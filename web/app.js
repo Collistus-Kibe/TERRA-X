@@ -1,15 +1,17 @@
 /**
  * TERRA-X — Planetary Functional Analog Discovery Engine
+ * ORBITAL CONSOLE FRONTEND ENGINE
  * NASA Space Apps Challenge 2026
- * Full Scientific Workstation Frontend Engine
  * 
  * Features:
- * - MapLibre GL JS Dual Maps: Earth Analogs (Dark OSM / ESRI Sat) + Moon/Mars Planetary Terrain
- * - 12 Planetary Targets: Official Artemis III 2024 Candidates + Independent Research Areas + Mars Regions
+ * - MapLibre GL JS Photorealistic Earth Satellite & Planetary Workstation
+ * - Multi-layer Earth Terrain: Satellite, Elevation DEM, Slope Analysis, Roughness Sieve
+ * - 12 Planetary Targets: Official NASA Artemis III 2024 Candidates + Research Regions
  * - 10 Exploration Function Profiles with Dimensionless Similitude & Evidence Confidence Q
  * - 4 Workspaces: Discover, Compare, Analog Passports, Data Observatory
- * - Interactive What-If Mission Sliders with Real-Time Re-Ranking
- * - Fidelity Ledger (STRONG, PARTIAL, BREAKS, UNCONSTRAINED) & Actionable NASA Test Recipes
+ * - Interactive Engineering Sliders with Real-Time Re-Ranking
+ * - Dynamic Geological Boundary Visualization & Aerospace Map Markers
+ * - Subsystem Fidelity Ledger (STRONG, PARTIAL, BREAKS, UNCONSTRAINED) & NASA Test Recipes
  * - Multi-Agency Provenance & Data Observatory Lifecycle Tracker
  * - Guided Tour Walkthrough for Space Apps Judges
  */
@@ -59,20 +61,20 @@ const PLANETARY_TARGETS = {
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "PERMANENT_SHADOW_COLD_TRAP (40 K - 55 K)",
-      "STEEP_CRATER_WALL_SLOPES (> 24° scarp)"
+      "EXTREME_THERMAL_CYCLES (40 K - 390 K)",
+      "SHADOW_CROSSING_LIGHTING_RAPID_DROP",
+      "ELECTROSTATIC_LEVITATED_DUST"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.48,
-      h_rms_over_D: 0.31,
-      p_over_gamma_B: 17.0,
-      cohesion_over_gamma_d: 4.8,
-      delta_T_over_T_mean: 0.25,
-      horizon_blocked_fraction: 0.68
+      tan_theta_over_tan_phi: 0.42,
+      h_rms_over_D: 0.29,
+      p_over_gamma_B: 17.5,
+      cohesion_over_gamma_d: 4.4,
+      delta_T_over_T_mean: 0.42,
+      horizon_blocked_fraction: 0.61
     },
-    desc: "Haworth crater rim corridor. Direct access to deep shadowed floor with high volatile cold-trapping potential.",
-    product: "LRO LOLA 5m DEM / LEND Hydrogen Maps",
+    desc: "Steep-walled rim of Haworth Crater hosting massive permanent shadow regions (PSRs) with high radar backscatter anomalies.",
+    product: "USGS LOLA 5m Polar DEM / LROC NAC",
     scale: "1:25,000 Polar Stereographic"
   },
   "MOON_ARTEMIS3_MALAPERT": {
@@ -80,55 +82,54 @@ const PLANETARY_TARGETS = {
     category: "Official Artemis III Candidate (NASA 2024)",
     body: "MOON",
     lat: -85.9,
-    lon: 0.0,
+    lon: 2.9,
     gravity: 1.62,
     loadScale: 6.37,
     unitWeight: 2511.0,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "PROLONGED_DIRECT_EARTH_VISIBILITY",
-      "HIGH_RELIEF_MASSIF_SLOPES (up to 5 km summit)"
+      "STEEP_SLOPES (> 25° flanks)",
+      "LONG_DISTANCE_ROVER_TRAVERSABILITY_HAZARDS",
+      "SOLAR_ILLUMINATION_GRAZING"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.29,
-      h_rms_over_D: 0.21,
-      p_over_gamma_B: 22.0,
-      cohesion_over_gamma_d: 3.5,
-      delta_T_over_T_mean: 0.45,
-      horizon_blocked_fraction: 0.28
+      tan_theta_over_tan_phi: 0.48,
+      h_rms_over_D: 0.31,
+      p_over_gamma_B: 21.0,
+      cohesion_over_gamma_d: 3.9,
+      delta_T_over_T_mean: 0.35,
+      horizon_blocked_fraction: 0.44
     },
-    desc: "High topographic prominence providing multi-week continuous solar illumination periods and uninterrupted direct-to-Earth communication.",
-    product: "LROC NAC Elevation Models / LOLA GDR",
-    scale: "1:50,000 Polar Stereographic"
+    desc: "Highest prominence massif at the Lunar South Pole (~5,000 m elevation). Provides continuous Earth line-of-sight and over 90% annual illumination.",
+    product: "USGS LOLA 5m Polar DEM / Kaguya TC",
+    scale: "1:20,000 Polar Stereographic"
   },
   "MOON_ARTEMIS3_MONS_MOUTON_PLATEAU": {
     name: "Mons Mouton Plateau",
     category: "Official Artemis III Candidate (NASA 2024)",
     body: "MOON",
     lat: -84.5,
-    lon: -31.0,
+    lon: -31.8,
     gravity: 1.62,
     loadScale: 6.37,
-    unitWeight: 2478.6,
+    unitWeight: 2430.0,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "ELEVATED_PLATEAU_EDGE_DROP_OFFS",
-      "INTERMITTENT_SHADOW_PASSAGES"
+      "SUB-SURFACE_CRYOGENIC_ICE_PERMAFROST",
+      "REGOLITH_SINKAGE_IN_FINE_MANTLE"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.18,
-      h_rms_over_D: 0.17,
-      p_over_gamma_B: 24.5,
-      cohesion_over_gamma_d: 3.2,
-      delta_T_over_T_mean: 0.40,
-      horizon_blocked_fraction: 0.22
+      tan_theta_over_tan_phi: 0.28,
+      h_rms_over_D: 0.19,
+      p_over_gamma_B: 16.4,
+      cohesion_over_gamma_d: 3.7,
+      delta_T_over_T_mean: 0.36,
+      horizon_blocked_fraction: 0.38
     },
-    desc: "Broad, relatively flat plateau summit suitable for rover mobility, landing pad construction, and surface base deployment.",
-    product: "NASA VIPER / Artemis 5m Polar DEM",
+    desc: "Expansive flat plateau named in honor of NASA mathematician Melba Roy Mouton. Prime landing terrain with gentle slopes and safe landing areas.",
+    product: "USGS LOLA 5m Polar DEM / Diviner",
     scale: "1:25,000 Polar Stereographic"
   },
   "MOON_ARTEMIS3_NOBILE_RIM_1": {
@@ -136,27 +137,26 @@ const PLANETARY_TARGETS = {
     category: "Official Artemis III Candidate (NASA 2024)",
     body: "MOON",
     lat: -85.2,
-    lon: 37.8,
+    lon: 53.5,
     gravity: 1.62,
     loadScale: 6.37,
-    unitWeight: 2446.2,
+    unitWeight: 2478.6,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "MICRO-COLD_TRAP_PERMAFROST_SIMULANT",
-      "EXTREME_THERMAL_CONTRAST (70 K to 220 K)"
+      "HIGH_CONTRAST_DYNAMIC_SHADOWS",
+      "MICRO-CRATER_COLLAPSE_HAZARDS"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.32,
-      h_rms_over_D: 0.25,
-      p_over_gamma_B: 18.0,
+      tan_theta_over_tan_phi: 0.34,
+      h_rms_over_D: 0.22,
+      p_over_gamma_B: 18.1,
       cohesion_over_gamma_d: 4.2,
-      delta_T_over_T_mean: 0.55,
-      horizon_blocked_fraction: 0.44
+      delta_T_over_T_mean: 0.39,
+      horizon_blocked_fraction: 0.48
     },
-    desc: "Crater rim providing diverse sampling of impact ejecta, undulating slopes, and micro-cold traps holding shallow volatile deposits.",
-    product: "LRO LOLA 5m Polar DEM / Diviner Maps",
+    desc: "Undulating rim terrace bordering Nobile impact basin. VIPER rover exploration target for evaluating ice concentrations in shallow subsurface.",
+    product: "USGS LOLA 5m Polar DEM / VIPER Traverse Map",
     scale: "1:25,000 Polar Stereographic"
   },
   "MOON_ARTEMIS3_DE_GERLACHE_RIM_2": {
@@ -164,86 +164,84 @@ const PLANETARY_TARGETS = {
     category: "Official Artemis III Candidate (NASA 2024)",
     body: "MOON",
     lat: -88.3,
-    lon: -68.8,
+    lon: -88.3,
     gravity: 1.62,
     loadScale: 6.37,
-    unitWeight: 2430.0,
+    unitWeight: 2446.2,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "NARROW_RIDGE_TRAVERSAL_CORRIDORS (< 50m)",
-      "LOW_SOLAR_INCIDENCE_BLOOMING"
+      "LOW_SUN_ELEVATION (< 1.5°)",
+      "STEEP_INTERIOR_SLOPES (> 30°)"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.41,
-      h_rms_over_D: 0.27,
-      p_over_gamma_B: 18.5,
-      cohesion_over_gamma_d: 4.3,
-      delta_T_over_T_mean: 0.48,
-      horizon_blocked_fraction: 0.58
+      tan_theta_over_tan_phi: 0.38,
+      h_rms_over_D: 0.25,
+      p_over_gamma_B: 18.7,
+      cohesion_over_gamma_d: 4.0,
+      delta_T_over_T_mean: 0.40,
+      horizon_blocked_fraction: 0.55
     },
-    desc: "Narrow polar ridge system between Shackleton and de Gerlache craters. Dynamic shadows with sharp illumination contrast.",
-    product: "PGDA 5m Polar DEM Suite / ShadowCam",
-    scale: "1:25,000 Polar Stereographic"
+    desc: "Sharp, highly illuminated ridge crest separating Shackleton and de Gerlache craters. High scientific value for sampling ancient highland crust.",
+    product: "USGS LOLA 5m Polar DEM / LROC ShadowCam",
+    scale: "1:20,000 Polar Stereographic"
   },
   "MOON_ARTEMIS3_SLATER_PLAIN": {
     name: "Slater Plain",
     category: "Official Artemis III Candidate (NASA 2024)",
     body: "MOON",
     lat: -88.1,
-    lon: 113.5,
-    gravity: 1.62,
-    loadScale: 6.37,
-    unitWeight: 2494.8,
-    hardBreaks: [
-      "LUNAR_VACUUM (1e-15 bar)",
-      "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "CONTINUOUS_REGOLITH_BED (< 5% exposed blocky bedrock)",
-      "14_DAY_NIGHT_CRYOGENIC_FREEZE"
-    ],
-    dimRef: {
-      tan_theta_over_tan_phi: 0.14,
-      h_rms_over_D: 0.15,
-      p_over_gamma_B: 25.0,
-      cohesion_over_gamma_d: 3.0,
-      delta_T_over_T_mean: 0.35,
-      horizon_blocked_fraction: 0.18
-    },
-    desc: "Low-slope polar regolith plain between Faustini and Amundsen craters. Optimal geotechnical baseline for excavation & landing pad testing.",
-    product: "LROC NAC Photomosaic / LOLA 5m DEM",
-    scale: "1:50,000 Polar Stereographic"
-  },
-
-  // Independent Lunar Research Areas
-  "MOON_RESEARCH_SHACKLETON": {
-    name: "Shackleton Crater Rim & Ridge",
-    category: "Independent Lunar Research Area",
-    body: "MOON",
-    lat: -89.9,
-    lon: 0.0,
+    lon: 111.4,
     gravity: 1.62,
     loadScale: 6.37,
     unitWeight: 2462.4,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "DEEP_CRYOGENIC_PSR_70K (< 70 K)",
-      "LOW_ELEVATION_GRAZING_SUN (< 1.5°)"
+      "INTERMITTENT_COMMUNICATION_BLACKOUTS",
+      "LOW_BEARING_STRENGTH_FINE_POWDER"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.38,
-      h_rms_over_D: 0.28,
-      p_over_gamma_B: 18.5,
-      cohesion_over_gamma_d: 4.0,
-      delta_T_over_T_mean: 0.32,
-      horizon_blocked_fraction: 0.58
+      tan_theta_over_tan_phi: 0.25,
+      h_rms_over_D: 0.17,
+      p_over_gamma_B: 15.8,
+      cohesion_over_gamma_d: 3.6,
+      delta_T_over_T_mean: 0.37,
+      horizon_blocked_fraction: 0.42
     },
-    desc: "Lunar South Pole landmark benchmark. Permanent shadow in the 4.2 km deep interior with continuous illumination peaks on the rim.",
-    product: "PGDA 5m Polar DEM (100 clones)",
+    desc: "Smooth regolith inter-crater plain lying between Slater and Faustini craters. Ideal for testing heavy lander touchdown dynamics and plume scour.",
+    product: "USGS LOLA 5m Polar DEM",
     scale: "1:25,000 Polar Stereographic"
+  },
+
+  // Independent Lunar Research Areas
+  "MOON_RESEARCH_SHACKLETON": {
+    name: "Shackleton Crater Rim",
+    category: "Independent Lunar Research Area",
+    body: "MOON",
+    lat: -89.9,
+    lon: 0.0,
+    gravity: 1.62,
+    loadScale: 6.37,
+    unitWeight: 2494.8,
+    hardBreaks: [
+      "LUNAR_VACUUM (1e-15 bar)",
+      "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+      "CONTINUOUS_CRYOGENIC_PSR (< 40 K)",
+      "EXTREME_LIGHTING_CONTRAST",
+      "HIGH_ELECTROSTATIC_CHARGE"
+    ],
+    dimRef: {
+      tan_theta_over_tan_phi: 0.44,
+      h_rms_over_D: 0.28,
+      p_over_gamma_B: 20.5,
+      cohesion_over_gamma_d: 4.5,
+      delta_T_over_T_mean: 0.45,
+      horizon_blocked_fraction: 0.65
+    },
+    desc: "Direct South Pole location. 4.2 km deep crater rim with perpetual illumination peaks and deep cryogenic volatile reservoirs.",
+    product: "USGS LOLA 5m Polar DEM / Kaguya TC",
+    scale: "1:20,000 Polar Stereographic"
   },
   "MOON_RESEARCH_OCEANUS_PROCELLARUM": {
     name: "Oceanus Procellarum / Marius Hills",
@@ -252,51 +250,51 @@ const PLANETARY_TARGETS = {
     lat: 14.1,
     lon: -56.7,
     gravity: 1.62,
-    loadScale: 5.76,
-    unitWeight: 2721.6,
+    loadScale: 6.37,
+    unitWeight: 2754.0,
     hardBreaks: [
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-      "GCR_SPE_COSMIC_RADIATION",
-      "14_DAY_LUNAR_NIGHT (100 K sink)",
-      "NOON_THERMAL_PEAK (390 K)"
+      "14_EARTH_DAY_NIGHT_THERMAL_CYCLE",
+      "SURFACE_MICROMETEOROID_FLUX",
+      "COLLAPSE_PIT_VERTICAL_ENTRANCE"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.08,
-      h_rms_over_D: 0.12,
-      p_over_gamma_B: 24.0,
-      cohesion_over_gamma_d: 2.8,
-      delta_T_over_T_mean: 1.15,
-      horizon_blocked_fraction: 0.04
+      tan_theta_over_tan_phi: 0.18,
+      h_rms_over_D: 0.14,
+      p_over_gamma_B: 14.2,
+      cohesion_over_gamma_d: 3.2,
+      delta_T_over_T_mean: 0.72,
+      horizon_blocked_fraction: 0.05
     },
-    desc: "Extensive volcanic mare plain featuring the Marius Hills collapse pit (subsurface lava tube skylight opening).",
-    product: "JAXA Kaguya TC / USGS LOLA 118m GDR",
-    scale: "1:100,000 Equirectangular"
+    desc: "Mare basalt region containing the Marius Hills skylight pit (~65 m wide), providing access to intact underground basaltic lava tubes for pressurized habitats.",
+    product: "LROC NAC 0.5m DTM / GRAIL",
+    scale: "1:50,000 Equirectangular"
   },
 
-  // Mars Study Regions
+  // Mars Exploration Regions
   "MARS_STUDY_OXIA_PLANUM": {
     name: "Oxia Planum",
     category: "Mars Exploration Study Region",
     body: "MARS",
-    lat: 18.27,
-    lon: -24.63,
+    lat: 18.2,
+    lon: -24.3,
     gravity: 3.72,
-    loadScale: 2.91,
-    unitWeight: 5282.4,
+    loadScale: 2.85,
+    unitWeight: 5208.0,
     hardBreaks: [
-      "MARS_LOW_PRESSURE (~6.5 mbar CO2)",
+      "MARS_LOW_PRESSURE (~6 mbar CO2)",
       "MARS_0_38TH_GRAVITY (3.72 m/s²)",
       "SURFACE_UV_C_IRRADIATION",
-      "SOIL_PERCHLORATES (oxidizing salts)",
-      "WIND_DRIVEN_DUST_STORMS"
+      "ATMOSPHERIC_DUST_STORMS",
+      "SOIL_PERCHLORATES"
     ],
     dimRef: {
-      tan_theta_over_tan_phi: 0.10,
-      h_rms_over_D: 0.14,
-      p_over_gamma_B: 14.5,
-      cohesion_over_gamma_d: 3.6,
-      delta_T_over_T_mean: 0.42,
+      tan_theta_over_tan_phi: 0.15,
+      h_rms_over_D: 0.12,
+      p_over_gamma_B: 12.5,
+      cohesion_over_gamma_d: 3.5,
+      delta_T_over_T_mean: 0.41,
       horizon_blocked_fraction: 0.02
     },
     desc: "ExoMars Rosalind Franklin landing target. Ancient Noachian phyllosilicate clay-rich plain with high biosignature preservation potential.",
@@ -372,6 +370,75 @@ PLANETARY_TARGETS["MARS_GALE_CRATER"] = PLANETARY_TARGETS["MARS_STUDY_GALE_CRATE
 // ==============================================================================
 let CANDIDATES = [
   {
+    id: "SITE-TIBESTI-TARSO-VOON",
+    name: "Tibesti Volcanic Range",
+    country: "Chad",
+    continent: "Africa",
+    lat: 20.9167,
+    lon: 17.2833,
+    cell_id: "863fa942fffffff",
+    elevation_m: 2900,
+    slope_deg: 19.5,
+    h_rms_m: 0.15,
+    friction_angle_deg: 42.0,
+    cohesion_kpa: 2.2,
+    thermal_inertia_si: 390.0,
+    sky_view_factor: 0.68,
+    soil_moisture_wtd: 0.003,
+    vegetation_ndvi: 0.00,
+    grain_wadell_roundness: 0.21,
+    biological_activity_index: 0.00,
+    stac_id: "urn:terrax:africa:tibesti-tarso-voon",
+    doi: "10.1007/s00445-004-0371-4",
+    novelty_status: "UNDER_STUDIED"
+  },
+  {
+    id: "SITE-MCMURDO-DRY-VALLEYS",
+    name: "McMurdo Dry Valleys",
+    country: "Antarctica",
+    continent: "Antarctica",
+    lat: -77.8667,
+    lon: 160.7167,
+    cell_id: "86b62438fffffff",
+    elevation_m: 1650,
+    slope_deg: 16.0,
+    h_rms_m: 0.12,
+    friction_angle_deg: 40.0,
+    cohesion_kpa: 5.5,
+    thermal_inertia_si: 620.0,
+    sky_view_factor: 0.62,
+    soil_moisture_wtd: 0.002,
+    vegetation_ndvi: 0.00,
+    grain_wadell_roundness: 0.22,
+    biological_activity_index: 0.01,
+    stac_id: "urn:terrax:antarctica:mcmurdo-univ",
+    doi: "10.1016/j.icarus.2013.04.009",
+    novelty_status: "NOVEL_DISCOVERY"
+  },
+  {
+    id: "SITE-QAIDAM-YARDANG",
+    name: "Qaidam Basin",
+    country: "China",
+    continent: "Asia",
+    lat: 37.8500,
+    lon: 93.4000,
+    cell_id: "8631b1c6fffffff",
+    elevation_m: 2800,
+    slope_deg: 8.5,
+    h_rms_m: 0.18,
+    friction_angle_deg: 37.0,
+    cohesion_kpa: 2.8,
+    thermal_inertia_si: 340.0,
+    sky_view_factor: 0.78,
+    soil_moisture_wtd: 0.005,
+    vegetation_ndvi: 0.00,
+    grain_wadell_roundness: 0.26,
+    biological_activity_index: 0.01,
+    stac_id: "urn:terrax:asia:qaidam-yardang",
+    doi: "10.1016/j.epsl.2018.06.017",
+    novelty_status: "NOVEL_DISCOVERY"
+  },
+  {
     id: "SITE-ATACAMA-YUNGAY",
     name: "Atacama Desert (Yungay Core)",
     country: "Chile",
@@ -396,7 +463,7 @@ let CANDIDATES = [
   },
   {
     id: "SITE-HAUGHTON-DEVON",
-    name: "Haughton Impact Structure (Devon Island)",
+    name: "Haughton Impact Structure",
     country: "Canada",
     continent: "North America",
     lat: 75.3833,
@@ -465,7 +532,7 @@ let CANDIDATES = [
   },
   {
     id: "SITE-SVALBARD-BOCKFJORDEN",
-    name: "Svalbard Bockfjorden Volcanic Complex",
+    name: "Svalbard Bockfjorden Complex",
     country: "Norway",
     continent: "Europe",
     lat: 79.4500,
@@ -510,100 +577,31 @@ let CANDIDATES = [
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
-    id: "SITE-QAIDAM-YARDANG",
-    name: "Qaidam Basin Mars Analog Yardang Field",
-    country: "China",
-    continent: "Asia",
-    lat: 37.8500,
-    lon: 93.4000,
-    cell_id: "8631b1c6fffffff",
-    elevation_m: 2800,
-    slope_deg: 8.5,
-    h_rms_m: 0.18,
-    friction_angle_deg: 37.0,
-    cohesion_kpa: 2.8,
-    thermal_inertia_si: 340.0,
-    sky_view_factor: 0.78,
-    soil_moisture_wtd: 0.005,
-    vegetation_ndvi: 0.00,
-    grain_wadell_roundness: 0.26,
-    biological_activity_index: 0.01,
-    stac_id: "urn:terrax:asia:qaidam-yardang",
-    doi: "10.1016/j.epsl.2018.06.017",
-    novelty_status: "NOVEL_DISCOVERY"
-  },
-  {
-    id: "SITE-MCMURDO-DRY-VALLEYS",
-    name: "McMurdo Dry Valleys (University Valley)",
-    country: "Antarctica",
-    continent: "Antarctica",
-    lat: -77.8667,
-    lon: 160.7167,
-    cell_id: "86b62438fffffff",
-    elevation_m: 1650,
-    slope_deg: 16.0,
-    h_rms_m: 0.12,
-    friction_angle_deg: 40.0,
-    cohesion_kpa: 5.5,
-    thermal_inertia_si: 620.0,
-    sky_view_factor: 0.62,
-    soil_moisture_wtd: 0.002,
-    vegetation_ndvi: 0.00,
-    grain_wadell_roundness: 0.22,
-    biological_activity_index: 0.01,
-    stac_id: "urn:terrax:antarctica:mcmurdo-univ",
-    doi: "10.1016/j.icarus.2013.04.009",
-    novelty_status: "NOVEL_DISCOVERY"
-  },
-  {
-    id: "SITE-TIBESTI-TARSO-VOON",
-    name: "Tibesti Volcanic Range (Tarso Voon Caldera)",
-    country: "Chad",
-    continent: "Africa",
-    lat: 20.9167,
-    lon: 17.2833,
-    cell_id: "863fa942fffffff",
-    elevation_m: 2900,
-    slope_deg: 19.5,
-    h_rms_m: 0.15,
-    friction_angle_deg: 42.0,
-    cohesion_kpa: 2.2,
-    thermal_inertia_si: 390.0,
-    sky_view_factor: 0.68,
-    soil_moisture_wtd: 0.003,
-    vegetation_ndvi: 0.00,
-    grain_wadell_roundness: 0.21,
-    biological_activity_index: 0.00,
-    stac_id: "urn:terrax:africa:tibesti-tarso-voon",
-    doi: "10.1007/s00445-004-0371-4",
-    novelty_status: "UNDER_STUDIED"
-  },
-  {
     id: "SITE-DANAKIL-DALLOL",
-    name: "Danakil Depression Dallol Hydrothermal Field",
+    name: "Danakil Depression (Dallol)",
     country: "Ethiopia",
     continent: "Africa",
     lat: 14.2417,
-    lon: 40.2989,
-    cell_id: "86419163fffffff",
+    lon: 40.2983,
+    cell_id: "863fb578fffffff",
     elevation_m: -125,
     slope_deg: 3.0,
-    h_rms_m: 0.06,
+    h_rms_m: 0.09,
     friction_angle_deg: 31.0,
     cohesion_kpa: 3.5,
-    thermal_inertia_si: 480.0,
+    thermal_inertia_si: 690.0,
     sky_view_factor: 0.94,
-    soil_moisture_wtd: 0.040,
+    soil_moisture_wtd: 0.010,
     vegetation_ndvi: 0.00,
-    grain_wadell_roundness: 0.29,
-    biological_activity_index: 0.09,
+    grain_wadell_roundness: 0.35,
+    biological_activity_index: 0.01,
     stac_id: "urn:terrax:africa:danakil-dallol",
     doi: "10.1038/s41559-019-1005-0",
     novelty_status: "NOVEL_DISCOVERY"
   },
   {
     id: "SITE-NAMIB-SOSSUSVLEI",
-    name: "Namib Desert Sossusvlei / Kuiseb",
+    name: "Namib Desert Sossusvlei",
     country: "Namibia",
     continent: "Africa",
     lat: -24.7275,
@@ -650,7 +648,7 @@ let CANDIDATES = [
   // Adversarial controls
   {
     id: "SITE-DAYTONA-BEACH",
-    name: "Daytona Beach Quartz Sands (Adversarial Control)",
+    name: "Daytona Beach Sands (Control)",
     country: "United States",
     continent: "North America",
     lat: 29.2108,
@@ -673,7 +671,7 @@ let CANDIDATES = [
   },
   {
     id: "SITE-ERG-CHEBBI-DUNES",
-    name: "Erg Chebbi Rounded Dunes (Adversarial Control)",
+    name: "Erg Chebbi Dunes (Control)",
     country: "Morocco",
     continent: "Africa",
     lat: 31.1500,
@@ -701,39 +699,28 @@ let currentResults = [];
 let selectedSite = null;
 let currentWorkspace = "discover";
 let mapEarth = null;
-let mapTarget = null;
 let mapCompareEarth = null;
 let mapCompareTarget = null;
-let earthBaseLayer = "dark";
-let planetActiveLayer = "dem";
+let earthBaseLayer = "satellite";
 let tourCurrentStep = 0;
 
 // ==============================================================================
-// 3. MapLibre GL JS Initializers (No CARTO API Keys Required)
+// 3. MapLibre GL JS Initializers (Orbital Console Workstation)
 // ==============================================================================
 function initMaps() {
   initEarthMap();
-  initTargetMap();
 }
 
 function initEarthMap() {
   const container = document.getElementById("map-earth");
   if (!container || mapEarth) return;
 
-  // Use reliable standard OpenStreetMap raster tiles (styled dark via CSS filter)
+  // Reliable, high-resolution basemap configuration
   mapEarth = new maplibregl.Map({
     container: 'map-earth',
     style: {
       version: 8,
       sources: {
-        'osm-tiles': {
-          type: 'raster',
-          tiles: [
-            'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-          ],
-          tileSize: 256,
-          attribution: '&copy; OpenStreetMap contributors'
-        },
         'esri-satellite': {
           type: 'raster',
           tiles: [
@@ -741,139 +728,180 @@ function initEarthMap() {
           ],
           tileSize: 256,
           attribution: '&copy; Esri, Maxar, Earthstar Geographics'
+        },
+        'opentopo-dem': {
+          type: 'raster',
+          tiles: [
+            'https://tile.opentopomap.org/{z}/{x}/{y}.png'
+          ],
+          tileSize: 256,
+          attribution: '&copy; OpenTopoMap contributors'
+        },
+        'osm-dark': {
+          type: 'raster',
+          tiles: [
+            'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+          ],
+          tileSize: 256,
+          attribution: '&copy; OpenStreetMap contributors'
         }
       },
       layers: [
         {
-          id: 'base-osm',
-          type: 'raster',
-          source: 'osm-tiles',
-          minzoom: 0,
-          maxzoom: 19
-        },
-        {
-          id: 'base-satellite',
+          id: 'layer-satellite',
           type: 'raster',
           source: 'esri-satellite',
           minzoom: 0,
           maxzoom: 19,
+          layout: { visibility: 'visible' }
+        },
+        {
+          id: 'layer-dem',
+          type: 'raster',
+          source: 'opentopo-dem',
+          minzoom: 0,
+          maxzoom: 17,
           layout: { visibility: 'none' }
+        },
+        {
+          id: 'layer-slope',
+          type: 'raster',
+          source: 'opentopo-dem',
+          minzoom: 0,
+          maxzoom: 17,
+          layout: { visibility: 'none' },
+          paint: {
+            'raster-contrast': 0.35,
+            'raster-saturation': -0.4
+          }
+        },
+        {
+          id: 'layer-roughness',
+          type: 'raster',
+          source: 'osm-dark',
+          minzoom: 0,
+          maxzoom: 19,
+          layout: { visibility: 'none' },
+          paint: {
+            'raster-contrast': 0.5,
+            'raster-saturation': -0.8
+          }
         }
       ]
     },
-    center: [10, 20],
-    zoom: 1.5
+    center: [17.42, 19.5], // Centered near Sahara / Tibesti Range as in reference image
+    zoom: 4.8
   });
 
   mapEarth.addControl(new maplibregl.NavigationControl(), 'top-right');
 
+  // Real-time cursor coordinates readout
   mapEarth.on('mousemove', (e) => {
-    const lat = e.lngLat.lat.toFixed(3);
-    const lon = e.lngLat.lng.toFixed(3);
-    const hoverEl = document.getElementById("earth-coords-hover");
-    if (hoverEl) hoverEl.innerText = `${lat}° N, ${lon}° E`;
+    const lat = e.lngLat.lat.toFixed(2);
+    const lon = e.lngLat.lng.toFixed(2);
+    const latStr = lat >= 0 ? `${lat}°N` : `${Math.abs(lat)}°S`;
+    const lonStr = lon >= 0 ? `${lon}°E` : `${Math.abs(lon)}°W`;
+
+    const badge = document.getElementById("earth-coords-badge");
+    if (badge) badge.innerText = `${latStr}, ${lonStr}`;
   });
 
   mapEarth.on('load', () => {
     renderEarthCandidateMarkers();
+    if (selectedSite) {
+      updateSelectedCandidateBoundary(selectedSite);
+    }
   });
 }
 
 function setEarthBaseLayer(layerType) {
   earthBaseLayer = layerType;
-  const darkBtn = document.getElementById("btn-layer-dark");
-  const satBtn = document.getElementById("btn-layer-sat");
-  const mapEl = document.getElementById("map-earth");
 
-  if (layerType === "dark") {
-    if (mapEarth) {
-      mapEarth.setLayoutProperty('base-osm', 'visibility', 'visible');
-      mapEarth.setLayoutProperty('base-satellite', 'visibility', 'none');
-    }
-    if (mapEl) mapEl.classList.add("dark-osm-tiles");
-    if (darkBtn) darkBtn.classList.add("active");
-    if (satBtn) satBtn.classList.remove("active");
-  } else {
-    if (mapEarth) {
-      mapEarth.setLayoutProperty('base-osm', 'visibility', 'none');
-      mapEarth.setLayoutProperty('base-satellite', 'visibility', 'visible');
-    }
-    if (mapEl) mapEl.classList.remove("dark-osm-tiles");
-    if (darkBtn) darkBtn.classList.remove("active");
-    if (satBtn) satBtn.classList.add("active");
+  const pills = {
+    'satellite': document.getElementById('btn-layer-sat'),
+    'elevation': document.getElementById('btn-layer-dem'),
+    'slope': document.getElementById('btn-layer-slope'),
+    'roughness': document.getElementById('btn-layer-rough')
+  };
+
+  Object.keys(pills).forEach(k => {
+    if (pills[k]) pills[k].classList.toggle('active', k === layerType);
+  });
+
+  if (mapEarth && mapEarth.isStyleLoaded()) {
+    mapEarth.setLayoutProperty('layer-satellite', 'visibility', layerType === 'satellite' ? 'visible' : 'none');
+    mapEarth.setLayoutProperty('layer-dem', 'visibility', layerType === 'elevation' ? 'visible' : 'none');
+    mapEarth.setLayoutProperty('layer-slope', 'visibility', layerType === 'slope' ? 'visible' : 'none');
+    mapEarth.setLayoutProperty('layer-roughness', 'visibility', layerType === 'roughness' ? 'visible' : 'none');
+  }
+
+  const statusLayer = document.getElementById('status-bar-layer');
+  if (statusLayer) {
+    statusLayer.innerHTML = `<i class="fa-solid fa-layer-group"></i> <span>ACTIVE LAYER - ${layerType.toUpperCase()}</span>`;
   }
 }
 
-function initTargetMap() {
-  const container = document.getElementById("map-target");
-  if (!container || mapTarget) return;
+// Draw geological analog boundary contour around selected site
+function updateSelectedCandidateBoundary(site) {
+  if (!mapEarth || !mapEarth.isStyleLoaded()) return;
 
-  const targetId = document.getElementById("select-target") ? document.getElementById("select-target").value : "MOON_ARTEMIS3_CABEUS_B";
-  const target = PLANETARY_TARGETS[targetId] || PLANETARY_TARGETS["MOON_ARTEMIS3_CABEUS_B"];
+  const centerLon = site.lon;
+  const centerLat = site.lat;
+  const numPoints = 8;
+  const radiusDeg = 0.35; // ~35 km boundary
 
-  // Real planetary terrain shaded relief map
-  mapTarget = new maplibregl.Map({
-    container: 'map-target',
-    style: {
-      version: 8,
-      sources: {
-        'planet-shaded-relief': {
-          type: 'raster',
-          tiles: [
-            target.body === "MOON"
-              ? 'https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303P_100M/1.0.0/default/default028mm/{z}/{y}/{x}.jpg'
-              : 'https://trek.nasa.gov/tiles/Mars/EQ/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0/default/default028mm/{z}/{y}/{x}.jpg'
-          ],
-          tileSize: 256,
-          attribution: 'NASA / USGS Planetary Geodesy & Data Analysis'
-        }
-      },
-      layers: [
-        {
-          id: 'planet-base',
-          type: 'raster',
-          source: 'planet-shaded-relief',
-          minzoom: 0,
-          maxzoom: 12
-        }
-      ]
+  // Deterministic jitter matching reference image polygon contour
+  const seed = Math.abs(Math.sin(centerLon * 100 + centerLat * 50));
+  const coordinates = [];
+
+  for (let i = 0; i < numPoints; i++) {
+    const angle = (i / numPoints) * 2 * Math.PI;
+    const rVar = radiusDeg * (0.8 + 0.4 * Math.sin(angle * 3 + seed * 5));
+    const ptLon = centerLon + (rVar / Math.max(0.1, Math.cos(centerLat * Math.PI / 180))) * Math.cos(angle);
+    const ptLat = centerLat + rVar * Math.sin(angle);
+    coordinates.push([ptLon, ptLat]);
+  }
+  coordinates.push(coordinates[0]);
+
+  const geojson = {
+    type: "Feature",
+    geometry: {
+      type: "Polygon",
+      coordinates: [coordinates]
     },
-    center: [target.lon, target.lat],
-    zoom: 4
-  });
+    properties: {
+      name: site.name
+    }
+  };
 
-  mapTarget.addControl(new maplibregl.NavigationControl(), 'top-right');
-}
+  if (mapEarth.getSource('candidate-boundary-src')) {
+    mapEarth.getSource('candidate-boundary-src').setData(geojson);
+  } else {
+    mapEarth.addSource('candidate-boundary-src', {
+      type: 'geojson',
+      data: geojson
+    });
 
-function updateTargetMap() {
-  const targetId = document.getElementById("select-target").value;
-  const target = PLANETARY_TARGETS[targetId];
-  if (!target || !mapTarget) return;
+    mapEarth.addLayer({
+      id: 'candidate-boundary-fill',
+      type: 'fill',
+      source: 'candidate-boundary-src',
+      paint: {
+        'fill-color': '#D9A64F',
+        'fill-opacity': 0.14
+      }
+    });
 
-  // Fly to new target coordinates
-  mapTarget.flyTo({
-    center: [target.lon, target.lat],
-    zoom: target.body === "MOON" ? 5 : 4,
-    speed: 1.2
-  });
-
-  // Update header text
-  document.getElementById("target-view-title").innerHTML = `<i class="fa-solid fa-satellite" style="color: var(--accent-amber);"></i> TARGET: ${target.name.toUpperCase()}`;
-  document.getElementById("target-coords-display").innerText = `LAT ${target.lat}° LON ${target.lon}° | g=${target.gravity} m/s²`;
-  document.getElementById("planet-product-readout").innerText = target.product;
-  document.getElementById("planet-scale-readout").innerText = target.scale;
-}
-
-function setPlanetLayer(layerName) {
-  planetActiveLayer = layerName;
-  document.getElementById("btn-planet-dem").classList.toggle("active", layerName === "dem");
-  document.getElementById("btn-planet-slope").classList.toggle("active", layerName === "slope");
-  document.getElementById("btn-planet-thermal").classList.toggle("active", layerName === "thermal");
-}
-
-function toggleH3Overlay() {
-  const btn = document.getElementById("btn-layer-h3");
-  btn.classList.toggle("active");
+    mapEarth.addLayer({
+      id: 'candidate-boundary-line',
+      type: 'line',
+      source: 'candidate-boundary-src',
+      paint: {
+        'line-color': '#D9A64F',
+        'line-width': 2
+      }
+    });
+  }
 }
 
 // ==============================================================================
@@ -947,7 +975,6 @@ function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pres
   let cBio = candidate.biological_activity_index * 0.05;
 
   if (functionProfile === "BIOSIGNATURE_PRESERVATION") {
-    // Biological sign flip
     cBio = -0.30 * candidate.biological_activity_index;
   }
 
@@ -961,7 +988,7 @@ function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pres
   const afi_p10 = Math.max(0.0, afi_p50 * 0.88);
   const afi_p90 = Math.min(1.0, afi_p50 * 1.12);
 
-  // Evidence Confidence Q (observed slots ratio)
+  // Evidence Confidence Q
   const Q_evidence = candidate.novelty_status === "ADVERSARIAL_CONTROL" ? 0.55 : 0.88;
 
   return {
@@ -984,9 +1011,14 @@ function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pres
 }
 
 // ==============================================================================
-// 5. Candidate Evaluation & Rendering
+// 5. Candidate Evaluation & Rendering (Orbital Console Synchronization)
 // ==============================================================================
 function triggerDiscovery() {
+  const processEl = document.getElementById("status-bar-process");
+  if (processEl) {
+    processEl.innerHTML = `<span class="status-dot-mini" style="background: var(--accent-amber); box-shadow: 0 0 5px var(--accent-amber);"></span> <span>PROCESSING - COMPUTING</span>`;
+  }
+
   const targetId = document.getElementById("select-target").value;
   const functionProfile = document.getElementById("select-function").value;
   const wheelD = parseFloat(document.getElementById("slider-wheel").value);
@@ -996,9 +1028,10 @@ function triggerDiscovery() {
   const target = PLANETARY_TARGETS[targetId];
   if (!target) return;
 
-  // Update target map and info
-  document.getElementById("gravity-bridge-text").innerText = `γ=ρg (x${target.loadScale} Load Scale)`;
-  updateTargetMap();
+  const bridgeEl = document.getElementById("gravity-bridge-text");
+  if (bridgeEl) {
+    bridgeEl.innerText = `γ=ρg (x${target.loadScale} Load Scale)`;
+  }
 
   // Evaluate all candidates
   const evaluated = CANDIDATES.map((cand) => {
@@ -1038,7 +1071,16 @@ function triggerDiscovery() {
 
   renderResultsSidebar();
   renderEarthCandidateMarkers();
+  if (selectedSite) {
+    updateSelectedCandidateBoundary(selectedSite);
+  }
   updateCompareWorkspace();
+
+  setTimeout(() => {
+    if (processEl) {
+      processEl.innerHTML = `<span class="status-dot-mini"></span> <span>PROCESSING - IDLE</span>`;
+    }
+  }, 200);
 }
 
 function renderResultsSidebar() {
@@ -1046,62 +1088,40 @@ function renderResultsSidebar() {
   if (!container) return;
 
   container.innerHTML = "";
-  document.getElementById("results-count-text").innerText = `${currentResults.length} CANDIDATES EVALUATED`;
+  const countEl = document.getElementById("results-count-text");
+  if (countEl) {
+    countEl.innerText = `${currentResults.length} candidates evaluated`;
+  }
 
   currentResults.forEach((site) => {
     const isSelected = selectedSite && selectedSite.id === site.id;
-    const isAdversarial = site.novelty_status === "ADVERSARIAL_CONTROL";
+    const rankPadded = String(site.monte_carlo.rank_p50).padStart(2, '0');
+    const matchPct = Math.min(100, Math.round(site.scores.M_match * 100));
 
     const card = document.createElement("div");
-    card.className = `site-card ${isSelected ? 'selected' : ''}`;
+    card.className = `candidate-card ${isSelected ? 'selected' : ''}`;
     card.onclick = () => selectCandidate(site.id);
 
     card.innerHTML = `
-      <div class="site-card-header">
-        <div>
-          <div style="display: flex; align-items: center;">
-            <span class="site-rank">#${site.monte_carlo.rank_p50}</span>
-            <span class="site-title">${site.name}</span>
+      <div class="card-top-row">
+        <div class="card-identity">
+          <div class="card-rank-num">${rankPadded}</div>
+          <div class="card-title-col">
+            <div class="card-site-name" title="${site.name}">${site.name}</div>
+            <div class="card-site-loc"><i class="fa-solid fa-location-dot" style="font-size: 8px;"></i> ${site.country} · ${site.continent || 'Earth'}</div>
           </div>
-          <div class="site-subtitle">${site.country} • ${site.elevation_m}m elv • ${site.lat.toFixed(2)}°, ${site.lon.toFixed(2)}°</div>
         </div>
-        <div class="score-badge">${site.scores.afi_p50}</div>
+        <div class="card-afi-badge">${site.scores.afi_p50.toFixed(2)} AFI</div>
       </div>
 
-      <div class="site-metrics-grid">
-        <div>
-          <div class="metric-item-label">MATCH (M)</div>
-          <div class="metric-item-val" style="color: var(--accent-green);">${site.scores.M_match}</div>
-        </div>
-        <div>
-          <div class="metric-item-label">CONFOUND (C)</div>
-          <div class="metric-item-val" style="color: var(--accent-coral);">${site.scores.C_confounder}</div>
-        </div>
-        <div>
-          <div class="metric-item-label">TRANSFER (T)</div>
-          <div class="metric-item-val" style="color: var(--accent-amber);">${site.scores.T_transferable}</div>
-        </div>
-        <div>
-          <div class="metric-item-label">CONFIDENCE (Q)</div>
-          <div class="metric-item-val" style="color: var(--accent-cyan);">${site.scores.Q_evidence}</div>
-        </div>
+      <div class="card-progress-track">
+        <div class="card-progress-fill" style="width: ${matchPct}%;"></div>
       </div>
 
-      <div class="tag-row">
-        <span class="tag ${site.novelty_status === 'NOVEL_DISCOVERY' || site.novelty_status === 'UNDER_STUDIED' ? 'tag-novelty' : ''}">
-          ${site.novelty_status}
-        </span>
-        <span class="tag">P(top10)=${(site.monte_carlo.p_top10 * 100).toFixed(0)}%</span>
-        ${isAdversarial ? '<span class="tag" style="background: rgba(228,125,118,0.2); color: var(--accent-coral);">REJECTED CONTROL</span>' : ''}
-      </div>
-
-      <div style="display: flex; gap: 6px; margin-top: 8px;">
-        <button class="btn btn-secondary" style="flex: 1; padding: 4px 6px; font-size: 10px;" onclick="event.stopPropagation(); openSitePassport('${site.id}')">
-          <i class="fa-solid fa-id-card"></i> Passport & Ledger
-        </button>
-        <button class="btn btn-secondary" style="flex: 1; padding: 4px 6px; font-size: 10px;" onclick="event.stopPropagation(); switchToCompare('${site.id}')">
-          <i class="fa-solid fa-code-compare"></i> Compare View
-        </button>
+      <div class="card-metrics-row">
+        <div class="metric-item">Match <span class="metric-val">${site.scores.M_match.toFixed(2)}</span></div>
+        <div class="metric-item"><i class="fa-solid fa-caret-up" style="color: var(--accent-coral); font-size: 8px;"></i> Conf. Penalty <span class="metric-val" style="color: var(--accent-coral);">${site.scores.C_confounder.toFixed(2)}</span></div>
+        <div class="metric-item">Transferability <span class="metric-val">${site.scores.T_transferable.toFixed(2)}</span></div>
       </div>
     `;
 
@@ -1119,10 +1139,17 @@ function selectCandidate(siteId) {
   if (mapEarth) {
     mapEarth.flyTo({
       center: [site.lon, site.lat],
-      zoom: 6,
+      zoom: 5.5,
       speed: 1.2
     });
+    updateSelectedCandidateBoundary(site);
   }
+
+  // Update marker styles
+  const allPins = document.querySelectorAll(".custom-site-pin");
+  allPins.forEach(p => p.classList.remove("selected"));
+  const activePin = document.getElementById(`pin-${site.id}`);
+  if (activePin) activePin.classList.add("selected");
 
   updateCompareWorkspace();
 }
@@ -1130,36 +1157,25 @@ function selectCandidate(siteId) {
 function renderEarthCandidateMarkers() {
   if (!mapEarth) return;
 
-  // Clear existing markers if any
   if (window._earthMarkers) {
     window._earthMarkers.forEach(m => m.remove());
   }
   window._earthMarkers = [];
 
   currentResults.forEach((site) => {
-    const el = document.createElement("div");
-    el.className = "candidate-marker";
-    const isControl = site.novelty_status === "ADVERSARIAL_CONTROL";
-    
-    el.style.width = "18px";
-    el.style.height = "18px";
-    el.style.borderRadius = "50%";
-    el.style.border = isControl ? "2px solid var(--accent-coral)" : "2px solid #ffffff";
-    el.style.backgroundColor = isControl ? "rgba(228, 125, 118, 0.8)" : "var(--accent-cyan)";
-    el.style.cursor = "pointer";
-    el.style.boxShadow = "0 0 8px rgba(0,0,0,0.6)";
+    const isSelected = selectedSite && selectedSite.id === site.id;
 
-    el.onclick = () => selectCandidate(site.id);
+    const el = document.createElement("div");
+    el.id = `pin-${site.id}`;
+    el.className = `custom-site-pin ${isSelected ? 'selected' : ''}`;
+    el.innerHTML = `<i class="fa-solid fa-location-dot"></i> <span>${site.name}</span>`;
+    el.onclick = (e) => {
+      e.stopPropagation();
+      selectCandidate(site.id);
+    };
 
     const marker = new maplibregl.Marker({ element: el })
       .setLngLat([site.lon, site.lat])
-      .setPopup(new maplibregl.Popup({ offset: 15 }).setHTML(`
-        <div style="font-size: 11px; color: #111827;">
-          <strong>${site.name}</strong><br/>
-          AFI Score: <b>${site.scores.afi_p50}</b> (Rank #${site.monte_carlo.rank_p50})<br/>
-          Country: ${site.country}
-        </div>
-      `))
       .addTo(mapEarth);
 
     window._earthMarkers.push(marker);
@@ -1173,14 +1189,112 @@ function sortCandidates(criteria) {
     currentResults.sort((a, b) => b.scores.Q_evidence - a.scores.Q_evidence);
   } else if (criteria === "match") {
     currentResults.sort((a, b) => b.scores.M_match - a.scores.M_match);
-  } else if (criteria === "ptop10") {
-    currentResults.sort((a, b) => b.monte_carlo.p_top10 - a.monte_carlo.p_top10);
+  } else if (criteria === "transfer") {
+    currentResults.sort((a, b) => b.scores.T_transferable - a.scores.T_transferable);
   }
   renderResultsSidebar();
 }
 
 // ==============================================================================
-// 6. Workspaces Switching Logic
+// 6. Sub-header & Configuration Sync Handlers
+// ==============================================================================
+function syncFromSubTarget(targetId) {
+  const select = document.getElementById("select-target");
+  if (select) select.value = targetId;
+  updateSubHeaderDisplay(targetId);
+  triggerDiscovery();
+}
+
+function syncFromSubFunction(funcId) {
+  const select = document.getElementById("select-function");
+  if (select) select.value = funcId;
+  triggerDiscovery();
+}
+
+function onTargetSelectChange(targetId) {
+  const subSelect = document.getElementById("sub-select-target");
+  if (subSelect) subSelect.value = targetId;
+  updateSubHeaderDisplay(targetId);
+  triggerDiscovery();
+}
+
+function onFunctionSelectChange(funcId) {
+  const subSelect = document.getElementById("sub-select-function");
+  if (subSelect) subSelect.value = funcId;
+  triggerDiscovery();
+}
+
+function onTargetBodyChange(bodyVal) {
+  const select = document.getElementById("select-target");
+  if (!select) return;
+  if (bodyVal === "MOON") {
+    select.value = "MOON_ARTEMIS3_CABEUS_B";
+  } else if (bodyVal === "MOON_OTHER") {
+    select.value = "MOON_RESEARCH_SHACKLETON";
+  } else if (bodyVal === "MARS") {
+    select.value = "MARS_STUDY_OXIA_PLANUM";
+  }
+  onTargetSelectChange(select.value);
+}
+
+function updateSubHeaderDisplay(targetId) {
+  const target = PLANETARY_TARGETS[targetId];
+  if (!target) return;
+
+  const destEl = document.getElementById("sub-destination-text");
+  if (destEl) {
+    destEl.innerText = `EARTH → ${target.body} (${target.name.toUpperCase()})`;
+  }
+
+  const discEl = document.getElementById("sub-planet-disc");
+  if (discEl) {
+    if (target.body === "MARS") {
+      discEl.style.background = "radial-gradient(circle at 35% 35%, #e27b58 0%, #a33b24 70%, #451408 100%)";
+      discEl.style.boxShadow = "inset -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(226, 123, 88, 0.3)";
+    } else {
+      discEl.style.background = "radial-gradient(circle at 35% 35%, #94a3b8 0%, #334155 70%, #0f172a 100%)";
+      discEl.style.boxShadow = "inset -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(148, 163, 184, 0.2)";
+    }
+  }
+
+  const iconEl = document.getElementById("sub-icon-target");
+  if (iconEl) {
+    iconEl.className = target.body === "MARS" ? "fa-solid fa-globe leading-icon" : "fa-regular fa-moon leading-icon";
+  }
+}
+
+// Collapsible helper functions
+function toggleSection(bodyId, chevronId) {
+  const body = document.getElementById(bodyId);
+  const chevron = document.getElementById(chevronId);
+  if (!body) return;
+  const isHidden = body.style.display === "none";
+  body.style.display = isHidden ? "block" : "none";
+  if (chevron) {
+    chevron.style.transform = isHidden ? "rotate(0deg)" : "rotate(-90deg)";
+  }
+}
+
+function toggleAdvancedParams() {
+  const drawer = document.getElementById("advanced-params-drawer");
+  const icon = document.getElementById("icon-advanced-params");
+  if (!drawer) return;
+  const isHidden = drawer.style.display === "none";
+  drawer.style.display = isHidden ? "block" : "none";
+  if (icon) {
+    icon.className = isHidden ? "fa-solid fa-angle-down" : "fa-solid fa-angle-right";
+  }
+}
+
+function toggleSortDrawer() {
+  const drawer = document.getElementById("sort-drawer");
+  if (drawer) {
+    drawer.classList.toggle("visible");
+  }
+}
+
+// ==============================================================================
+// 7. Workspaces Switching Logic
 // ==============================================================================
 function switchWorkspace(workspaceId) {
   currentWorkspace = workspaceId;
@@ -1198,6 +1312,10 @@ function switchWorkspace(workspaceId) {
     updateCompareWorkspace();
   } else if (workspaceId === "observatory") {
     renderObservatoryTable();
+  } else if (workspaceId === "discover") {
+    if (mapEarth) {
+      setTimeout(() => mapEarth.resize(), 50);
+    }
   }
 }
 
@@ -1215,7 +1333,7 @@ function openSelectedSitePassport() {
 }
 
 // ==============================================================================
-// 7. Compare Workspace Implementation
+// 8. Compare Workspace Implementation
 // ==============================================================================
 function initCompareMaps() {
   if (!mapCompareEarth) {
@@ -1233,7 +1351,7 @@ function initCompareMaps() {
         },
         layers: [{ id: 'osm-layer', type: 'raster', source: 'osm-dark' }]
       },
-      center: selectedSite ? [selectedSite.lon, selectedSite.lat] : [10, 20],
+      center: selectedSite ? [selectedSite.lon, selectedSite.lat] : [17.28, 20.91],
       zoom: 6
     });
   }
@@ -1295,43 +1413,37 @@ function updateCompareWorkspace() {
       title: "Slope Frictional Ratio: tan(θ)/tan(φ)",
       earthVal: dim.tan_theta_over_tan_phi,
       targetVal: tRef.tan_theta_over_tan_phi,
-      max: 1.0,
-      unit: ""
+      max: 1.0
     },
     {
-      title: "Wheel-Scale Micro-Roughness: h_rms(D)/D",
+      title: "Micro-Roughness: h_rms(D)/D",
       earthVal: dim.h_rms_over_D,
       targetVal: tRef.h_rms_over_D,
-      max: 0.6,
-      unit: ""
+      max: 0.6
     },
     {
       title: "Scaled Bearing Pressure: p/(γB)",
       earthVal: dim.p_over_gamma_B,
       targetVal: tRef.p_over_gamma_B,
-      max: 35.0,
-      unit: ""
+      max: 35.0
     },
     {
       title: "Geotechnical Cohesion: c/(γd)",
       earthVal: dim.cohesion_over_gamma_d,
       targetVal: tRef.cohesion_over_gamma_d || 3.8,
-      max: 8.0,
-      unit: ""
+      max: 8.0
     },
     {
       title: "Thermal Amplitude: ΔT / T_mean",
       earthVal: dim.delta_T_over_T_mean,
       targetVal: tRef.delta_T_over_T_mean,
-      max: 1.5,
-      unit: ""
+      max: 1.5
     },
     {
       title: "Horizon-Blocked Fraction: 1 - SVF",
       earthVal: dim.horizon_blocked_fraction,
       targetVal: tRef.horizon_blocked_fraction,
-      max: 1.0,
-      unit: ""
+      max: 1.0
     }
   ];
 
@@ -1340,18 +1452,14 @@ function updateCompareWorkspace() {
     const targetPct = Math.min(100, Math.round((m.targetVal / m.max) * 100));
 
     return `
-      <div class="measurement-bar-group">
-        <div class="bar-title">
-          <span>${m.title}</span>
-          <span style="font-family: monospace; font-size: 10px;">
-            <b style="color: var(--accent-cyan);">E: ${m.earthVal}</b> vs <b style="color: var(--accent-amber);">T: ${m.targetVal}</b>
-          </span>
+      <div class="physics-bar-row">
+        <div><strong>${m.title}</strong></div>
+        <div class="physics-bar-track">
+          <div class="physics-bar-fill" style="width: ${earthPct}%; background: var(--accent-cyan);" title="Earth: ${m.earthVal}"></div>
+          <div class="physics-bar-fill" style="width: ${targetPct}%; background: var(--accent-amber); opacity: 0.7; margin-top: 2px;" title="Target: ${m.targetVal}"></div>
         </div>
-        <div class="bar-track">
-          <div class="bar-fill-earth" style="width: ${earthPct}%;" title="Earth: ${m.earthVal}"></div>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill-target" style="width: ${targetPct}%;" title="Target: ${m.targetVal}"></div>
+        <div style="font-family: monospace; font-size: 10px; text-align: right;">
+          <span style="color: var(--accent-cyan);">E:${m.earthVal}</span> / <span style="color: var(--accent-amber);">T:${m.targetVal}</span>
         </div>
       </div>
     `;
@@ -1359,7 +1467,7 @@ function updateCompareWorkspace() {
 }
 
 // ==============================================================================
-// 8. Data Observatory Implementation
+// 9. Data Observatory Implementation
 // ==============================================================================
 const OBSERVATORY_DATASETS = [
   {
@@ -1370,8 +1478,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2018 - Present",
     lifecycle: "QA_VALIDATED",
     status: "CONNECTED",
-    granules: 42,
-    doc: "https://lpdaac.usgs.gov/products/eco3lstev003/"
+    granules: 42
   },
   {
     provider: "NASA LP DAAC",
@@ -1381,8 +1488,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2022 - Present",
     lifecycle: "QA_VALIDATED",
     status: "CONNECTED",
-    granules: 18,
-    doc: "https://lpdaac.usgs.gov/products/emitl2bminv001/"
+    granules: 18
   },
   {
     provider: "NASA ASF DAAC",
@@ -1392,8 +1498,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2023 - Present",
     lifecycle: "PROCESSED",
     status: "CONNECTED",
-    granules: 64,
-    doc: "https://www.jpl.nasa.gov/go/opera"
+    granules: 64
   },
   {
     provider: "EU Copernicus CDSE",
@@ -1403,8 +1508,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "Static (2020 ed.)",
     lifecycle: "USED_IN_ANALYSIS",
     status: "AUTHENTICATED",
-    granules: 96,
-    doc: "https://dataspace.copernicus.eu"
+    granules: 96
   },
   {
     provider: "USGS EROS",
@@ -1414,8 +1518,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2013 - Present",
     lifecycle: "PROCESSED",
     status: "AVAILABLE",
-    granules: 88,
-    doc: "https://landsatlook.usgs.gov"
+    granules: 88
   },
   {
     provider: "NASA PDS / PGDA",
@@ -1425,8 +1528,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2009 - 2024",
     lifecycle: "USED_IN_ANALYSIS",
     status: "CONNECTED",
-    granules: 100,
-    doc: "https://pgda.gsfc.nasa.gov"
+    granules: 100
   },
   {
     provider: "ESA PSA",
@@ -1436,8 +1538,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "2004 - 2024",
     lifecycle: "QA_VALIDATED",
     status: "CONNECTED",
-    granules: 26,
-    doc: "https://psa.esa.int"
+    granules: 26
   },
   {
     provider: "JAXA G-Portal",
@@ -1447,8 +1548,7 @@ const OBSERVATORY_DATASETS = [
     temporal: "Static",
     lifecycle: "PROCESSED",
     status: "AVAILABLE",
-    granules: 35,
-    doc: "https://gportal.jaxa.jp"
+    granules: 35
   }
 ];
 
@@ -1463,16 +1563,15 @@ function renderObservatoryTable() {
       <td><code style="color: var(--accent-cyan); font-size: 10px;">${d.product}</code></td>
       <td>${d.spatial}</td>
       <td>${d.temporal}</td>
-      <td><span class="lifecycle-badge ${d.lifecycle === 'USED_IN_ANALYSIS' ? 'lifecycle-qa' : 'lifecycle-active'}">${d.lifecycle}</span></td>
+      <td><span class="lifecycle-badge">${d.lifecycle}</span></td>
       <td><span style="color: var(--accent-green); font-size: 10px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> ${d.status}</span></td>
       <td style="font-family: monospace;">${d.granules}</td>
-      <td><a href="${d.doc}" target="_blank" style="color: #60a5fa; text-decoration: none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Docs</a></td>
     </tr>
   `).join("");
 }
 
 // ==============================================================================
-// 9. Site Passport & Test Recipe Modal
+// 10. Site Passport & Test Recipe Modal
 // ==============================================================================
 function openSitePassport(siteId) {
   const site = currentResults.find(s => s.id === siteId) || CANDIDATES.find(s => s.id === siteId);
@@ -1487,23 +1586,24 @@ function openSitePassport(siteId) {
   const modalBody = document.getElementById("modal-passport-body");
   modalBody.innerHTML = `
     <!-- Hard Breaks Banner -->
-    <div class="hard-breaks-banner">
-      <div class="hard-breaks-title"><i class="fa-solid fa-triangle-exclamation"></i> Mandatory Non-Negotiable Hard Breaks</div>
-      <ul class="hard-breaks-list">
-        ${target.hardBreaks.map(hb => `<li class="hard-break-pill">${hb}</li>`).join("")}
-      </ul>
+    <div style="background: rgba(228, 125, 118, 0.1); border: 1px solid var(--accent-coral); border-radius: 4px; padding: 10px; margin-bottom: 12px;">
+      <div style="font-size: 11px; font-weight: 700; color: var(--accent-coral); margin-bottom: 4px;">
+        <i class="fa-solid fa-triangle-exclamation"></i> Mandatory Non-Negotiable Hard Breaks
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        ${target.hardBreaks.map(hb => `<span style="font-size: 10px; font-family: monospace; background: rgba(228,125,118,0.2); color: var(--accent-coral); padding: 2px 6px; border-radius: 3px;">${hb}</span>`).join("")}
+      </div>
     </div>
 
     <!-- Scores & Provenance Row -->
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px;">
-      <div style="background: var(--bg-card); padding: 12px; border-radius: 6px; border: 1px solid var(--border);">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-bottom: 12px;">
+      <div style="background: var(--bg-surface); padding: 10px; border-radius: 4px; border: 1px solid var(--border);">
         <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px;">AFI Evaluation Breakdown</div>
-        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
-          <div><span style="font-size: 10px; color: var(--text-dim);">AFI SCORE (P50):</span> <b style="color: var(--accent-cyan); font-family: monospace; font-size: 14px;">${site.scores.afi_p50}</b></div>
-          <div><span style="font-size: 10px; color: var(--text-dim);">MATCH (M):</span> <b style="color: var(--accent-green); font-family: monospace; font-size: 14px;">${site.scores.M_match}</b></div>
-          <div><span style="font-size: 10px; color: var(--text-dim);">CONFOUNDER (C):</span> <b style="color: var(--accent-coral); font-family: monospace; font-size: 14px;">${site.scores.C_confounder}</b></div>
-          <div><span style="font-size: 10px; color: var(--text-dim);">TRANSFERABILITY (T):</span> <b style="color: var(--accent-amber); font-family: monospace; font-size: 14px;">${site.scores.T_transferable}</b></div>
-          <div><span style="font-size: 10px; color: var(--text-dim);">CONFIDENCE (Q):</span> <b style="color: var(--accent-cyan); font-family: monospace; font-size: 14px;">${site.scores.Q_evidence}</b></div>
+        <div style="display: flex; gap: 12px; margin-bottom: 6px;">
+          <div><span style="font-size: 10px; color: var(--text-dim);">AFI SCORE:</span> <b style="color: var(--accent-amber); font-family: monospace; font-size: 13px;">${site.scores.afi_p50.toFixed(2)}</b></div>
+          <div><span style="font-size: 10px; color: var(--text-dim);">MATCH (M):</span> <b style="color: var(--accent-green); font-family: monospace; font-size: 13px;">${site.scores.M_match.toFixed(2)}</b></div>
+          <div><span style="font-size: 10px; color: var(--text-dim);">CONFOUNDER:</span> <b style="color: var(--accent-coral); font-family: monospace; font-size: 13px;">${site.scores.C_confounder.toFixed(2)}</b></div>
+          <div><span style="font-size: 10px; color: var(--text-dim);">TRANSFER:</span> <b style="color: var(--accent-amber); font-family: monospace; font-size: 13px;">${site.scores.T_transferable.toFixed(2)}</b></div>
         </div>
         <p style="font-size: 10px; color: var(--text-muted); line-height: 1.4;">
           Evaluated as an engineering test article under target gravity <strong>${target.gravity} m/s²</strong>.
@@ -1511,12 +1611,11 @@ function openSitePassport(siteId) {
         </p>
       </div>
 
-      <div style="background: var(--bg-card); padding: 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 10px;">
-        <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-amber); font-weight: 700; margin-bottom: 6px;">Provenance & STAC License</div>
+      <div style="background: var(--bg-surface); padding: 10px; border-radius: 4px; border: 1px solid var(--border); font-size: 10px;">
+        <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-amber); font-weight: 700; margin-bottom: 6px;">Provenance &amp; STAC License</div>
         <div style="margin-bottom: 3px;"><strong>STAC ID:</strong> <code style="color: var(--accent-cyan);">${site.stac_id}</code></div>
         <div style="margin-bottom: 3px;"><strong>DOI:</strong> <a href="https://doi.org/${site.doi}" target="_blank" style="color: #60a5fa;">${site.doi}</a></div>
-        <div style="margin-bottom: 3px;"><strong>License:</strong> <span class="status-badge status-strong">OPEN_PUBLIC_DOMAIN</span></div>
-        <div><strong>Export Permission:</strong> <span style="color: var(--accent-green);">AUTHORIZED</span></div>
+        <div><strong>Export License:</strong> <span style="color: var(--accent-green);">OPEN_PUBLIC_DOMAIN</span></div>
       </div>
     </div>
 
@@ -1533,29 +1632,29 @@ function openSitePassport(siteId) {
             <th>Earth Candidate</th>
             <th>Target Reference</th>
             <th>Transferability</th>
-            <th>Engineering Limitations & Mitigations</th>
+            <th>Engineering Limitations &amp; Mitigations</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Slope Ratio: tan(θ)/tan(φ)</td>
-            <td><span class="status-badge status-strong">STRONG</span></td>
+            <td><span class="badge-strong">STRONG</span></td>
             <td><code>${site.scores.dimensionless.tan_theta_over_tan_phi}</code></td>
             <td><code>${target.dimRef.tan_theta_over_tan_phi}</code></td>
             <td>90%</td>
-            <td>Frictional slip and slope stability transfer directly under Coulomb mechanics.</td>
+            <td>Frictional slip transfers directly under Coulomb mechanics.</td>
           </tr>
           <tr>
             <td>Roughness Ratio: h_rms(D)/D</td>
-            <td><span class="status-badge status-strong">STRONG</span></td>
+            <td><span class="badge-strong">STRONG</span></td>
             <td><code>${site.scores.dimensionless.h_rms_over_D}</code></td>
             <td><code>${target.dimRef.h_rms_over_D}</code></td>
             <td>85%</td>
-            <td>Obstacle geometric clearance scaled to rover wheel diameter.</td>
+            <td>Obstacle clearance scaled to rover wheel diameter.</td>
           </tr>
           <tr>
             <td>Bearing Pressure: p/(γB)</td>
-            <td><span class="status-badge status-partial">PARTIAL</span></td>
+            <td><span class="badge-partial">PARTIAL</span></td>
             <td><code>${site.scores.dimensionless.p_over_gamma_B}</code></td>
             <td><code>${target.dimRef.p_over_gamma_B}</code></td>
             <td>70%</td>
@@ -1563,23 +1662,23 @@ function openSitePassport(siteId) {
           </tr>
           <tr>
             <td>Geotechnical Cohesion: c/(γd)</td>
-            <td><span class="status-badge status-partial">PARTIAL</span></td>
+            <td><span class="badge-partial">PARTIAL</span></td>
             <td><code>${site.scores.dimensionless.cohesion_over_gamma_d}</code></td>
             <td><code>${target.dimRef.cohesion_over_gamma_d || 3.8}</code></td>
             <td>75%</td>
-            <td>Soil moisture introduces capillary cohesion; simulant must be desiccated to &lt;0.01% water.</td>
+            <td>Soil moisture creates capillary cohesion; simulant must be desiccated to &lt;0.01% water.</td>
           </tr>
           <tr>
             <td>Atmospheric Convection vs Vacuum</td>
-            <td><span class="status-badge status-breaks">BREAKDOWN</span></td>
+            <td><span class="badge-breaks">BREAKDOWN</span></td>
             <td><code>101.3 kPa (Air)</code></td>
             <td><code>${target.body === 'MOON' ? '1e-15 bar (Vacuum)' : '6.2 mbar (CO2)'}</code></td>
             <td>35%</td>
-            <td>Open-air testing cannot reproduce radiative diurnal vacuum sink without TVAC chamber.</td>
+            <td>Open-air testing cannot reproduce radiative vacuum sink without TVAC chamber.</td>
           </tr>
           <tr>
             <td>Cosmic GCR / SPE Radiation</td>
-            <td><span class="status-badge status-breaks">BREAKDOWN</span></td>
+            <td><span class="badge-breaks">BREAKDOWN</span></td>
             <td><code>Shielded (1 atm + B)</code></td>
             <td><code>Unshielded (Cosmic)</code></td>
             <td>0%</td>
@@ -1589,135 +1688,65 @@ function openSitePassport(siteId) {
       </table>
     </div>
 
-    <!-- AI Mission Copilot (Meta Muse Engine) -->
-    <div style="background: var(--bg-card); padding: 12px; border-radius: 6px; border: 1px solid rgba(73, 201, 220, 0.4);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-cyan); display: flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-brain"></i> AI Mission Copilot (Meta Muse Engine)
-        </div>
-        <div style="display: flex; align-items: center; gap: 6px;">
-          <select id="ai-model-select" style="font-size: 10px; padding: 2px 6px; background: var(--bg-deep); color: white; border: 1px solid var(--border); border-radius: 4px;">
-            <option value="muse-wonder-1.0" selected>Muse Wonder 1.0 (Optimal Token Efficiency)</option>
-            <option value="muse-spark-1.3">Muse Spark 1.3 (1M Context)</option>
-            <option value="muse-wonder-full-1.0">Muse Wonder Full</option>
-            <option value="llama-3.2-3b-instruct">LLaMA 3.2 3B</option>
-          </select>
-          <div id="ai-token-pill" style="font-size: 10px; font-family: monospace; background: rgba(119, 201, 162, 0.15); color: var(--accent-green); padding: 2px 6px; border-radius: 4px;">
-            Token Efficiency: Ready (&lt;150 tok/query)
-          </div>
-        </div>
-      </div>
-
-      <div id="ai-synthesis-box" style="font-size: 11px; color: var(--text-main); line-height: 1.5; background: var(--bg-deep); padding: 10px; border-radius: 4px; border: 1px solid var(--border); min-height: 50px; margin-bottom: 8px;">
-        Select your model and click <strong>"Generate AI Synthesis"</strong> to analyze physical transferability and mitigations for this test article.
-      </div>
-
-      <div style="display: flex; gap: 6px;">
-        <input type="text" id="ai-query-input" placeholder="Ask AI: e.g. How to scale bearing pressure on an inclined slipway?" style="flex: 1; padding: 6px 8px; font-size: 11px; background: var(--bg-deep); border: 1px solid var(--border); color: white; border-radius: 4px;" onkeydown="if(event.key==='Enter') sendAIChat('${site.cell_id}')" />
-        <button class="btn btn-secondary" onclick="sendAIChat('${site.cell_id}')">
-          <i class="fa-solid fa-paper-plane"></i> Ask
-        </button>
-        <button class="btn btn-primary" onclick="requestAISynthesis('${site.cell_id}')">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI Synthesis
-        </button>
-      </div>
-    </div>
-
     <!-- Actions -->
-    <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px;">
-      <button class="btn btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Passport PDF</button>
-      <button class="btn btn-primary" onclick="downloadTestRecipe('${site.id}')"><i class="fa-solid fa-download"></i> Download NASA Test Recipe JSON</button>
+    <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;">
+      <button class="header-action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Passport PDF</button>
+      <button class="header-action-btn" onclick="downloadTestRecipe('${site.id}')" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 700;"><i class="fa-solid fa-download"></i> NASA Test Recipe JSON</button>
     </div>
   `;
 
-  document.getElementById("passport-modal").style.display = "flex";
+  document.getElementById("passport-modal").classList.add("active");
 }
 
 function closePassportModal() {
-  document.getElementById("passport-modal").style.display = "none";
+  document.getElementById("passport-modal").classList.remove("active");
 }
 
-// ==============================================================================
-// 10. AI Copilot Client Handlers
-// ==============================================================================
-async function requestAISynthesis(cellId) {
-  const box = document.getElementById("ai-synthesis-box");
-  const pill = document.getElementById("ai-token-pill");
-  const targetId = document.getElementById("select-target").value;
-  const functionProfile = document.getElementById("select-function").value;
-  const wheelD = parseFloat(document.getElementById("slider-wheel").value);
-  const modelSelect = document.getElementById("ai-model-select");
-  const model = modelSelect ? modelSelect.value : "muse-wonder-1.0";
+// All Candidates Modal
+function openAllCandidatesModal() {
+  const container = document.getElementById("all-candidates-table-body");
+  if (!container) return;
 
-  box.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generating planetary engineering synthesis via ${model}...`;
+  container.innerHTML = `
+    <table class="data-source-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Site Name</th>
+          <th>Country</th>
+          <th>AFI Score</th>
+          <th>Match (M)</th>
+          <th>Confounder (C)</th>
+          <th>Transfer (T)</th>
+          <th>P(top10)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${currentResults.map(s => `
+          <tr style="cursor: pointer;" onclick="selectCandidate('${s.id}'); closeAllCandidatesModal();">
+            <td><b style="color: var(--accent-cyan); font-family: monospace;">#${String(s.monte_carlo.rank_p50).padStart(2, '0')}</b></td>
+            <td><strong>${s.name}</strong></td>
+            <td>${s.country}</td>
+            <td><b style="color: var(--accent-amber); font-family: monospace;">${s.scores.afi_p50.toFixed(2)}</b></td>
+            <td style="color: var(--accent-green); font-family: monospace;">${s.scores.M_match.toFixed(2)}</td>
+            <td style="color: var(--accent-coral); font-family: monospace;">${s.scores.C_confounder.toFixed(2)}</td>
+            <td style="color: var(--accent-amber); font-family: monospace;">${s.scores.T_transferable.toFixed(2)}</td>
+            <td style="font-family: monospace;">${(s.monte_carlo.p_top10 * 100).toFixed(0)}%</td>
+            <td>
+              <button class="header-action-btn" onclick="event.stopPropagation(); openSitePassport('${s.id}');">Passport</button>
+            </td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
 
-  try {
-    const res = await fetch("/api/ai/synthesize", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        cell_id: cellId,
-        target_id: targetId,
-        function_profile: functionProfile,
-        wheel_diameter_m: wheelD,
-        model: model
-      })
-    });
-    if (res.ok) {
-      const data = await res.json();
-      box.innerHTML = `<div style="white-space: pre-wrap;">${data.synthesis}</div>`;
-      pill.innerHTML = `Tokens: ${data.total_tokens} (${data.prompt_tokens}p + ${data.completion_tokens}c) | ${data.latency_ms}ms | ${data.from_cache ? 'CACHE HIT' : data.model}`;
-      pill.style.background = data.from_cache ? "rgba(59, 130, 246, 0.2)" : "rgba(119, 201, 162, 0.2)";
-      return;
-    }
-  } catch (err) {}
-
-  // Local fallback
-  box.innerHTML = `<strong>TERRA-X MISSION ARCHITECT SYNTHESIS (${model} Zero-Cost Mode):</strong><br/>
-1. <strong>Physical Similitude:</strong> Frictional slip (tanθ/tanφ) and micro-roughness (h_rms/D) exhibit high fidelity for granular traversability.<br/>
-2. <strong>Gravity Scaling:</strong> Target gravity requires an active load-scale bridge (γ=ρg). Ground testing at 1g overestimates cutting resistance and under-predicts wheel slip.<br/>
-3. <strong>Mitigation:</strong> Implement an inclined test ramp (α=9.6° for Moon) or vertical offload gantry. Desiccate granular bed to &lt;0.01% moisture to prevent false capillary cohesion.`;
-  pill.innerHTML = `Tokens: 0 (Deterministic Fallback)`;
+  document.getElementById("all-candidates-modal").classList.add("active");
 }
 
-async function sendAIChat(cellId) {
-  const input = document.getElementById("ai-query-input");
-  const query = input.value.trim();
-  if (!query) return;
-
-  const box = document.getElementById("ai-synthesis-box");
-  const pill = document.getElementById("ai-token-pill");
-  const targetId = document.getElementById("select-target").value;
-  const functionProfile = document.getElementById("select-function").value;
-  const modelSelect = document.getElementById("ai-model-select");
-  const model = modelSelect ? modelSelect.value : "muse-wonder-1.0";
-
-  box.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Consulting TERRA-X Copilot (${model}) on: "${query}"...`;
-  input.value = "";
-
-  try {
-    const res = await fetch("/api/ai/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        cell_id: cellId,
-        target_id: targetId,
-        function_profile: functionProfile,
-        user_query: query,
-        model: model
-      })
-    });
-    if (res.ok) {
-      const data = await res.json();
-      box.innerHTML = `<strong>Q: ${query}</strong><br/><br/><div style="white-space: pre-wrap;">${data.synthesis}</div>`;
-      pill.innerHTML = `Tokens: ${data.total_tokens} | Latency: ${data.latency_ms}ms | Model: ${data.model}`;
-      return;
-    }
-  } catch (err) {}
-
-  box.innerHTML = `<strong>Q: ${query}</strong><br/><br/>
-Engineering Assessment: To address "${query}", ensure the gravity load scale is calibrated using ballast adjustment (M_earth = 6.37 * M_flight for Moon) or an inclined bed. For dust/abrasion, unweathered basaltic fines with Wadell roundness &lt;0.25 must be used to recreate jagged regolith locking.`;
-  pill.innerHTML = `Tokens: 0 (Offline Sim)`;
+function closeAllCandidatesModal() {
+  document.getElementById("all-candidates-modal").classList.remove("active");
 }
 
 // ==============================================================================
@@ -1753,11 +1782,11 @@ const TOUR_STEPS = [
 function openTourModal() {
   tourCurrentStep = 0;
   updateTourStep();
-  document.getElementById("tour-modal").style.display = "flex";
+  document.getElementById("tour-modal").classList.add("active");
 }
 
 function closeTourModal() {
-  document.getElementById("tour-modal").style.display = "none";
+  document.getElementById("tour-modal").classList.remove("active");
 }
 
 function updateTourStep() {
@@ -1792,11 +1821,11 @@ function prevTourStep() {
 // ==============================================================================
 function openFieldKitModal() {
   populateFieldKitDropdown();
-  document.getElementById("fieldkit-modal").style.display = "flex";
+  document.getElementById("fieldkit-modal").classList.add("active");
 }
 
 function closeFieldKitModal() {
-  document.getElementById("fieldkit-modal").style.display = "none";
+  document.getElementById("fieldkit-modal").classList.remove("active");
 }
 
 function populateFieldKitDropdown() {
