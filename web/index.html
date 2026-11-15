@@ -7,7 +7,9 @@
   
   <!-- MapLibre GL CSS -->
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
-  <!-- FontAwesome Icons -->
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Fallback Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- Orbital Console Single-View Styling -->
   <link rel="stylesheet" href="style.css" />
@@ -18,38 +20,38 @@
   <header class="orbital-header">
     <div class="brand-section">
       <div class="brand-logo-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="7"></circle>
           <ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-30 12 12)"></ellipse>
         </svg>
       </div>
       <div class="brand-text-block">
         <span class="brand-title">TERRA-X</span>
-        <span class="brand-subtitle">PLANETARY ANALOG ENGINE</span>
+        <span class="brand-subtitle">Planetary Analog Engine</span>
       </div>
     </div>
 
     <!-- Center Mission Purpose -->
     <div class="header-center-motto">
-      "Where on Earth should we rehearse a lunar base or Mars mission, and how trustworthy is that rehearsal?"
+      Planetary Proving Ground Discovery &amp; Quantitative Similitude Engine
     </div>
 
     <!-- Right Header Meta & Controls -->
     <div class="header-meta">
       <div class="status-pill">
         <span class="pulse-dot"></span>
-        <span>SENSORS ONLINE</span>
+        <span>Sensors Online</span>
       </div>
       <button class="header-btn" onclick="openFieldKitModal()" title="In-Situ Field Kit Ground-Truth">
-        <i class="fa-solid fa-microscope"></i>
+        <i data-lucide="flask-conical"></i>
         <span>Field Kit</span>
       </button>
       <button class="header-btn" onclick="exportGeoParquetSTAC()" title="Export STAC Catalog">
-        <i class="fa-solid fa-download"></i>
+        <i data-lucide="download"></i>
         <span>STAC Export</span>
       </button>
       <button class="header-btn" onclick="openTourModal()" title="Guided Walkthrough">
-        <i class="fa-solid fa-circle-question"></i>
+        <i data-lucide="help-circle"></i>
         <span>Guide</span>
       </button>
     </div>
@@ -66,7 +68,7 @@
       <!-- Top Mission Selectors -->
       <div class="chat-mission-controls">
         <div class="mission-control-row">
-          <label><i class="fa-solid fa-satellite"></i> TARGET</label>
+          <label><i data-lucide="crosshair"></i> Target</label>
           <select class="compact-select" id="select-target" onchange="onTargetSelectChange(this.value)">
             <optgroup label="Official Artemis III Candidates (NASA 2024)">
               <option value="MOON_ARTEMIS3_CABEUS_B" selected>Peak near Cabeus B (-84.9° Lat)</option>
@@ -90,18 +92,18 @@
         </div>
 
         <div class="mission-control-row">
-          <label><i class="fa-solid fa-crosshairs"></i> FUNCTION</label>
+          <label><i data-lucide="sliders"></i> Function</label>
           <select class="compact-select" id="select-function" onchange="onFunctionSelectChange(this.value)">
-            <option value="ROVER_MOBILITY" selected>🚜 Rover Mobility &amp; Traversability</option>
-            <option value="LANDING_PAD_CONSTRUCTION">🚀 Landing-Pad Blast &amp; Ejecta</option>
-            <option value="REGOLITH_EXCAVATION">⛏️ Regolith Excavation &amp; Shear</option>
-            <option value="ISRU_CONSTRUCTION">🏗️ ISRU Compaction &amp; Sintering</option>
-            <option value="THERMAL_SURVIVABILITY">❄️ Extreme Thermal &amp; Radiative Sink</option>
-            <option value="DUST_AND_WIND">🌪️ Dust Saltation &amp; Electrostatics</option>
-            <option value="WATER_AND_ICE_RESOURCES">🧊 Cryo Volatiles &amp; PSR Cold Traps</option>
-            <option value="BIOSIGNATURE_PRESERVATION">🔬 Biosignature &amp; Clay Preservation</option>
-            <option value="SUBSURFACE_AND_LAVA_TUBES">🌋 Basalt Lava Tubes &amp; Skylights</option>
-            <option value="COMMUNICATION_AND_ILLUMINATION">📡 TRN Navigation &amp; Grazing Sun</option>
+            <option value="ROVER_MOBILITY" selected>Rover Mobility &amp; Traversability</option>
+            <option value="LANDING_PAD_CONSTRUCTION">Landing-Pad Blast &amp; Ejecta</option>
+            <option value="REGOLITH_EXCAVATION">Regolith Excavation &amp; Shear</option>
+            <option value="ISRU_CONSTRUCTION">ISRU Compaction &amp; Sintering</option>
+            <option value="THERMAL_SURVIVABILITY">Extreme Thermal &amp; Radiative Sink</option>
+            <option value="DUST_AND_WIND">Dust Saltation &amp; Electrostatics</option>
+            <option value="WATER_AND_ICE_RESOURCES">Cryo Volatiles &amp; PSR Cold Traps</option>
+            <option value="BIOSIGNATURE_PRESERVATION">Biosignature &amp; Clay Preservation</option>
+            <option value="SUBSURFACE_AND_LAVA_TUBES">Basalt Lava Tubes &amp; Skylights</option>
+            <option value="COMMUNICATION_AND_ILLUMINATION">TRN Navigation &amp; Grazing Sun</option>
           </select>
         </div>
       </div>
@@ -111,20 +113,11 @@
         <!-- Welcoming & conversational messages populated by app.js -->
       </div>
 
-      <!-- Quick Query Prompt Chips -->
-      <div class="chat-prompt-chips">
-        <button class="prompt-chip" onclick="sendQuickPrompt('Where can we test lunar rover mobility on steep slopes?')">🚜 Rover Mobility</button>
-        <button class="prompt-chip" onclick="sendQuickPrompt('Best Earth analog for cryogenic volatile drilling & PSR cold traps?')">🧊 Volatiles &amp; Ice</button>
-        <button class="prompt-chip" onclick="sendQuickPrompt('Where to rehearse Mars Jezero delta clay excavation?')">⛏️ Regolith Excavation</button>
-        <button class="prompt-chip" onclick="sendQuickPrompt('Where should we test dust abrasion and seal degradation?')">🌪️ Dust &amp; Wind</button>
-        <button class="prompt-chip" onclick="sendQuickPrompt('Find lava tube analog with basalt vault structural integrity')">🌋 Lava Tubes</button>
-      </div>
-
-      <!-- Chat Input Bar -->
+      <!-- Chat Input Bar (Clean, no redundant chips) -->
       <div class="chat-input-bar">
-        <input type="text" id="chat-user-input" class="chat-input-field" placeholder="Ask TERRA-X: e.g. Where to test rover mobility..." onkeydown="if(event.key==='Enter') submitUserChat()" />
+        <input type="text" id="chat-user-input" class="chat-input-field" placeholder="Ask mission query (e.g. Rover mobility on steep lunar basalt)..." onkeydown="if(event.key==='Enter') submitUserChat()" />
         <button class="chat-send-btn" id="btn-chat-send" onclick="submitUserChat()" title="Send Mission Query">
-          <i class="fa-solid fa-paper-plane"></i>
+          <i data-lucide="send"></i>
         </button>
       </div>
 
@@ -138,16 +131,20 @@
       <!-- Floating Layer Selector Toolbar -->
       <div class="map-floating-toolbar">
         <button class="map-layer-pill active" id="btn-layer-sat" onclick="setEarthBaseLayer('satellite')">
-          <i class="fa-solid fa-satellite"></i> SATELLITE
+          <i data-lucide="satellite"></i>
+          <span>Satellite</span>
         </button>
         <button class="map-layer-pill" id="btn-layer-dem" onclick="setEarthBaseLayer('elevation')">
-          <i class="fa-solid fa-mountain"></i> ELEVATION
+          <i data-lucide="mountain"></i>
+          <span>Elevation</span>
         </button>
         <button class="map-layer-pill" id="btn-layer-slope" onclick="setEarthBaseLayer('slope')">
-          <i class="fa-solid fa-chart-line"></i> SLOPE
+          <i data-lucide="trending-up"></i>
+          <span>Slope</span>
         </button>
         <button class="map-layer-pill" id="btn-layer-rough" onclick="setEarthBaseLayer('roughness')">
-          <i class="fa-solid fa-wave-square"></i> ROUGHNESS
+          <i data-lucide="activity"></i>
+          <span>Roughness</span>
         </button>
       </div>
 
@@ -169,10 +166,10 @@
       <div class="map-dossier-panel" id="map-dossier-panel">
         <div class="dossier-toggle-bar" onclick="toggleDossierDrawer()">
           <span class="dossier-title">
-            <i class="fa-solid fa-chart-pie"></i>
-            <span id="dossier-bar-title">ACTIVE SITE DOSSIER &amp; DATA ANALYTICS</span>
+            <i data-lucide="bar-chart-2"></i>
+            <span id="dossier-bar-title">Active Site Dossier &amp; Data Analytics</span>
           </span>
-          <i class="fa-solid fa-chevron-down dossier-toggle-chevron" id="dossier-chevron"></i>
+          <i data-lucide="chevron-down" class="dossier-toggle-chevron" id="dossier-chevron"></i>
         </div>
 
         <div class="dossier-content-grid" id="dossier-content-grid">
@@ -190,10 +187,10 @@
       <div class="results-header-bar">
         <div class="results-title-group">
           <div class="results-title">
-            <i class="fa-solid fa-chart-simple" style="color: var(--accent-cyan);"></i>
-            <span>RANKED ANALOG SITES</span>
+            <i data-lucide="layers" style="color: var(--accent-cyan);"></i>
+            <span>Ranked Analog Sites</span>
           </div>
-          <div class="results-count-sub" id="results-count-text">14 CANDIDATES EVALUATED</div>
+          <div class="results-count-sub" id="results-count-text">14 Candidates Evaluated</div>
         </div>
 
         <select class="sort-select-compact" id="sort-ranking" onchange="sortCandidates(this.value)">
@@ -216,23 +213,23 @@
   <!-- FIXED BOTTOM TECHNICAL STATUS BAR -->
   <footer class="orbital-status-bar">
     <div class="status-bar-item">
-      <i class="fa-solid fa-database"></i>
-      <span>COORDINATES - WGS84</span>
+      <i data-lucide="database"></i>
+      <span>Coordinates: WGS84</span>
     </div>
     <div class="status-bar-divider"></div>
     <div class="status-bar-item" id="status-bar-layer">
-      <i class="fa-solid fa-layer-group"></i>
-      <span>ACTIVE LAYER - SATELLITE</span>
+      <i data-lucide="layers"></i>
+      <span>Layer: Satellite</span>
     </div>
     <div class="status-bar-divider"></div>
     <div class="status-bar-item">
-      <i class="fa-solid fa-expand"></i>
-      <span>RESOLUTION - COP-DEM 30M / LANDSAT-9</span>
+      <i data-lucide="maximize-2"></i>
+      <span>Resolution: COP-DEM 30m / Landsat-9</span>
     </div>
     <div class="status-bar-divider"></div>
     <div class="status-bar-item" id="status-bar-process">
       <span class="status-dot-mini"></span>
-      <span>PROCESSING - IDLE</span>
+      <span>Processing: Idle</span>
     </div>
     <div class="status-bar-spacer"></div>
     <div class="status-grip-pattern">/////</div>
@@ -247,10 +244,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <div>
-          <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 1px;">VERIFIABLE SITE PASSPORT</div>
-          <h2 id="modal-site-name" style="font-size: 16px; color: var(--text-main);">McMurdo Dry Valleys</h2>
+          <div class="modal-eyebrow">Verifiable Site Passport</div>
+          <h2 id="modal-site-name" class="modal-site-title">McMurdo Dry Valleys</h2>
         </div>
-        <button class="modal-close-btn" onclick="closePassportModal()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="modal-close-btn" onclick="closePassportModal()"><i data-lucide="x"></i></button>
       </div>
       <div class="modal-body" id="modal-passport-body">
         <!-- Injected via app.js -->
@@ -262,42 +259,42 @@
   <div class="modal-overlay" id="fieldkit-modal">
     <div class="modal-content" style="max-width: 580px;">
       <div class="modal-header">
-        <h2 style="font-size: 15px;"><i class="fa-solid fa-microscope" style="color: var(--accent-cyan);"></i> In-Situ Field-Kit Ingest &amp; Re-Scoring</h2>
-        <button class="modal-close-btn" onclick="closeFieldKitModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="modal-dialog-title"><i data-lucide="flask-conical" style="color: var(--accent-cyan);"></i> In-Situ Field-Kit Ingest &amp; Re-Scoring</h2>
+        <button class="modal-close-btn" onclick="closeFieldKitModal()"><i data-lucide="x"></i></button>
       </div>
       <div class="modal-body">
-        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
+        <p class="modal-description">
           Ingest ground-truth measurements (shear vane, cone penetrometer, micro-grain morphology) to upgrade Fidelity Ledger statuses from UNCONSTRAINED/PARTIAL to STRONG.
         </p>
 
-        <div class="form-group" style="margin-bottom: 10px;">
-          <label style="display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Select Test Article Site</label>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label class="form-label">Select Test Article Site</label>
           <select class="compact-select" id="fieldkit-cell-select" style="width: 100%;">
             <!-- Populated via JavaScript -->
           </select>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
           <div>
-            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Shear-Vane Friction Angle (&deg;)</label>
+            <label class="form-label">Shear-Vane Friction Angle (&deg;)</label>
             <input type="number" class="compact-select" id="fk-friction" value="38.5" step="0.5" style="width: 100%;" />
           </div>
           <div>
-            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Shear-Vane Cohesion (kPa)</label>
+            <label class="form-label">Shear-Vane Cohesion (kPa)</label>
             <input type="number" class="compact-select" id="fk-cohesion" value="3.2" step="0.1" style="width: 100%;" />
           </div>
           <div>
-            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Cone Penetrometer Bearing (kPa)</label>
+            <label class="form-label">Cone Penetrometer Bearing (kPa)</label>
             <input type="number" class="compact-select" id="fk-bearing" value="45.0" step="1.0" style="width: 100%;" />
           </div>
           <div>
-            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Micro-Grain Wadell Roundness</label>
+            <label class="form-label">Micro-Grain Wadell Roundness</label>
             <input type="number" class="compact-select" id="fk-roundness" value="0.22" step="0.02" style="width: 100%;" />
           </div>
         </div>
 
-        <button class="header-btn" onclick="submitFieldKitData()" style="width: 100%; background: var(--accent-cyan); color: var(--bg-main); font-weight: 700; padding: 10px; justify-content: center;">
-          <i class="fa-solid fa-flask"></i> Ingest Field Data &amp; Re-Score
+        <button class="header-btn primary-action-btn" onclick="submitFieldKitData()" style="width: 100%; justify-content: center; height: 36px;">
+          <i data-lucide="flask-conical"></i> Ingest Field Data &amp; Re-Score
         </button>
       </div>
     </div>
@@ -307,18 +304,18 @@
   <div class="modal-overlay" id="tour-modal">
     <div class="modal-content" style="max-width: 620px;">
       <div class="modal-header">
-        <h2 style="font-size: 15px;"><i class="fa-solid fa-compass" style="color: var(--accent-cyan);"></i> TERRA-X Guided Mission Walkthrough</h2>
-        <button class="modal-close-btn" onclick="closeTourModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="modal-dialog-title"><i data-lucide="compass" style="color: var(--accent-cyan);"></i> TERRA-X Guided Mission Walkthrough</h2>
+        <button class="modal-close-btn" onclick="closeTourModal()"><i data-lucide="x"></i></button>
       </div>
       <div class="modal-body">
         <div id="tour-step-content" style="font-size: 12px; line-height: 1.6; color: var(--text-main);">
           <!-- Step injected dynamically by app.js -->
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
           <span id="tour-step-indicator" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber);">Step 1 of 6</span>
           <div style="display: flex; gap: 8px;">
             <button class="header-btn" id="btn-tour-prev" onclick="prevTourStep()">Previous</button>
-            <button class="header-btn" id="btn-tour-next" onclick="nextTourStep()" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 600;">Next Step</button>
+            <button class="header-btn primary-action-btn" id="btn-tour-next" onclick="nextTourStep()">Next Step</button>
           </div>
         </div>
       </div>

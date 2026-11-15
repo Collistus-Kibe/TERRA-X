@@ -14,6 +14,19 @@
  */
 
 // ==============================================================================
+// Global Lucide Icon Initialization Helper
+// ==============================================================================
+function initLucideIcons() {
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    try {
+      window.lucide.createIcons();
+    } catch (e) {
+      // Graceful fallback
+    }
+  }
+}
+
+// ==============================================================================
 // 1. Planetary Target Catalogs (NASA Artemis III 2024 Updates & Mars Regions)
 // ==============================================================================
 const PLANETARY_TARGETS = {
@@ -830,7 +843,8 @@ function setEarthBaseLayer(layerType) {
 
   const statusLayer = document.getElementById('status-bar-layer');
   if (statusLayer) {
-    statusLayer.innerHTML = `<i class="fa-solid fa-layer-group"></i> <span>ACTIVE LAYER - ${layerType.toUpperCase()}</span>`;
+    statusLayer.innerHTML = `<i data-lucide="layers"></i> <span>Layer: ${layerType.charAt(0).toUpperCase() + layerType.slice(1)}</span>`;
+    initLucideIcons();
   }
 }
 
@@ -1067,7 +1081,7 @@ function triggerDiscovery(skipFly = false) {
 
   setTimeout(() => {
     if (processEl) {
-      processEl.innerHTML = `<span class="status-dot-mini"></span> <span>PROCESSING - IDLE</span>`;
+      processEl.innerHTML = `<span class="status-dot-mini"></span> <span>Processing: Idle</span>`;
     }
   }, 200);
 }
@@ -1082,7 +1096,7 @@ function renderResultsSidebar() {
   container.innerHTML = "";
   const countEl = document.getElementById("results-count-text");
   if (countEl) {
-    countEl.innerText = `${currentResults.length} candidates evaluated`;
+    countEl.innerText = `${currentResults.length} Candidates Evaluated`;
   }
 
   currentResults.forEach((site) => {
@@ -1100,7 +1114,7 @@ function renderResultsSidebar() {
           <div class="card-rank-num">${rankPadded}</div>
           <div class="card-title-col">
             <div class="card-site-name" title="${site.name}">${site.name}</div>
-            <div class="card-site-loc"><i class="fa-solid fa-location-dot" style="font-size: 8px;"></i> ${site.country} · ${site.continent || 'Earth'}</div>
+            <div class="card-site-loc"><i data-lucide="map-pin" style="width: 10px; height: 10px;"></i> ${site.country} · ${site.continent || 'Earth'}</div>
           </div>
         </div>
         <div class="card-afi-badge">${site.scores.afi_p50.toFixed(2)} AFI</div>
@@ -1112,13 +1126,14 @@ function renderResultsSidebar() {
 
       <div class="card-metrics-row">
         <div class="metric-item">Match <span class="metric-val">${site.scores.M_match.toFixed(2)}</span></div>
-        <div class="metric-item"><i class="fa-solid fa-caret-up" style="color: var(--accent-coral); font-size: 8px;"></i> Conf. Penalty <span class="metric-val" style="color: var(--accent-coral);">${site.scores.C_confounder.toFixed(2)}</span></div>
+        <div class="metric-item"><i data-lucide="arrow-up-right" style="color: var(--accent-coral); width: 10px; height: 10px;"></i> Penalty <span class="metric-val" style="color: var(--accent-coral);">${site.scores.C_confounder.toFixed(2)}</span></div>
         <div class="metric-item">Transfer <span class="metric-val">${site.scores.T_transferable.toFixed(2)}</span></div>
       </div>
     `;
 
     container.appendChild(card);
   });
+  initLucideIcons();
 }
 
 function selectCandidate(siteId, source = "sidebar") {
@@ -1159,7 +1174,7 @@ function renderEarthCandidateMarkers() {
     const el = document.createElement("div");
     el.id = `pin-${site.id}`;
     el.className = `custom-site-pin ${isSelected ? 'selected' : ''}`;
-    el.innerHTML = `<i class="fa-solid fa-location-dot"></i> <span>${site.name}</span>`;
+    el.innerHTML = `<i data-lucide="map-pin" style="width: 10px; height: 10px;"></i> <span>${site.name}</span>`;
     el.onclick = (e) => {
       e.stopPropagation();
       selectCandidate(site.id, "map");
@@ -1171,6 +1186,7 @@ function renderEarthCandidateMarkers() {
 
     window._earthMarkers.push(marker);
   });
+  initLucideIcons();
 }
 
 function sortCandidates(criteria) {
@@ -1217,53 +1233,54 @@ function updateVisualDossier(site) {
       <div class="dossier-photo-info">
         <div class="site-name">${site.name}</div>
         <div class="site-loc">${site.country} · ${site.elevation_m}m Elv · ${site.lat.toFixed(2)}°, ${site.lon.toFixed(2)}°</div>
-        <div style="margin-top: 4px; display: flex; gap: 4px;">
-          <button class="header-btn" onclick="openSitePassport('${site.id}')" style="padding: 2px 6px; font-size: 9px;"><i class="fa-regular fa-id-badge"></i> Passport</button>
-          <button class="header-btn" onclick="downloadTestRecipe('${site.id}')" style="padding: 2px 6px; font-size: 9px;"><i class="fa-solid fa-download"></i> Recipe</button>
+        <div style="margin-top: 5px; display: flex; gap: 6px;">
+          <button class="header-btn" onclick="openSitePassport('${site.id}')" style="height: 24px; padding: 0 8px; font-size: 10px;"><i data-lucide="file-text" style="width: 11px; height: 11px;"></i> <span>Passport</span></button>
+          <button class="header-btn" onclick="downloadTestRecipe('${site.id}')" style="height: 24px; padding: 0 8px; font-size: 10px;"><i data-lucide="download" style="width: 11px; height: 11px;"></i> <span>Recipe</span></button>
         </div>
       </div>
     </div>
 
     <!-- Column 2: Aligned Similitude Metrics -->
     <div class="dossier-similitude-col">
-      <div style="font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-size: 9px; letter-spacing: 0.5px;">Dimensionless Similitude Analysis</div>
+      <div style="font-weight: 600; color: var(--accent-cyan); font-size: 10px; letter-spacing: 0.3px;">Dimensionless Similitude Analysis</div>
       
       <div class="similitude-row">
         <span>Slope Stability tanθ/tanφ</span>
         <div class="similitude-track"><div class="similitude-fill" style="width: ${slopeRatioPct}%;"></div></div>
-        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.tan_theta_over_tan_phi}</span>
+        <span style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">${dim.tan_theta_over_tan_phi}</span>
       </div>
 
       <div class="similitude-row">
         <span>Micro-Roughness h_rms/D</span>
         <div class="similitude-track"><div class="similitude-fill" style="width: ${roughPct}%;"></div></div>
-        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.h_rms_over_D}</span>
+        <span style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">${dim.h_rms_over_D}</span>
       </div>
 
       <div class="similitude-row">
         <span>Scaled Bearing p/(γB)</span>
         <div class="similitude-track"><div class="similitude-fill" style="width: ${bearingPct}%;"></div></div>
-        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.p_over_gamma_B}</span>
+        <span style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">${dim.p_over_gamma_B}</span>
       </div>
 
       <div class="similitude-row">
         <span>Cohesion Ratio c/(γd)</span>
         <div class="similitude-track"><div class="similitude-fill" style="width: ${cohesionPct}%;"></div></div>
-        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.cohesion_over_gamma_d}</span>
+        <span style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">${dim.cohesion_over_gamma_d}</span>
       </div>
     </div>
 
     <!-- Column 3: Space Breaks & Gravity Bridge -->
     <div class="dossier-breaks-col">
-      <div style="font-weight: 700; color: var(--accent-coral); text-transform: uppercase; font-size: 9px; letter-spacing: 0.5px;">Mandatory Space Breaks</div>
+      <div style="font-weight: 600; color: var(--accent-coral); font-size: 10px; letter-spacing: 0.3px;">Mandatory Space Breaks</div>
       <div>
         ${target.hardBreaks.slice(0, 3).map(hb => `<span class="hard-break-badge">${hb}</span>`).join("")}
       </div>
-      <div style="color: var(--text-muted); font-size: 9px; line-height: 1.4; margin-top: 4px;">
+      <div style="color: var(--text-muted); font-size: 9.5px; line-height: 1.45; margin-top: 4px;">
         <strong style="color: var(--accent-amber);">γ=ρg Load Scale:</strong> Ground test requires <strong style="color: var(--accent-cyan);">x${target.loadScale}</strong> ballast or inclined ramp (α=${(Math.asin(1.0 / target.loadScale) * 180 / Math.PI).toFixed(1)}°).
       </div>
     </div>
   `;
+  initLucideIcons();
 }
 
 function toggleDossierDrawer() {
@@ -1287,8 +1304,8 @@ function initChatStream() {
   stream.innerHTML = `
     <div class="chat-bubble assistant">
       <div class="chat-bubble-header">
-        <span class="chat-highlight-badge"><i class="fa-solid fa-satellite-dish"></i> TERRA-X MISSION DISCOVERY ENGINE</span>
-        <span>READY</span>
+        <span class="chat-highlight-badge"><i data-lucide="compass"></i> TERRA-X Mission Discovery Engine</span>
+        <span>Ready</span>
       </div>
       <p>
         Welcome to <strong>TERRA-X</strong>. I identify real locations on Earth that serve as physical proving grounds for lunar base and Mars surface operations.
@@ -1296,11 +1313,12 @@ function initChatStream() {
       <div class="chat-metric-box">
         <strong>Core Question:</strong> Where on Earth should we rehearse a specific lunar or Martian mission operation, and how trustworthy is that rehearsal?
       </div>
-      <p style="color: var(--text-muted); font-size: 10px;">
-        Ask any engineering rehearsal question below, click a query chip, or adjust mission targets above.
+      <p style="color: var(--text-muted); font-size: 10.5px;">
+        Enter any operational query below or adjust the target body and functional profile above.
       </p>
     </div>
   `;
+  initLucideIcons();
 }
 
 function appendUserMessage(text) {
@@ -1328,7 +1346,7 @@ function appendAssistantMessage(data) {
   div.className = "chat-bubble assistant";
   div.innerHTML = `
     <div class="chat-bubble-header">
-      <span class="chat-highlight-badge"><i class="fa-solid fa-satellite-dish"></i> SCIENTIFIC EVALUATION</span>
+      <span class="chat-highlight-badge"><i data-lucide="cpu"></i> Scientific Evaluation</span>
       <span>${data.targetBody} · ${data.functionName}</span>
     </div>
     
@@ -1342,7 +1360,7 @@ function appendAssistantMessage(data) {
       <div>Gravity Bridge: <span style="color: var(--accent-amber); font-weight: 600;">γ=ρg (${data.loadScale}x Load Scale)</span></div>
     </div>
 
-    <div style="font-size: 10px; color: var(--text-muted); line-height: 1.4;">
+    <div style="font-size: 10px; color: var(--text-muted); line-height: 1.45;">
       <strong style="color: var(--accent-coral);">Analogy Breakdown:</strong> ${data.hardBreaks.join("; ")}.
       <br/>
       <strong style="color: var(--accent-green);">Rehearsal Mitigation:</strong> ${data.mitigation}
@@ -1350,6 +1368,7 @@ function appendAssistantMessage(data) {
   `;
   stream.appendChild(div);
   stream.scrollTop = stream.scrollHeight;
+  initLucideIcons();
 }
 
 function submitUserChat() {
@@ -1610,13 +1629,14 @@ function openSitePassport(siteId) {
     </div>
 
     <!-- Actions -->
-    <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;">
-      <button class="header-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Passport PDF</button>
-      <button class="header-btn" onclick="downloadTestRecipe('${site.id}')" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 700;"><i class="fa-solid fa-download"></i> NASA Test Recipe JSON</button>
+    <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px;">
+      <button class="header-btn" onclick="window.print()"><i data-lucide="printer"></i> <span>Print Passport PDF</span></button>
+      <button class="header-btn primary-action-btn" onclick="downloadTestRecipe('${site.id}')"><i data-lucide="download"></i> <span>NASA Test Recipe JSON</span></button>
     </div>
   `;
 
   document.getElementById("passport-modal").classList.add("active");
+  initLucideIcons();
 }
 
 function closePassportModal() {
@@ -1824,6 +1844,7 @@ function escapeHtml(str) {
 // 10. Application Boot
 // ==============================================================================
 window.addEventListener("DOMContentLoaded", () => {
+  initLucideIcons();
   initMaps();
   initChatStream();
   triggerDiscovery();
