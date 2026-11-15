@@ -1,26 +1,22 @@
 /**
  * TERRA-X — Planetary Functional Analog Discovery Engine
- * ORBITAL CONSOLE FRONTEND ENGINE
+ * ORBITAL CONSOLE SINGLE-VIEW WORKSTATION ENGINE
  * NASA Space Apps Challenge 2026
  * 
  * Features:
- * - MapLibre GL JS Photorealistic Earth Satellite & Planetary Workstation
- * - Multi-layer Earth Terrain: Satellite, Elevation DEM, Slope Analysis, Roughness Sieve
- * - 12 Planetary Targets: Official NASA Artemis III 2024 Candidates + Research Regions
- * - 10 Exploration Function Profiles with Dimensionless Similitude & Evidence Confidence Q
- * - 4 Workspaces: Discover, Compare, Analog Passports, Data Observatory
- * - Interactive Engineering Sliders with Real-Time Re-Ranking
- * - Dynamic Geological Boundary Visualization & Aerospace Map Markers
- * - Subsystem Fidelity Ledger (STRONG, PARTIAL, BREAKS, UNCONSTRAINED) & NASA Test Recipes
- * - Multi-Agency Provenance & Data Observatory Lifecycle Tracker
- * - Guided Tour Walkthrough for Space Apps Judges
+ * - Natural Language Mission Intelligence Chat (Left Panel)
+ * - MapLibre GL Photorealistic Earth Map + Visual Data Analytics Dossier (Center Panel)
+ * - Ranked Analog Sites with Bulletproof Non-Overlapping Cards (Right Panel)
+ * - Real Planetary Science & Astronomical Gravity Bridge Scaling (γ = ρg)
+ * - 12 Planetary Targets (Official Artemis III 2024 Candidates + Mars Regions)
+ * - 10 Exploration Function Profiles with Dimensionless Similitude & Hard Breaks
+ * - Full STAC GeoJSON, GeoParquet, and NASA Test Recipe JSON Exports
  */
 
 // ==============================================================================
 // 1. Planetary Target Catalogs (NASA Artemis III 2024 Updates & Mars Regions)
 // ==============================================================================
 const PLANETARY_TARGETS = {
-  // Official Artemis III Candidate Regions (Updated 2024)
   "MOON_ARTEMIS3_CABEUS_B": {
     name: "Peak near Cabeus B",
     category: "Official Artemis III Candidate (NASA 2024)",
@@ -45,7 +41,7 @@ const PLANETARY_TARGETS = {
       delta_T_over_T_mean: 0.38,
       horizon_blocked_fraction: 0.52
     },
-    desc: "Elevated massif ridge near Cabeus B. Excellent Earth communication line-of-sight with proximal access to cryogenic PSR volatile deposits.",
+    desc: "Elevated massif ridge near Cabeus B. High solar illumination peak with direct access to cryogenic PSR volatile deposits.",
     product: "USGS LOLA 5m Polar DEM / Diviner Thermal Suite",
     scale: "1:25,000 Polar Stereographic"
   },
@@ -73,7 +69,7 @@ const PLANETARY_TARGETS = {
       delta_T_over_T_mean: 0.42,
       horizon_blocked_fraction: 0.61
     },
-    desc: "Steep-walled rim of Haworth Crater hosting massive permanent shadow regions (PSRs) with high radar backscatter anomalies.",
+    desc: "Steep-walled rim of Haworth Crater hosting massive permanent shadow regions (PSRs) with radar backscatter anomalies.",
     product: "USGS LOLA 5m Polar DEM / LROC NAC",
     scale: "1:25,000 Polar Stereographic"
   },
@@ -128,7 +124,7 @@ const PLANETARY_TARGETS = {
       delta_T_over_T_mean: 0.36,
       horizon_blocked_fraction: 0.38
     },
-    desc: "Expansive flat plateau named in honor of NASA mathematician Melba Roy Mouton. Prime landing terrain with gentle slopes and safe landing areas.",
+    desc: "Expansive flat plateau named in honor of NASA mathematician Melba Roy Mouton. Prime landing terrain with gentle slopes and safe touchdown zones.",
     product: "USGS LOLA 5m Polar DEM / Diviner",
     scale: "1:25,000 Polar Stereographic"
   },
@@ -213,8 +209,6 @@ const PLANETARY_TARGETS = {
     product: "USGS LOLA 5m Polar DEM",
     scale: "1:25,000 Polar Stereographic"
   },
-
-  // Independent Lunar Research Areas
   "MOON_RESEARCH_SHACKLETON": {
     name: "Shackleton Crater Rim",
     category: "Independent Lunar Research Area",
@@ -228,8 +222,7 @@ const PLANETARY_TARGETS = {
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
       "CONTINUOUS_CRYOGENIC_PSR (< 40 K)",
-      "EXTREME_LIGHTING_CONTRAST",
-      "HIGH_ELECTROSTATIC_CHARGE"
+      "EXTREME_LIGHTING_CONTRAST"
     ],
     dimRef: {
       tan_theta_over_tan_phi: 0.44,
@@ -256,7 +249,6 @@ const PLANETARY_TARGETS = {
       "LUNAR_VACUUM (1e-15 bar)",
       "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
       "14_EARTH_DAY_NIGHT_THERMAL_CYCLE",
-      "SURFACE_MICROMETEOROID_FLUX",
       "COLLAPSE_PIT_VERTICAL_ENTRANCE"
     ],
     dimRef: {
@@ -267,12 +259,10 @@ const PLANETARY_TARGETS = {
       delta_T_over_T_mean: 0.72,
       horizon_blocked_fraction: 0.05
     },
-    desc: "Mare basalt region containing the Marius Hills skylight pit (~65 m wide), providing access to intact underground basaltic lava tubes for pressurized habitats.",
+    desc: "Mare basalt region containing the Marius Hills skylight pit (~65 m wide), providing access to intact underground basaltic lava tubes.",
     product: "LROC NAC 0.5m DTM / GRAIL",
     scale: "1:50,000 Equirectangular"
   },
-
-  // Mars Exploration Regions
   "MARS_STUDY_OXIA_PLANUM": {
     name: "Oxia Planum",
     category: "Mars Exploration Study Region",
@@ -286,8 +276,7 @@ const PLANETARY_TARGETS = {
       "MARS_LOW_PRESSURE (~6 mbar CO2)",
       "MARS_0_38TH_GRAVITY (3.72 m/s²)",
       "SURFACE_UV_C_IRRADIATION",
-      "ATMOSPHERIC_DUST_STORMS",
-      "SOIL_PERCHLORATES"
+      "ATMOSPHERIC_DUST_STORMS"
     ],
     dimRef: {
       tan_theta_over_tan_phi: 0.15,
@@ -313,7 +302,6 @@ const PLANETARY_TARGETS = {
     hardBreaks: [
       "MARS_LOW_PRESSURE (~6.2 mbar CO2)",
       "MARS_0_38TH_GRAVITY (3.72 m/s²)",
-      "SURFACE_UV_C_IRRADIATION",
       "SOIL_PERCHLORATES",
       "ACTIVE_DUST_DEVILS_AND_ABRASION"
     ],
@@ -342,7 +330,6 @@ const PLANETARY_TARGETS = {
       "MARS_LOW_PRESSURE (~7.1 mbar CO2)",
       "MARS_0_38TH_GRAVITY (3.72 m/s²)",
       "VENTIFACT_WHEEL_GOUGE_TERRAIN",
-      "SURFACE_UV_C_IRRADIATION",
       "DIURNAL_THERMAL_SWING (~90 K swing)"
     ],
     dimRef: {
@@ -370,29 +357,6 @@ PLANETARY_TARGETS["MARS_GALE_CRATER"] = PLANETARY_TARGETS["MARS_STUDY_GALE_CRATE
 // ==============================================================================
 let CANDIDATES = [
   {
-    id: "SITE-TIBESTI-TARSO-VOON",
-    name: "Tibesti Volcanic Range",
-    country: "Chad",
-    continent: "Africa",
-    lat: 20.9167,
-    lon: 17.2833,
-    cell_id: "863fa942fffffff",
-    elevation_m: 2900,
-    slope_deg: 19.5,
-    h_rms_m: 0.15,
-    friction_angle_deg: 42.0,
-    cohesion_kpa: 2.2,
-    thermal_inertia_si: 390.0,
-    sky_view_factor: 0.68,
-    soil_moisture_wtd: 0.003,
-    vegetation_ndvi: 0.00,
-    grain_wadell_roundness: 0.21,
-    biological_activity_index: 0.00,
-    stac_id: "urn:terrax:africa:tibesti-tarso-voon",
-    doi: "10.1007/s00445-004-0371-4",
-    novelty_status: "UNDER_STUDIED"
-  },
-  {
     id: "SITE-MCMURDO-DRY-VALLEYS",
     name: "McMurdo Dry Valleys",
     country: "Antarctica",
@@ -413,11 +377,36 @@ let CANDIDATES = [
     biological_activity_index: 0.01,
     stac_id: "urn:terrax:antarctica:mcmurdo-univ",
     doi: "10.1016/j.icarus.2013.04.009",
+    photo: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80",
     novelty_status: "NOVEL_DISCOVERY"
   },
   {
+    id: "SITE-TIBESTI-TARSO-VOON",
+    name: "Tibesti Volcanic Range",
+    country: "Chad",
+    continent: "Africa",
+    lat: 20.9167,
+    lon: 17.2833,
+    cell_id: "863fa942fffffff",
+    elevation_m: 2900,
+    slope_deg: 19.5,
+    h_rms_m: 0.15,
+    friction_angle_deg: 42.0,
+    cohesion_kpa: 2.2,
+    thermal_inertia_si: 390.0,
+    sky_view_factor: 0.68,
+    soil_moisture_wtd: 0.003,
+    vegetation_ndvi: 0.00,
+    grain_wadell_roundness: 0.21,
+    biological_activity_index: 0.00,
+    stac_id: "urn:terrax:africa:tibesti-tarso-voon",
+    doi: "10.1007/s00445-004-0371-4",
+    photo: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
+    novelty_status: "UNDER_STUDIED"
+  },
+  {
     id: "SITE-QAIDAM-YARDANG",
-    name: "Qaidam Basin",
+    name: "Qaidam Basin Yardangs",
     country: "China",
     continent: "Asia",
     lat: 37.8500,
@@ -436,6 +425,7 @@ let CANDIDATES = [
     biological_activity_index: 0.01,
     stac_id: "urn:terrax:asia:qaidam-yardang",
     doi: "10.1016/j.epsl.2018.06.017",
+    photo: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&q=80",
     novelty_status: "NOVEL_DISCOVERY"
   },
   {
@@ -459,6 +449,7 @@ let CANDIDATES = [
     biological_activity_index: 0.08,
     stac_id: "urn:terrax:chile:atacama-yungay",
     doi: "10.1126/science.1087369",
+    photo: "https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=400&q=80",
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
@@ -482,29 +473,7 @@ let CANDIDATES = [
     biological_activity_index: 0.05,
     stac_id: "urn:terrax:canada:haughton-devon",
     doi: "10.1111/j.1945-5100.1998.tb01332.x",
-    novelty_status: "BENCHMARK_GOLDEN"
-  },
-  {
-    id: "SITE-DEATH-VALLEY",
-    name: "Death Valley (Mars Hill)",
-    country: "United States",
-    continent: "North America",
-    lat: 36.5050,
-    lon: -116.8750,
-    cell_id: "8626e25afffffff",
-    elevation_m: -86,
-    slope_deg: 4.5,
-    h_rms_m: 0.11,
-    friction_angle_deg: 35.0,
-    cohesion_kpa: 2.1,
-    thermal_inertia_si: 450.0,
-    sky_view_factor: 0.88,
-    soil_moisture_wtd: 0.015,
-    vegetation_ndvi: 0.01,
-    grain_wadell_roundness: 0.30,
-    biological_activity_index: 0.02,
-    stac_id: "urn:terrax:usgs:death-valley",
-    doi: "10.1029/2004JE002364",
+    photo: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80",
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
@@ -528,6 +497,31 @@ let CANDIDATES = [
     biological_activity_index: 0.01,
     stac_id: "urn:terrax:usgs:mauna-kea",
     doi: "10.1016/j.pss.2010.05.006",
+    photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
+    novelty_status: "BENCHMARK_GOLDEN"
+  },
+  {
+    id: "SITE-DEATH-VALLEY",
+    name: "Death Valley (Mars Hill)",
+    country: "United States",
+    continent: "North America",
+    lat: 36.5050,
+    lon: -116.8750,
+    cell_id: "8626e25afffffff",
+    elevation_m: -86,
+    slope_deg: 4.5,
+    h_rms_m: 0.11,
+    friction_angle_deg: 35.0,
+    cohesion_kpa: 2.1,
+    thermal_inertia_si: 450.0,
+    sky_view_factor: 0.88,
+    soil_moisture_wtd: 0.015,
+    vegetation_ndvi: 0.01,
+    grain_wadell_roundness: 0.30,
+    biological_activity_index: 0.02,
+    stac_id: "urn:terrax:usgs:death-valley",
+    doi: "10.1029/2004JE002364",
+    photo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
@@ -551,6 +545,7 @@ let CANDIDATES = [
     biological_activity_index: 0.04,
     stac_id: "urn:terrax:norway:svalbard-bockfjorden",
     doi: "10.1089/ast.2007.0143",
+    photo: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=400&q=80",
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
@@ -574,6 +569,7 @@ let CANDIDATES = [
     biological_activity_index: 0.03,
     stac_id: "urn:terrax:usgs:kilbourne-hole",
     doi: "10.1002/2016JE005252",
+    photo: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
     novelty_status: "BENCHMARK_GOLDEN"
   },
   {
@@ -597,6 +593,7 @@ let CANDIDATES = [
     biological_activity_index: 0.01,
     stac_id: "urn:terrax:africa:danakil-dallol",
     doi: "10.1038/s41559-019-1005-0",
+    photo: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80",
     novelty_status: "NOVEL_DISCOVERY"
   },
   {
@@ -620,6 +617,7 @@ let CANDIDATES = [
     biological_activity_index: 0.02,
     stac_id: "urn:terrax:africa:namib-sossusvlei",
     doi: "10.1016/j.geomorph.2010.02.012",
+    photo: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
     novelty_status: "NOVEL_DISCOVERY"
   },
   {
@@ -643,6 +641,7 @@ let CANDIDATES = [
     biological_activity_index: 0.04,
     stac_id: "urn:terrax:africa:makgadikgadi-pans",
     doi: "10.1016/j.palaeo.2011.08.016",
+    photo: "https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=400&q=80",
     novelty_status: "UNDER_STUDIED"
   },
   // Adversarial controls
@@ -667,6 +666,7 @@ let CANDIDATES = [
     biological_activity_index: 0.45,
     stac_id: "urn:terrax:control:daytona-beach",
     doi: "10.0000/adversarial-control-beach",
+    photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
     novelty_status: "ADVERSARIAL_CONTROL"
   },
   {
@@ -690,6 +690,7 @@ let CANDIDATES = [
     biological_activity_index: 0.01,
     stac_id: "urn:terrax:control:erg-chebbi-rounded",
     doi: "10.0000/adversarial-control-dunes",
+    photo: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
     novelty_status: "ADVERSARIAL_CONTROL"
   }
 ];
@@ -697,25 +698,17 @@ let CANDIDATES = [
 // Active State
 let currentResults = [];
 let selectedSite = null;
-let currentWorkspace = "discover";
 let mapEarth = null;
-let mapCompareEarth = null;
-let mapCompareTarget = null;
 let earthBaseLayer = "satellite";
 let tourCurrentStep = 0;
 
 // ==============================================================================
-// 3. MapLibre GL JS Initializers (Orbital Console Workstation)
+// 3. MapLibre GL JS Initializer
 // ==============================================================================
 function initMaps() {
-  initEarthMap();
-}
-
-function initEarthMap() {
   const container = document.getElementById("map-earth");
   if (!container || mapEarth) return;
 
-  // Reliable, high-resolution basemap configuration
   mapEarth = new maplibregl.Map({
     container: 'map-earth',
     style: {
@@ -789,8 +782,8 @@ function initEarthMap() {
         }
       ]
     },
-    center: [17.42, 19.5], // Centered near Sahara / Tibesti Range as in reference image
-    zoom: 4.8
+    center: [160.71, -77.86], // Centered on McMurdo Dry Valleys
+    zoom: 5.0
   });
 
   mapEarth.addControl(new maplibregl.NavigationControl(), 'top-right');
@@ -848,9 +841,8 @@ function updateSelectedCandidateBoundary(site) {
   const centerLon = site.lon;
   const centerLat = site.lat;
   const numPoints = 8;
-  const radiusDeg = 0.35; // ~35 km boundary
+  const radiusDeg = 0.35; // ~35 km analog test boundary
 
-  // Deterministic jitter matching reference image polygon contour
   const seed = Math.abs(Math.sin(centerLon * 100 + centerLat * 50));
   const coordinates = [];
 
@@ -887,7 +879,7 @@ function updateSelectedCandidateBoundary(site) {
       type: 'fill',
       source: 'candidate-boundary-src',
       paint: {
-        'fill-color': '#D9A64F',
+        'fill-color': '#E59934',
         'fill-opacity': 0.14
       }
     });
@@ -897,7 +889,7 @@ function updateSelectedCandidateBoundary(site) {
       type: 'line',
       source: 'candidate-boundary-src',
       paint: {
-        'line-color': '#D9A64F',
+        'line-color': '#E59934',
         'line-width': 2
       }
     });
@@ -907,7 +899,7 @@ function updateSelectedCandidateBoundary(site) {
 // ==============================================================================
 // 4. Dimensionless Physics Scoring Engine (Client-Side Similitude)
 // ==============================================================================
-function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pressKPa) {
+function computeClientAFI(candidate, target, functionProfile, wheelD = 0.50, padB = 0.30, pressKPa = 25.0) {
   const tRef = target.dimRef;
 
   // 1. Slope Ratio: tan(theta) / tan(phi)
@@ -988,7 +980,6 @@ function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pres
   const afi_p10 = Math.max(0.0, afi_p50 * 0.88);
   const afi_p90 = Math.min(1.0, afi_p50 * 1.12);
 
-  // Evidence Confidence Q
   const Q_evidence = candidate.novelty_status === "ADVERSARIAL_CONTROL" ? 0.55 : 0.88;
 
   return {
@@ -1011,9 +1002,9 @@ function computeClientAFI(candidate, target, functionProfile, wheelD, padB, pres
 }
 
 // ==============================================================================
-// 5. Candidate Evaluation & Rendering (Orbital Console Synchronization)
+// 5. Discovery Calculation & Evaluation
 // ==============================================================================
-function triggerDiscovery() {
+function triggerDiscovery(skipFly = false) {
   const processEl = document.getElementById("status-bar-process");
   if (processEl) {
     processEl.innerHTML = `<span class="status-dot-mini" style="background: var(--accent-amber); box-shadow: 0 0 5px var(--accent-amber);"></span> <span>PROCESSING - COMPUTING</span>`;
@@ -1021,21 +1012,13 @@ function triggerDiscovery() {
 
   const targetId = document.getElementById("select-target").value;
   const functionProfile = document.getElementById("select-function").value;
-  const wheelD = parseFloat(document.getElementById("slider-wheel").value);
-  const padB = parseFloat(document.getElementById("slider-footprint").value);
-  const pressKPa = parseFloat(document.getElementById("slider-pressure").value);
 
   const target = PLANETARY_TARGETS[targetId];
   if (!target) return;
 
-  const bridgeEl = document.getElementById("gravity-bridge-text");
-  if (bridgeEl) {
-    bridgeEl.innerText = `γ=ρg (x${target.loadScale} Load Scale)`;
-  }
-
   // Evaluate all candidates
   const evaluated = CANDIDATES.map((cand) => {
-    const scores = computeClientAFI(cand, target, functionProfile, wheelD, padB, pressKPa);
+    const scores = computeClientAFI(cand, target, functionProfile);
     return {
       ...cand,
       scores,
@@ -1065,16 +1048,22 @@ function triggerDiscovery() {
     };
   });
 
-  if (!selectedSite && currentResults.length > 0) {
+  if (!selectedSite || !currentResults.some(s => s.id === selectedSite.id)) {
     selectedSite = currentResults[0];
   }
 
   renderResultsSidebar();
   renderEarthCandidateMarkers();
-  if (selectedSite) {
+  updateVisualDossier(selectedSite);
+
+  if (!skipFly && selectedSite && mapEarth) {
+    mapEarth.flyTo({
+      center: [selectedSite.lon, selectedSite.lat],
+      zoom: 5.2,
+      speed: 1.2
+    });
     updateSelectedCandidateBoundary(selectedSite);
   }
-  updateCompareWorkspace();
 
   setTimeout(() => {
     if (processEl) {
@@ -1083,6 +1072,9 @@ function triggerDiscovery() {
   }, 200);
 }
 
+// ==============================================================================
+// 6. Right Panel: Bulletproof Non-Overlapping Candidate Cards
+// ==============================================================================
 function renderResultsSidebar() {
   const container = document.getElementById("site-cards-container");
   if (!container) return;
@@ -1121,7 +1113,7 @@ function renderResultsSidebar() {
       <div class="card-metrics-row">
         <div class="metric-item">Match <span class="metric-val">${site.scores.M_match.toFixed(2)}</span></div>
         <div class="metric-item"><i class="fa-solid fa-caret-up" style="color: var(--accent-coral); font-size: 8px;"></i> Conf. Penalty <span class="metric-val" style="color: var(--accent-coral);">${site.scores.C_confounder.toFixed(2)}</span></div>
-        <div class="metric-item">Transferability <span class="metric-val">${site.scores.T_transferable.toFixed(2)}</span></div>
+        <div class="metric-item">Transfer <span class="metric-val">${site.scores.T_transferable.toFixed(2)}</span></div>
       </div>
     `;
 
@@ -1129,12 +1121,13 @@ function renderResultsSidebar() {
   });
 }
 
-function selectCandidate(siteId) {
+function selectCandidate(siteId, source = "sidebar") {
   const site = currentResults.find(s => s.id === siteId);
   if (!site) return;
   selectedSite = site;
 
   renderResultsSidebar();
+  updateVisualDossier(site);
 
   if (mapEarth) {
     mapEarth.flyTo({
@@ -1150,8 +1143,6 @@ function selectCandidate(siteId) {
   allPins.forEach(p => p.classList.remove("selected"));
   const activePin = document.getElementById(`pin-${site.id}`);
   if (activePin) activePin.classList.add("selected");
-
-  updateCompareWorkspace();
 }
 
 function renderEarthCandidateMarkers() {
@@ -1171,7 +1162,7 @@ function renderEarthCandidateMarkers() {
     el.innerHTML = `<i class="fa-solid fa-location-dot"></i> <span>${site.name}</span>`;
     el.onclick = (e) => {
       e.stopPropagation();
-      selectCandidate(site.id);
+      selectCandidate(site.id, "map");
     };
 
     const marker = new maplibregl.Marker({ element: el })
@@ -1196,382 +1187,320 @@ function sortCandidates(criteria) {
 }
 
 // ==============================================================================
-// 6. Sub-header & Configuration Sync Handlers
+// 7. Center Panel: Visual Data Analytics Dossier Drawer
 // ==============================================================================
-function syncFromSubTarget(targetId) {
-  const select = document.getElementById("select-target");
-  if (select) select.value = targetId;
-  updateSubHeaderDisplay(targetId);
-  triggerDiscovery();
-}
+function updateVisualDossier(site) {
+  const grid = document.getElementById("dossier-content-grid");
+  const titleEl = document.getElementById("dossier-bar-title");
+  if (!grid || !site) return;
 
-function syncFromSubFunction(funcId) {
-  const select = document.getElementById("select-function");
-  if (select) select.value = funcId;
-  triggerDiscovery();
-}
-
-function onTargetSelectChange(targetId) {
-  const subSelect = document.getElementById("sub-select-target");
-  if (subSelect) subSelect.value = targetId;
-  updateSubHeaderDisplay(targetId);
-  triggerDiscovery();
-}
-
-function onFunctionSelectChange(funcId) {
-  const subSelect = document.getElementById("sub-select-function");
-  if (subSelect) subSelect.value = funcId;
-  triggerDiscovery();
-}
-
-function onTargetBodyChange(bodyVal) {
-  const select = document.getElementById("select-target");
-  if (!select) return;
-  if (bodyVal === "MOON") {
-    select.value = "MOON_ARTEMIS3_CABEUS_B";
-  } else if (bodyVal === "MOON_OTHER") {
-    select.value = "MOON_RESEARCH_SHACKLETON";
-  } else if (bodyVal === "MARS") {
-    select.value = "MARS_STUDY_OXIA_PLANUM";
-  }
-  onTargetSelectChange(select.value);
-}
-
-function updateSubHeaderDisplay(targetId) {
+  const targetId = document.getElementById("select-target").value;
   const target = PLANETARY_TARGETS[targetId];
   if (!target) return;
 
-  const destEl = document.getElementById("sub-destination-text");
-  if (destEl) {
-    destEl.innerText = `EARTH → ${target.body} (${target.name.toUpperCase()})`;
+  if (titleEl) {
+    titleEl.innerText = `SITE DOSSIER: ${site.name.toUpperCase()} (${site.country.toUpperCase()}) — AFI: ${site.scores.afi_p50.toFixed(2)}`;
   }
 
-  const discEl = document.getElementById("sub-planet-disc");
-  if (discEl) {
-    if (target.body === "MARS") {
-      discEl.style.background = "radial-gradient(circle at 35% 35%, #e27b58 0%, #a33b24 70%, #451408 100%)";
-      discEl.style.boxShadow = "inset -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(226, 123, 88, 0.3)";
-    } else {
-      discEl.style.background = "radial-gradient(circle at 35% 35%, #94a3b8 0%, #334155 70%, #0f172a 100%)";
-      discEl.style.boxShadow = "inset -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(148, 163, 184, 0.2)";
-    }
-  }
-
-  const iconEl = document.getElementById("sub-icon-target");
-  if (iconEl) {
-    iconEl.className = target.body === "MARS" ? "fa-solid fa-globe leading-icon" : "fa-regular fa-moon leading-icon";
-  }
-}
-
-// Collapsible helper functions
-function toggleSection(bodyId, chevronId) {
-  const body = document.getElementById(bodyId);
-  const chevron = document.getElementById(chevronId);
-  if (!body) return;
-  const isHidden = body.style.display === "none";
-  body.style.display = isHidden ? "block" : "none";
-  if (chevron) {
-    chevron.style.transform = isHidden ? "rotate(0deg)" : "rotate(-90deg)";
-  }
-}
-
-function toggleAdvancedParams() {
-  const drawer = document.getElementById("advanced-params-drawer");
-  const icon = document.getElementById("icon-advanced-params");
-  if (!drawer) return;
-  const isHidden = drawer.style.display === "none";
-  drawer.style.display = isHidden ? "block" : "none";
-  if (icon) {
-    icon.className = isHidden ? "fa-solid fa-angle-down" : "fa-solid fa-angle-right";
-  }
-}
-
-function toggleSortDrawer() {
-  const drawer = document.getElementById("sort-drawer");
-  if (drawer) {
-    drawer.classList.toggle("visible");
-  }
-}
-
-// ==============================================================================
-// 7. Workspaces Switching Logic
-// ==============================================================================
-function switchWorkspace(workspaceId) {
-  currentWorkspace = workspaceId;
-
-  document.getElementById("tab-discover").classList.toggle("active", workspaceId === "discover");
-  document.getElementById("tab-compare").classList.toggle("active", workspaceId === "compare");
-  document.getElementById("tab-observatory").classList.toggle("active", workspaceId === "observatory");
-
-  document.getElementById("view-discover").classList.toggle("active", workspaceId === "discover");
-  document.getElementById("view-compare").classList.toggle("active", workspaceId === "compare");
-  document.getElementById("view-observatory").classList.toggle("active", workspaceId === "observatory");
-
-  if (workspaceId === "compare") {
-    initCompareMaps();
-    updateCompareWorkspace();
-  } else if (workspaceId === "observatory") {
-    renderObservatoryTable();
-  } else if (workspaceId === "discover") {
-    if (mapEarth) {
-      setTimeout(() => mapEarth.resize(), 50);
-    }
-  }
-}
-
-function switchToCompare(siteId) {
-  selectCandidate(siteId);
-  switchWorkspace("compare");
-}
-
-function openSelectedSitePassport() {
-  if (selectedSite) {
-    openSitePassport(selectedSite.id);
-  } else if (currentResults.length > 0) {
-    openSitePassport(currentResults[0].id);
-  }
-}
-
-// ==============================================================================
-// 8. Compare Workspace Implementation
-// ==============================================================================
-function initCompareMaps() {
-  if (!mapCompareEarth) {
-    mapCompareEarth = new maplibregl.Map({
-      container: 'map-compare-earth',
-      style: {
-        version: 8,
-        sources: {
-          'osm-dark': {
-            type: 'raster',
-            tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-            tileSize: 256,
-            attribution: '&copy; OpenStreetMap'
-          }
-        },
-        layers: [{ id: 'osm-layer', type: 'raster', source: 'osm-dark' }]
-      },
-      center: selectedSite ? [selectedSite.lon, selectedSite.lat] : [17.28, 20.91],
-      zoom: 6
-    });
-  }
-
-  if (!mapCompareTarget) {
-    const targetId = document.getElementById("select-target").value;
-    const target = PLANETARY_TARGETS[targetId];
-
-    mapCompareTarget = new maplibregl.Map({
-      container: 'map-compare-target',
-      style: {
-        version: 8,
-        sources: {
-          'planet-shaded': {
-            type: 'raster',
-            tiles: [
-              target.body === "MOON"
-                ? 'https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303P_100M/1.0.0/default/default028mm/{z}/{y}/{x}.jpg'
-                : 'https://trek.nasa.gov/tiles/Mars/EQ/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0/default/default028mm/{z}/{y}/{x}.jpg'
-            ],
-            tileSize: 256,
-            attribution: 'NASA PDS'
-          }
-        },
-        layers: [{ id: 'planet-layer', type: 'raster', source: 'planet-shaded' }]
-      },
-      center: [target.lon, target.lat],
-      zoom: 5
-    });
-  }
-}
-
-function updateCompareWorkspace() {
-  if (!selectedSite) return;
-  const targetId = document.getElementById("select-target").value;
-  const target = PLANETARY_TARGETS[targetId];
-
-  const earthNameEl = document.getElementById("compare-earth-name");
-  const planetNameEl = document.getElementById("compare-planet-name");
-  if (earthNameEl) earthNameEl.innerText = `${selectedSite.name} (${selectedSite.country})`;
-  if (planetNameEl) planetNameEl.innerText = `${target.name} (${target.body})`;
-
-  if (mapCompareEarth) {
-    mapCompareEarth.flyTo({ center: [selectedSite.lon, selectedSite.lat], zoom: 6 });
-  }
-  if (mapCompareTarget) {
-    mapCompareTarget.flyTo({ center: [target.lon, target.lat], zoom: 5 });
-  }
-
-  // Populate Aligned Measurement Bars
-  const barsContainer = document.getElementById("aligned-bars-container");
-  if (!barsContainer) return;
-
-  const dim = selectedSite.scores.dimensionless;
+  const dim = site.scores.dimensionless;
   const tRef = target.dimRef;
 
-  const metrics = [
-    {
-      title: "Slope Frictional Ratio: tan(θ)/tan(φ)",
-      earthVal: dim.tan_theta_over_tan_phi,
-      targetVal: tRef.tan_theta_over_tan_phi,
-      max: 1.0
-    },
-    {
-      title: "Micro-Roughness: h_rms(D)/D",
-      earthVal: dim.h_rms_over_D,
-      targetVal: tRef.h_rms_over_D,
-      max: 0.6
-    },
-    {
-      title: "Scaled Bearing Pressure: p/(γB)",
-      earthVal: dim.p_over_gamma_B,
-      targetVal: tRef.p_over_gamma_B,
-      max: 35.0
-    },
-    {
-      title: "Geotechnical Cohesion: c/(γd)",
-      earthVal: dim.cohesion_over_gamma_d,
-      targetVal: tRef.cohesion_over_gamma_d || 3.8,
-      max: 8.0
-    },
-    {
-      title: "Thermal Amplitude: ΔT / T_mean",
-      earthVal: dim.delta_T_over_T_mean,
-      targetVal: tRef.delta_T_over_T_mean,
-      max: 1.5
-    },
-    {
-      title: "Horizon-Blocked Fraction: 1 - SVF",
-      earthVal: dim.horizon_blocked_fraction,
-      targetVal: tRef.horizon_blocked_fraction,
-      max: 1.0
-    }
-  ];
+  const slopeRatioPct = Math.min(100, Math.round((dim.tan_theta_over_tan_phi / 0.8) * 100));
+  const roughPct = Math.min(100, Math.round((dim.h_rms_over_D / 0.5) * 100));
+  const bearingPct = Math.min(100, Math.round((dim.p_over_gamma_B / 30.0) * 100));
+  const cohesionPct = Math.min(100, Math.round((dim.cohesion_over_gamma_d / 6.0) * 100));
 
-  barsContainer.innerHTML = metrics.map(m => {
-    const earthPct = Math.min(100, Math.round((m.earthVal / m.max) * 100));
-    const targetPct = Math.min(100, Math.round((m.targetVal / m.max) * 100));
-
-    return `
-      <div class="physics-bar-row">
-        <div><strong>${m.title}</strong></div>
-        <div class="physics-bar-track">
-          <div class="physics-bar-fill" style="width: ${earthPct}%; background: var(--accent-cyan);" title="Earth: ${m.earthVal}"></div>
-          <div class="physics-bar-fill" style="width: ${targetPct}%; background: var(--accent-amber); opacity: 0.7; margin-top: 2px;" title="Target: ${m.targetVal}"></div>
-        </div>
-        <div style="font-family: monospace; font-size: 10px; text-align: right;">
-          <span style="color: var(--accent-cyan);">E:${m.earthVal}</span> / <span style="color: var(--accent-amber);">T:${m.targetVal}</span>
+  grid.innerHTML = `
+    <!-- Column 1: Site Image & Provenance -->
+    <div class="dossier-photo-card">
+      <img src="${site.photo || 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80'}" class="dossier-photo-img" alt="${site.name}" />
+      <div class="dossier-photo-info">
+        <div class="site-name">${site.name}</div>
+        <div class="site-loc">${site.country} · ${site.elevation_m}m Elv · ${site.lat.toFixed(2)}°, ${site.lon.toFixed(2)}°</div>
+        <div style="margin-top: 4px; display: flex; gap: 4px;">
+          <button class="header-btn" onclick="openSitePassport('${site.id}')" style="padding: 2px 6px; font-size: 9px;"><i class="fa-regular fa-id-badge"></i> Passport</button>
+          <button class="header-btn" onclick="downloadTestRecipe('${site.id}')" style="padding: 2px 6px; font-size: 9px;"><i class="fa-solid fa-download"></i> Recipe</button>
         </div>
       </div>
-    `;
-  }).join("");
+    </div>
+
+    <!-- Column 2: Aligned Similitude Metrics -->
+    <div class="dossier-similitude-col">
+      <div style="font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-size: 9px; letter-spacing: 0.5px;">Dimensionless Similitude Analysis</div>
+      
+      <div class="similitude-row">
+        <span>Slope Stability tanθ/tanφ</span>
+        <div class="similitude-track"><div class="similitude-fill" style="width: ${slopeRatioPct}%;"></div></div>
+        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.tan_theta_over_tan_phi}</span>
+      </div>
+
+      <div class="similitude-row">
+        <span>Micro-Roughness h_rms/D</span>
+        <div class="similitude-track"><div class="similitude-fill" style="width: ${roughPct}%;"></div></div>
+        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.h_rms_over_D}</span>
+      </div>
+
+      <div class="similitude-row">
+        <span>Scaled Bearing p/(γB)</span>
+        <div class="similitude-track"><div class="similitude-fill" style="width: ${bearingPct}%;"></div></div>
+        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.p_over_gamma_B}</span>
+      </div>
+
+      <div class="similitude-row">
+        <span>Cohesion Ratio c/(γd)</span>
+        <div class="similitude-track"><div class="similitude-fill" style="width: ${cohesionPct}%;"></div></div>
+        <span style="font-family: monospace; text-align: right; color: var(--accent-amber);">${dim.cohesion_over_gamma_d}</span>
+      </div>
+    </div>
+
+    <!-- Column 3: Space Breaks & Gravity Bridge -->
+    <div class="dossier-breaks-col">
+      <div style="font-weight: 700; color: var(--accent-coral); text-transform: uppercase; font-size: 9px; letter-spacing: 0.5px;">Mandatory Space Breaks</div>
+      <div>
+        ${target.hardBreaks.slice(0, 3).map(hb => `<span class="hard-break-badge">${hb}</span>`).join("")}
+      </div>
+      <div style="color: var(--text-muted); font-size: 9px; line-height: 1.4; margin-top: 4px;">
+        <strong style="color: var(--accent-amber);">γ=ρg Load Scale:</strong> Ground test requires <strong style="color: var(--accent-cyan);">x${target.loadScale}</strong> ballast or inclined ramp (α=${(Math.asin(1.0 / target.loadScale) * 180 / Math.PI).toFixed(1)}°).
+      </div>
+    </div>
+  `;
+}
+
+function toggleDossierDrawer() {
+  const panel = document.getElementById("map-dossier-panel");
+  const scaleBadge = document.getElementById("map-scale-badge");
+  const coordsBadge = document.getElementById("earth-coords-badge");
+  if (!panel) return;
+
+  const isCollapsed = panel.classList.toggle("collapsed");
+  if (scaleBadge) scaleBadge.style.bottom = isCollapsed ? "42px" : "190px";
+  if (coordsBadge) coordsBadge.style.bottom = isCollapsed ? "42px" : "190px";
 }
 
 // ==============================================================================
-// 9. Data Observatory Implementation
+// 8. Left Panel: Natural Language Mission Chat & Intelligence
 // ==============================================================================
-const OBSERVATORY_DATASETS = [
-  {
-    provider: "NASA LP DAAC",
-    mission: "ISS ECOSTRESS",
-    product: "ECO3LSTE V003 (C3998139651-LPCLOUD)",
-    spatial: "70 m",
-    temporal: "2018 - Present",
-    lifecycle: "QA_VALIDATED",
-    status: "CONNECTED",
-    granules: 42
-  },
-  {
-    provider: "NASA LP DAAC",
-    mission: "ISS EMIT",
-    product: "EMITL2BMIN V001 (Mineralogy)",
-    spatial: "60 m",
-    temporal: "2022 - Present",
-    lifecycle: "QA_VALIDATED",
-    status: "CONNECTED",
-    granules: 18
-  },
-  {
-    provider: "NASA ASF DAAC",
-    mission: "OPERA (Sentinel-1)",
-    product: "OPERA_L2_RTC-S1_V1",
-    spatial: "30 m",
-    temporal: "2023 - Present",
-    lifecycle: "PROCESSED",
-    status: "CONNECTED",
-    granules: 64
-  },
-  {
-    provider: "EU Copernicus CDSE",
-    mission: "Copernicus DEM",
-    product: "COP-DEM GLO-30 (COG v1)",
-    spatial: "30 m",
-    temporal: "Static (2020 ed.)",
-    lifecycle: "USED_IN_ANALYSIS",
-    status: "AUTHENTICATED",
-    granules: 96
-  },
-  {
-    provider: "USGS EROS",
-    mission: "Landsat 8/9",
-    product: "Landsat-C2L2-ST / SR",
-    spatial: "30 m",
-    temporal: "2013 - Present",
-    lifecycle: "PROCESSED",
-    status: "AVAILABLE",
-    granules: 88
-  },
-  {
-    provider: "NASA PDS / PGDA",
-    mission: "LRO LOLA",
-    product: "LDEM_80S_5M (100 Clones Ensemble)",
-    spatial: "5 m",
-    temporal: "2009 - 2024",
-    lifecycle: "USED_IN_ANALYSIS",
-    status: "CONNECTED",
-    granules: 100
-  },
-  {
-    provider: "ESA PSA",
-    mission: "Mars Express",
-    product: "MEX_HRSC_DTM_V1",
-    spatial: "50 m",
-    temporal: "2004 - 2024",
-    lifecycle: "QA_VALIDATED",
-    status: "CONNECTED",
-    granules: 26
-  },
-  {
-    provider: "JAXA G-Portal",
-    mission: "ALOS PRISM",
-    product: "AW3D30 v3.2 DSM",
-    spatial: "30 m",
-    temporal: "Static",
-    lifecycle: "PROCESSED",
-    status: "AVAILABLE",
-    granules: 35
+function initChatStream() {
+  const stream = document.getElementById("chat-stream");
+  if (!stream) return;
+
+  stream.innerHTML = `
+    <div class="chat-bubble assistant">
+      <div class="chat-bubble-header">
+        <span class="chat-highlight-badge"><i class="fa-solid fa-satellite-dish"></i> TERRA-X MISSION DISCOVERY ENGINE</span>
+        <span>READY</span>
+      </div>
+      <p>
+        Welcome to <strong>TERRA-X</strong>. I identify real locations on Earth that serve as physical proving grounds for lunar base and Mars surface operations.
+      </p>
+      <div class="chat-metric-box">
+        <strong>Core Question:</strong> Where on Earth should we rehearse a specific lunar or Martian mission operation, and how trustworthy is that rehearsal?
+      </div>
+      <p style="color: var(--text-muted); font-size: 10px;">
+        Ask any engineering rehearsal question below, click a query chip, or adjust mission targets above.
+      </p>
+    </div>
+  `;
+}
+
+function appendUserMessage(text) {
+  const stream = document.getElementById("chat-stream");
+  if (!stream) return;
+
+  const div = document.createElement("div");
+  div.className = "chat-bubble user";
+  div.innerHTML = `
+    <div class="chat-bubble-header">
+      <span style="color: var(--accent-cyan); font-weight: 600;">YOU</span>
+      <span>NOW</span>
+    </div>
+    <div>${escapeHtml(text)}</div>
+  `;
+  stream.appendChild(div);
+  stream.scrollTop = stream.scrollHeight;
+}
+
+function appendAssistantMessage(data) {
+  const stream = document.getElementById("chat-stream");
+  if (!stream) return;
+
+  const div = document.createElement("div");
+  div.className = "chat-bubble assistant";
+  div.innerHTML = `
+    <div class="chat-bubble-header">
+      <span class="chat-highlight-badge"><i class="fa-solid fa-satellite-dish"></i> SCIENTIFIC EVALUATION</span>
+      <span>${data.targetBody} · ${data.functionName}</span>
+    </div>
+    
+    <div style="margin-bottom: 6px;">
+      ${data.analysis}
+    </div>
+
+    <div class="chat-metric-box">
+      <div>Top Earth Proving Ground: <strong style="color: var(--accent-cyan);">${data.siteName} (${data.siteCountry})</strong></div>
+      <div>Similitude Score: <strong>${data.afiScore.toFixed(2)} AFI</strong> (Match: ${data.match.toFixed(2)} | Penalty: ${data.confounder.toFixed(2)})</div>
+      <div>Gravity Bridge: <span style="color: var(--accent-amber); font-weight: 600;">γ=ρg (${data.loadScale}x Load Scale)</span></div>
+    </div>
+
+    <div style="font-size: 10px; color: var(--text-muted); line-height: 1.4;">
+      <strong style="color: var(--accent-coral);">Analogy Breakdown:</strong> ${data.hardBreaks.join("; ")}.
+      <br/>
+      <strong style="color: var(--accent-green);">Rehearsal Mitigation:</strong> ${data.mitigation}
+    </div>
+  `;
+  stream.appendChild(div);
+  stream.scrollTop = stream.scrollHeight;
+}
+
+function submitUserChat() {
+  const input = document.getElementById("chat-user-input");
+  if (!input) return;
+  const text = input.value.trim();
+  if (!text) return;
+
+  input.value = "";
+  processNaturalLanguageQuery(text);
+}
+
+function sendQuickPrompt(promptText) {
+  processNaturalLanguageQuery(promptText);
+}
+
+function processNaturalLanguageQuery(userQuery) {
+  appendUserMessage(userQuery);
+
+  const q = userQuery.toLowerCase();
+  let targetId = document.getElementById("select-target").value;
+  let functionProfile = document.getElementById("select-function").value;
+
+  // Keyword extraction for target
+  if (q.includes("mars") || q.includes("jezero")) {
+    targetId = "MARS_STUDY_JEZERO_DELTA";
+  } else if (q.includes("gale") || q.includes("curiosity")) {
+    targetId = "MARS_STUDY_GALE_CRATER";
+  } else if (q.includes("oxia") || q.includes("exomars")) {
+    targetId = "MARS_STUDY_OXIA_PLANUM";
+  } else if (q.includes("cabeus")) {
+    targetId = "MOON_ARTEMIS3_CABEUS_B";
+  } else if (q.includes("haworth")) {
+    targetId = "MOON_ARTEMIS3_HAWORTH";
+  } else if (q.includes("malapert")) {
+    targetId = "MOON_ARTEMIS3_MALAPERT";
+  } else if (q.includes("mouton")) {
+    targetId = "MOON_ARTEMIS3_MONS_MOUTON_PLATEAU";
+  } else if (q.includes("nobile")) {
+    targetId = "MOON_ARTEMIS3_NOBILE_RIM_1";
+  } else if (q.includes("shackleton")) {
+    targetId = "MOON_RESEARCH_SHACKLETON";
+  } else if (q.includes("marius") || q.includes("lava") || q.includes("tube") || q.includes("cave")) {
+    targetId = "MOON_RESEARCH_OCEANUS_PROCELLARUM";
+    functionProfile = "SUBSURFACE_AND_LAVA_TUBES";
   }
-];
 
-function renderObservatoryTable() {
-  const tbody = document.getElementById("observatory-table-body");
-  if (!tbody) return;
+  // Keyword extraction for exploration function
+  if (q.includes("mobility") || q.includes("rover") || q.includes("slope") || q.includes("wheel") || q.includes("traverse") || q.includes("sinkage")) {
+    functionProfile = "ROVER_MOBILITY";
+  } else if (q.includes("landing") || q.includes("pad") || q.includes("blast") || q.includes("plume") || q.includes("ejecta")) {
+    functionProfile = "LANDING_PAD_CONSTRUCTION";
+  } else if (q.includes("excavat") || q.includes("dig") || q.includes("drill") || q.includes("shear") || q.includes("cutting")) {
+    functionProfile = "REGOLITH_EXCAVATION";
+  } else if (q.includes("isru") || q.includes("sinter") || q.includes("microwave") || q.includes("brick")) {
+    functionProfile = "ISRU_CONSTRUCTION";
+  } else if (q.includes("thermal") || q.includes("cold") || q.includes("freeze") || q.includes("night") || q.includes("sink")) {
+    functionProfile = "THERMAL_SURVIVABILITY";
+  } else if (q.includes("dust") || q.includes("wind") || q.includes("abrasion") || q.includes("electrostatic") || q.includes("saltation") || q.includes("seal")) {
+    functionProfile = "DUST_AND_WIND";
+  } else if (q.includes("water") || q.includes("ice") || q.includes("volatile") || q.includes("psr") || q.includes("cold trap")) {
+    functionProfile = "WATER_AND_ICE_RESOURCES";
+  } else if (q.includes("bio") || q.includes("fossil") || q.includes("life") || q.includes("clay") || q.includes("organic")) {
+    functionProfile = "BIOSIGNATURE_PRESERVATION";
+  } else if (q.includes("lava") || q.includes("skylight") || q.includes("subsurface") || q.includes("vault")) {
+    functionProfile = "SUBSURFACE_AND_LAVA_TUBES";
+  } else if (q.includes("nav") || q.includes("illumination") || q.includes("sun") || q.includes("light") || q.includes("shadow") || q.includes("trn")) {
+    functionProfile = "COMMUNICATION_AND_ILLUMINATION";
+  }
 
-  tbody.innerHTML = OBSERVATORY_DATASETS.map(d => `
-    <tr>
-      <td><strong>${d.provider}</strong></td>
-      <td>${d.mission}</td>
-      <td><code style="color: var(--accent-cyan); font-size: 10px;">${d.product}</code></td>
-      <td>${d.spatial}</td>
-      <td>${d.temporal}</td>
-      <td><span class="lifecycle-badge">${d.lifecycle}</span></td>
-      <td><span style="color: var(--accent-green); font-size: 10px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> ${d.status}</span></td>
-      <td style="font-family: monospace;">${d.granules}</td>
-    </tr>
-  `).join("");
+  // Synchronize selects
+  document.getElementById("select-target").value = targetId;
+  document.getElementById("select-function").value = functionProfile;
+
+  // Trigger evaluation
+  triggerDiscovery();
+
+  const target = PLANETARY_TARGETS[targetId];
+  const topSite = currentResults[0];
+
+  const analysisNarratives = {
+    "ROVER_MOBILITY": `To test rover traversability for ${target.name}, we analyze the Coulomb slope stability ratio (tanθ/tanφ = ${topSite.scores.dimensionless.tan_theta_over_tan_phi}) and obstacle clearance (h_rms/D = ${topSite.scores.dimensionless.h_rms_over_D}). Ground testing at 1g overpredicts wheel traction.`,
+    "WATER_AND_ICE_RESOURCES": `Cryogenic volatile sampling for ${target.name} requires ultra-low moisture permafrost and sublimation dynamics under extreme micro-cold trap conditions.`,
+    "REGOLITH_EXCAVATION": `Regolith excavation and cutting shear mechanics scale directly with effective unit weight (γ = ρg). ${topSite.name} provides matching grain shear strength (cohesion c/(γd) = ${topSite.scores.dimensionless.cohesion_over_gamma_d}).`,
+    "DUST_AND_WIND": `Evaluating dust saltation and electrostatic seal degradation for ${target.name}. Unweathered abrasive angular basalt fines with low roundness (Wadell < 0.25) are essential.`,
+    "SUBSURFACE_AND_LAVA_TUBES": `Basalt vault structural integrity for ${target.name}. Reduced target gravity allows up to 6x wider stable lava tube spans without roof collapse.`
+  };
+
+  const narrative = analysisNarratives[functionProfile] || `Screened 14 global Earth test articles for ${target.name} (${functionProfile}). Highest physical similitude identified at ${topSite.name}.`;
+
+  appendAssistantMessage({
+    targetBody: target.body,
+    functionName: functionProfile.replace(/_/g, " "),
+    analysis: narrative,
+    siteName: topSite.name,
+    siteCountry: topSite.country,
+    afiScore: topSite.scores.afi_p50,
+    match: topSite.scores.M_match,
+    confounder: topSite.scores.C_confounder,
+    loadScale: target.loadScale,
+    hardBreaks: target.hardBreaks.slice(0, 3),
+    mitigation: `Test on an inclined ramp (α = ${(Math.asin(1.0 / target.loadScale) * 180 / Math.PI).toFixed(1)}°) or constant-tension offload rig to scale 1g gravity to ${target.gravity} m/s². Desiccate test bed to < 0.01% moisture.`
+  });
+}
+
+// Select change handlers
+function onTargetSelectChange(targetId) {
+  triggerDiscovery();
+  const target = PLANETARY_TARGETS[targetId];
+  const topSite = currentResults[0];
+  if (target && topSite) {
+    appendAssistantMessage({
+      targetBody: target.body,
+      functionName: document.getElementById("select-function").value.replace(/_/g, " "),
+      analysis: `Updated planetary target to <strong>${target.name}</strong> (${target.category}). Evaluated against 14 global candidate sites.`,
+      siteName: topSite.name,
+      siteCountry: topSite.country,
+      afiScore: topSite.scores.afi_p50,
+      match: topSite.scores.M_match,
+      confounder: topSite.scores.C_confounder,
+      loadScale: target.loadScale,
+      hardBreaks: target.hardBreaks.slice(0, 3),
+      mitigation: `Maintain load scale bridge factor x${target.loadScale} (γ=ρg) during ground rehearsals.`
+    });
+  }
+}
+
+function onFunctionSelectChange(funcId) {
+  triggerDiscovery();
+  const targetId = document.getElementById("select-target").value;
+  const target = PLANETARY_TARGETS[targetId];
+  const topSite = currentResults[0];
+  if (target && topSite) {
+    appendAssistantMessage({
+      targetBody: target.body,
+      functionName: funcId.replace(/_/g, " "),
+      analysis: `Re-calculated functional analog rankings for <strong>${funcId.replace(/_/g, " ")}</strong> under target conditions.`,
+      siteName: topSite.name,
+      siteCountry: topSite.country,
+      afiScore: topSite.scores.afi_p50,
+      match: topSite.scores.M_match,
+      confounder: topSite.scores.C_confounder,
+      loadScale: target.loadScale,
+      hardBreaks: target.hardBreaks.slice(0, 3),
+      mitigation: `Ensure simulant conditioning accounts for target vacuum and low cohesion.`
+    });
+  }
 }
 
 // ==============================================================================
-// 10. Site Passport & Test Recipe Modal
+// 9. Modals (Site Passport, Field Kit, Tour)
 // ==============================================================================
 function openSitePassport(siteId) {
   const site = currentResults.find(s => s.id === siteId) || CANDIDATES.find(s => s.id === siteId);
@@ -1586,12 +1515,12 @@ function openSitePassport(siteId) {
   const modalBody = document.getElementById("modal-passport-body");
   modalBody.innerHTML = `
     <!-- Hard Breaks Banner -->
-    <div style="background: rgba(228, 125, 118, 0.1); border: 1px solid var(--accent-coral); border-radius: 4px; padding: 10px; margin-bottom: 12px;">
+    <div style="background: rgba(250, 82, 82, 0.1); border: 1px solid var(--accent-coral); border-radius: 4px; padding: 10px; margin-bottom: 12px;">
       <div style="font-size: 11px; font-weight: 700; color: var(--accent-coral); margin-bottom: 4px;">
         <i class="fa-solid fa-triangle-exclamation"></i> Mandatory Non-Negotiable Hard Breaks
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-        ${target.hardBreaks.map(hb => `<span style="font-size: 10px; font-family: monospace; background: rgba(228,125,118,0.2); color: var(--accent-coral); padding: 2px 6px; border-radius: 3px;">${hb}</span>`).join("")}
+        ${target.hardBreaks.map(hb => `<span style="font-size: 10px; font-family: monospace; background: rgba(250, 82, 82, 0.15); color: var(--accent-coral); padding: 2px 6px; border-radius: 3px;">${hb}</span>`).join("")}
       </div>
     </div>
 
@@ -1676,22 +1605,14 @@ function openSitePassport(siteId) {
             <td>35%</td>
             <td>Open-air testing cannot reproduce radiative vacuum sink without TVAC chamber.</td>
           </tr>
-          <tr>
-            <td>Cosmic GCR / SPE Radiation</td>
-            <td><span class="badge-breaks">BREAKDOWN</span></td>
-            <td><code>Shielded (1 atm + B)</code></td>
-            <td><code>Unshielded (Cosmic)</code></td>
-            <td>0%</td>
-            <td>Terrestrial magnetosphere and atmosphere prevent realistic space radiation dose testing.</td>
-          </tr>
         </tbody>
       </table>
     </div>
 
     <!-- Actions -->
     <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;">
-      <button class="header-action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Passport PDF</button>
-      <button class="header-action-btn" onclick="downloadTestRecipe('${site.id}')" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 700;"><i class="fa-solid fa-download"></i> NASA Test Recipe JSON</button>
+      <button class="header-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Passport PDF</button>
+      <button class="header-btn" onclick="downloadTestRecipe('${site.id}')" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 700;"><i class="fa-solid fa-download"></i> NASA Test Recipe JSON</button>
     </div>
   `;
 
@@ -1702,80 +1623,85 @@ function closePassportModal() {
   document.getElementById("passport-modal").classList.remove("active");
 }
 
-// All Candidates Modal
-function openAllCandidatesModal() {
-  const container = document.getElementById("all-candidates-table-body");
-  if (!container) return;
-
-  container.innerHTML = `
-    <table class="data-source-table">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Site Name</th>
-          <th>Country</th>
-          <th>AFI Score</th>
-          <th>Match (M)</th>
-          <th>Confounder (C)</th>
-          <th>Transfer (T)</th>
-          <th>P(top10)</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${currentResults.map(s => `
-          <tr style="cursor: pointer;" onclick="selectCandidate('${s.id}'); closeAllCandidatesModal();">
-            <td><b style="color: var(--accent-cyan); font-family: monospace;">#${String(s.monte_carlo.rank_p50).padStart(2, '0')}</b></td>
-            <td><strong>${s.name}</strong></td>
-            <td>${s.country}</td>
-            <td><b style="color: var(--accent-amber); font-family: monospace;">${s.scores.afi_p50.toFixed(2)}</b></td>
-            <td style="color: var(--accent-green); font-family: monospace;">${s.scores.M_match.toFixed(2)}</td>
-            <td style="color: var(--accent-coral); font-family: monospace;">${s.scores.C_confounder.toFixed(2)}</td>
-            <td style="color: var(--accent-amber); font-family: monospace;">${s.scores.T_transferable.toFixed(2)}</td>
-            <td style="font-family: monospace;">${(s.monte_carlo.p_top10 * 100).toFixed(0)}%</td>
-            <td>
-              <button class="header-action-btn" onclick="event.stopPropagation(); openSitePassport('${s.id}');">Passport</button>
-            </td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
-
-  document.getElementById("all-candidates-modal").classList.add("active");
+// In-Situ Field Kit Modal
+function openFieldKitModal() {
+  populateFieldKitDropdown();
+  document.getElementById("fieldkit-modal").classList.add("active");
 }
 
-function closeAllCandidatesModal() {
-  document.getElementById("all-candidates-modal").classList.remove("active");
+function closeFieldKitModal() {
+  document.getElementById("fieldkit-modal").classList.remove("active");
 }
 
-// ==============================================================================
-// 11. Guided Tour Walkthrough for Space Apps Judges
-// ==============================================================================
+function populateFieldKitDropdown() {
+  const select = document.getElementById("fieldkit-cell-select");
+  if (!select) return;
+  select.innerHTML = "";
+  CANDIDATES.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c.id;
+    opt.innerText = `${c.name} (${c.country})`;
+    select.appendChild(opt);
+  });
+}
+
+function submitFieldKitData() {
+  const siteId = document.getElementById("fieldkit-cell-select").value;
+  const friction = parseFloat(document.getElementById("fk-friction").value);
+  const cohesion = parseFloat(document.getElementById("fk-cohesion").value);
+  const roundness = parseFloat(document.getElementById("fk-roundness").value);
+
+  const cand = CANDIDATES.find(c => c.id === siteId);
+  if (cand) {
+    cand.friction_angle_deg = friction;
+    cand.cohesion_kpa = cohesion;
+    cand.grain_wadell_roundness = roundness;
+    cand.novelty_status = "FIELD_KIT_VERIFIED";
+  }
+
+  closeFieldKitModal();
+  triggerDiscovery();
+  
+  appendAssistantMessage({
+    targetBody: "FIELD-KIT",
+    functionName: "IN-SITU INGEST",
+    analysis: `Ground-truth measurements ingested for <strong>${cand.name}</strong>. Fidelity ledger upgraded with reduced experimental uncertainty.`,
+    siteName: cand.name,
+    siteCountry: cand.country,
+    afiScore: cand.scores.afi_p50,
+    match: cand.scores.M_match,
+    confounder: cand.scores.C_confounder,
+    loadScale: 6.37,
+    hardBreaks: ["IN-SITU VERIFIED"],
+    mitigation: "Ground measurements directly validated."
+  });
+}
+
+// Guided Tour
 const TOUR_STEPS = [
   {
-    title: "1. Planetary Target Selection",
-    content: "Select your destination world and exploration region. TERRA-X features official <strong>NASA Artemis III 2024 Candidate Landing Regions</strong> (Peak near Cabeus B, Haworth, Malapert Massif, Mons Mouton, Nobile Rim, de Gerlache Rim, Slater Plain), independent lunar south pole research areas (Shackleton), and Mars rover landing sites (Oxia Planum, Jezero Delta, Gale Crater)."
+    title: "1. Planetary Discovery & Decision-Support",
+    content: "TERRA-X is a search engine for Earth test-sites for the Moon and Mars. It answers: <em>Where on Earth should we rehearse a specific part of a lunar base or Mars mission, and how trustworthy is that rehearsal?</em>"
   },
   {
-    title: "2. Exploration Function Profiles (All 10 Operations)",
-    content: "TERRA-X evaluates functional engineering test articles, not visual scenery. Choose between 10 dedicated exploration function profiles: <em>Rover Mobility, Landing Pad Construction, Regolith Excavation, ISRU Construction, Thermal Survivability, Dust & Wind Dynamics, Water & Ice Resources, Biosignature Preservation, Subsurface Lava Tubes, and Communication/Illumination</em>."
+    title: "2. Natural Language Query & Mission Chat",
+    content: "In the left panel, ask any operational question (e.g. <em>Where can we test rover mobility on steep slopes?</em> or <em>Best analog for cryogenic volatile drilling?</em>). TERRA-X evaluates the request with real planetary physics, reduced gravity bridges, and dimensionless similitude."
   },
   {
-    title: "3. Dimensionless Similitude & The Gravity Bridge",
-    content: "We compare non-dimensional governing groups rather than raw Earth values: <strong>tanθ/tanφ</strong> (slope stability), <strong>h_rms/D</strong> (micro-roughness scaled to wheel diameter), <strong>p/(γB)</strong> (bearing pressure scaled to reduced gravity), and <strong>c/(γd)</strong> (cohesion ratio). The gravity bridge enforces <strong>γ = ρg</strong> (load scale x6.37 for Moon, x2.85 for Mars). Never claim 1g == 1/6g!"
+    title: "3. Interactive Map & Visual Data Analytics",
+    content: "The center panel features an interactive geospatial map with high-resolution satellite imagery, DEM elevation, slope, and roughness layers. The Site Dossier provides visual satellite photos, dimensionless similitude gauges, and non-negotiable space breaks."
   },
   {
-    title: "4. Multi-Sensor Global Screening & Confounders",
-    content: "Earth is screened via H3 hexagonal cells across NASA ECOSTRESS, EMIT, OPERA RTC-S1, Copernicus DEM GLO-30, and JAXA sensors. Earth-added confounders (soil moisture, vegetation root cohesion, atmospheric convection, weathered round grains) are penalized strictly via the governing law: <strong>AFI = M × (1 - C) × T</strong>. Missing data is strictly labeled <em>UNCONSTRAINED</em>."
+    title: "4. Ranked Analog Sites (Non-Overlapping Cards)",
+    content: "The right panel ranks real Earth test articles using the scientific AFI governing law: <strong>AFI = M × (1 - C) × T</strong>. Filter and sort by score, evidence confidence, or transferability."
   },
   {
-    title: "5. Verifiable Site Passport & Fidelity Ledger",
-    content: "Every shortlisted candidate receives a verifiable Site Passport containing a 3-tier Fidelity Ledger: <strong>STRONG ANALOGY</strong> (valid physics), <strong>PARTIAL ANALOGY</strong> (needs scaling rigs), and <strong>ANALOGY BREAKDOWN</strong> (unavoidable space breaks: vacuum, 1/6g, GCR/SPE radiation, cryogenic PSR 70 K)."
+    title: "5. Dimensionless Physics & Gravity Scaling",
+    content: "Never assume 1g == 1/6g. We enforce the <strong>γ = ρg load-scale bridge</strong> (x6.37 for Moon, x2.85 for Mars). All calculations preserve strict scientific rigor."
   },
   {
-    title: "6. Actionable NASA Test Recipes & Open Exports",
-    content: "Generate actionable, transferrable engineering Test Recipes tied directly to named NASA Technology Gaps (TX04 Surface Mobility, TX06 Dust Mitigation, TX07 Regolith Excavation). Export your findings instantly to open STAC GeoJSON, GeoParquet, and printable scientific reports."
+    title: "6. Open STAC & NASA Test Recipes",
+    content: "Generate actionable, transferrable engineering Test Recipes tied directly to named NASA Technology Gaps. Export your findings to open STAC GeoJSON."
   }
 ];
 
@@ -1816,57 +1742,7 @@ function prevTourStep() {
   }
 }
 
-// ==============================================================================
-// 12. In-Situ Field Kit Ingest & Re-Scoring
-// ==============================================================================
-function openFieldKitModal() {
-  populateFieldKitDropdown();
-  document.getElementById("fieldkit-modal").classList.add("active");
-}
-
-function closeFieldKitModal() {
-  document.getElementById("fieldkit-modal").classList.remove("active");
-}
-
-function populateFieldKitDropdown() {
-  const select = document.getElementById("fieldkit-cell-select");
-  if (!select) return;
-  select.innerHTML = "";
-  CANDIDATES.forEach(c => {
-    const opt = document.createElement("option");
-    opt.value = c.id;
-    opt.innerText = `${c.name} (${c.cell_id})`;
-    select.appendChild(opt);
-  });
-}
-
-function submitFieldKitData() {
-  const siteId = document.getElementById("fieldkit-cell-select").value;
-  const friction = parseFloat(document.getElementById("fk-friction").value);
-  const cohesion = parseFloat(document.getElementById("fk-cohesion").value);
-  const roundness = parseFloat(document.getElementById("fk-roundness").value);
-
-  const cand = CANDIDATES.find(c => c.id === siteId);
-  if (cand) {
-    cand.friction_angle_deg = friction;
-    cand.cohesion_kpa = cohesion;
-    cand.grain_wadell_roundness = roundness;
-    cand.novelty_status = "FIELD_KIT_VERIFIED";
-  }
-
-  closeFieldKitModal();
-  triggerDiscovery();
-  alert(`In-situ field kit measurements ingested for ${cand.name}! Re-scored with reduced uncertainty.`);
-}
-
-// ==============================================================================
-// 13. Sliders & Export Logic
-// ==============================================================================
-function updateSlider(type, value, unit) {
-  const el = document.getElementById(`val-${type}`);
-  if (el) el.innerText = `${value} ${unit}`;
-}
-
+// Download Test Recipe
 function downloadTestRecipe(siteId) {
   const site = currentResults.find(s => s.id === siteId) || CANDIDATES.find(s => s.id === siteId);
   if (!site) return;
@@ -1938,10 +1814,17 @@ function exportGeoParquetSTAC() {
   a.click();
 }
 
+function escapeHtml(str) {
+  return str.replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+  );
+}
+
 // ==============================================================================
-// 14. Application Boot
+// 10. Application Boot
 // ==============================================================================
 window.addEventListener("DOMContentLoaded", () => {
   initMaps();
+  initChatStream();
   triggerDiscovery();
 });

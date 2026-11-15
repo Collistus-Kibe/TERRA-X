@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Orbital Console Workstation Styling -->
+  <!-- Orbital Console Single-View Styling -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- TIER 1: TOP NAVIGATION (ORBITAL CONSOLE) -->
+  <!-- UNIFIED TOP NAVIGATION -->
   <header class="orbital-header">
     <div class="brand-section">
       <div class="brand-logo-icon">
@@ -29,401 +29,191 @@
       </div>
     </div>
 
-    <!-- Workspace Tabs -->
-    <nav class="workspace-nav">
-      <button class="nav-tab active" id="tab-discover" onclick="switchWorkspace('discover')">
-        <i class="fa-solid fa-crosshairs"></i> DISCOVER
-      </button>
-      <button class="nav-tab" id="tab-compare" onclick="switchWorkspace('compare')">
-        <i class="fa-solid fa-scale-balanced"></i> COMPARE
-      </button>
-      <button class="nav-tab" id="tab-passports" onclick="openSelectedSitePassport()">
-        <i class="fa-regular fa-id-badge"></i> ANALOG PASSPORTS
-      </button>
-      <button class="nav-tab" id="tab-observatory" onclick="switchWorkspace('observatory')">
-        <i class="fa-solid fa-satellite-dish"></i> DATA OBSERVATORY
-      </button>
-    </nav>
+    <!-- Center Mission Purpose -->
+    <div class="header-center-motto">
+      "Where on Earth should we rehearse a lunar base or Mars mission, and how trustworthy is that rehearsal?"
+    </div>
 
     <!-- Right Header Meta & Controls -->
     <div class="header-meta">
       <div class="status-pill">
         <span class="pulse-dot"></span>
         <span>SENSORS ONLINE</span>
-        <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
       </div>
-      <button class="header-action-btn" onclick="openTourModal()" title="Guided Walkthrough">
-        <i class="fa-solid fa-circle-question"></i>
-      </button>
-      <button class="header-action-btn" onclick="openFieldKitModal()" title="In-Situ Field Kit">
+      <button class="header-btn" onclick="openFieldKitModal()" title="In-Situ Field Kit Ground-Truth">
         <i class="fa-solid fa-microscope"></i>
+        <span>Field Kit</span>
       </button>
-      <button class="header-action-btn" onclick="exportGeoParquetSTAC()" title="Export STAC / GeoParquet">
+      <button class="header-btn" onclick="exportGeoParquetSTAC()" title="Export STAC Catalog">
         <i class="fa-solid fa-download"></i>
+        <span>STAC Export</span>
+      </button>
+      <button class="header-btn" onclick="openTourModal()" title="Guided Walkthrough">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>Guide</span>
       </button>
     </div>
   </header>
 
-  <!-- TIER 2: SUB-HEADER (MISSION CONTEXT BAR) -->
-  <div class="orbital-subheader">
-    <div class="subheader-left">
-      <div class="planet-thumb-disc" id="sub-planet-disc" title="Current Planetary Target"></div>
-      <div class="sub-title-block">
-        <div class="sub-heading">Analog Discovery</div>
-        <div class="sub-destination" id="sub-destination-text">EARTH &rarr; MOON / MARS</div>
-      </div>
-    </div>
-
-    <div class="subheader-center">
-      <!-- Target Region Dropdown Pill -->
-      <div class="pill-select-wrapper">
-        <i class="fa-regular fa-moon leading-icon" id="sub-icon-target"></i>
-        <select class="pill-select" id="sub-select-target" onchange="syncFromSubTarget(this.value)">
-          <optgroup label="Official Artemis III Candidates (NASA 2024)">
-            <option value="MOON_ARTEMIS3_CABEUS_B" selected>MOON - CABEUS B</option>
-            <option value="MOON_ARTEMIS3_HAWORTH">MOON - HAWORTH RIM</option>
-            <option value="MOON_ARTEMIS3_MALAPERT">MOON - MALAPERT MASSIF</option>
-            <option value="MOON_ARTEMIS3_MONS_MOUTON_PLATEAU">MOON - MONS MOUTON</option>
-            <option value="MOON_ARTEMIS3_NOBILE_RIM_1">MOON - NOBILE RIM 1</option>
-            <option value="MOON_ARTEMIS3_DE_GERLACHE_RIM_2">MOON - DE GERLACHE</option>
-            <option value="MOON_ARTEMIS3_SLATER_PLAIN">MOON - SLATER PLAIN</option>
-          </optgroup>
-          <optgroup label="Independent Lunar Research Areas">
-            <option value="MOON_RESEARCH_SHACKLETON">MOON - SHACKLETON RIM</option>
-            <option value="MOON_RESEARCH_OCEANUS_PROCELLARUM">MOON - MARIUS HILLS PIT</option>
-          </optgroup>
-          <optgroup label="Mars Planetary Study Regions">
-            <option value="MARS_STUDY_OXIA_PLANUM">MARS - OXIA PLANUM</option>
-            <option value="MARS_STUDY_JEZERO_DELTA">MARS - JEZERO DELTA</option>
-            <option value="MARS_STUDY_GALE_CRATER">MARS - GALE CRATER</option>
-          </optgroup>
-        </select>
-        <i class="fa-solid fa-chevron-down trailing-icon"></i>
-      </div>
-
-      <!-- Exploration Function Dropdown Pill -->
-      <div class="pill-select-wrapper">
-        <i class="fa-solid fa-crosshairs leading-icon"></i>
-        <select class="pill-select" id="sub-select-function" onchange="syncFromSubFunction(this.value)">
-          <option value="ROVER_MOBILITY" selected>ROVER MOBILITY</option>
-          <option value="LANDING_PAD_CONSTRUCTION">LANDING PAD</option>
-          <option value="REGOLITH_EXCAVATION">EXCAVATION</option>
-          <option value="ISRU_CONSTRUCTION">ISRU SINTERING</option>
-          <option value="THERMAL_SURVIVABILITY">THERMAL SINK</option>
-          <option value="DUST_AND_WIND">DUST &amp; WIND</option>
-          <option value="WATER_AND_ICE_RESOURCES">WATER &amp; ICE</option>
-          <option value="BIOSIGNATURE_PRESERVATION">BIOSIGNATURES</option>
-          <option value="SUBSURFACE_AND_LAVA_TUBES">LAVA TUBES</option>
-          <option value="COMMUNICATION_AND_ILLUMINATION">ILLUMINATION / TRN</option>
-        </select>
-        <i class="fa-solid fa-chevron-down trailing-icon"></i>
-      </div>
-    </div>
-
-    <div class="subheader-right">
-      <div class="sub-tagline">Find Earth's best proving grounds for exploring other worlds.</div>
-    </div>
-  </div>
-
-  <!-- WORKSPACE CONTAINER -->
+  <!-- MAIN 3-PANEL SINGLE SCREEN WORKSTATION -->
   <div class="app-container">
 
     <!-- ========================================================================
-         WORKSPACE 1: DISCOVER VIEW (3-COLUMN ORBITAL CONSOLE)
+         LEFT PANEL: NATURAL LANGUAGE DISCOVERY CHAT & MISSION CONTROLS
          ======================================================================== -->
-    <div class="workspace-view active" id="view-discover">
+    <aside class="panel-chat-query">
       
-      <!-- LEFT PANEL: MISSION CONFIGURATION -->
-      <aside class="panel-config">
-        
-        <!-- Section: Mission Configuration -->
-        <div class="config-section" id="sec-mission-container">
-          <div class="section-header" onclick="toggleSection('sec-mission-body', 'chevron-mission')">
-            <span><i class="fa-solid fa-gear"></i> MISSION CONFIGURATION</span>
-            <i class="fa-solid fa-chevron-up toggle-chevron" id="chevron-mission"></i>
-          </div>
-          
-          <div class="section-content" id="sec-mission-body">
-            <div class="form-group">
-              <label>Target Body</label>
-              <select class="form-select" id="select-target-body" onchange="onTargetBodyChange(this.value)">
-                <option value="MOON" selected>Moon · South Pole</option>
-                <option value="MOON_OTHER">Moon · Independent Research</option>
-                <option value="MARS">Mars · Study Regions</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Target Region</label>
-              <select class="form-select" id="select-target" onchange="onTargetSelectChange(this.value)">
-                <optgroup label="Official Artemis III Candidates (NASA 2024)">
-                  <option value="MOON_ARTEMIS3_CABEUS_B" selected>Peak near Cabeus B (-84.9° Lat)</option>
-                  <option value="MOON_ARTEMIS3_HAWORTH">Haworth Rim (-87.4° Lat)</option>
-                  <option value="MOON_ARTEMIS3_MALAPERT">Malapert Massif (-85.9° Lat)</option>
-                  <option value="MOON_ARTEMIS3_MONS_MOUTON_PLATEAU">Mons Mouton Plateau (-84.5° Lat)</option>
-                  <option value="MOON_ARTEMIS3_NOBILE_RIM_1">Nobile Rim 1 (-85.2° Lat)</option>
-                  <option value="MOON_ARTEMIS3_DE_GERLACHE_RIM_2">de Gerlache Rim 2 (-88.3° Lat)</option>
-                  <option value="MOON_ARTEMIS3_SLATER_PLAIN">Slater Plain (-88.1° Lat)</option>
-                </optgroup>
-                <optgroup label="Independent Lunar Research Areas">
-                  <option value="MOON_RESEARCH_SHACKLETON">Shackleton Crater Rim (-89.9° Lat)</option>
-                  <option value="MOON_RESEARCH_OCEANUS_PROCELLARUM">Oceanus Procellarum / Marius Hills Pit</option>
-                </optgroup>
-                <optgroup label="Mars Planetary Study Regions">
-                  <option value="MARS_STUDY_OXIA_PLANUM">Oxia Planum (ExoMars Rosalind Franklin)</option>
-                  <option value="MARS_STUDY_JEZERO_DELTA">Jezero Crater Fan Delta (M2020)</option>
-                  <option value="MARS_STUDY_GALE_CRATER">Gale Crater Mt. Sharp (MSL Curiosity)</option>
-                </optgroup>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Exploration Function</label>
-              <select class="form-select" id="select-function" onchange="onFunctionSelectChange(this.value)">
-                <option value="ROVER_MOBILITY" selected>🚜 Rover Mobility</option>
-                <option value="LANDING_PAD_CONSTRUCTION">🚀 Landing-Pad Construction</option>
-                <option value="REGOLITH_EXCAVATION">⛏️ Regolith Excavation</option>
-                <option value="ISRU_CONSTRUCTION">🏗️ ISRU Construction</option>
-                <option value="THERMAL_SURVIVABILITY">❄️ Thermal Survivability</option>
-                <option value="DUST_AND_WIND">🌪️ Dust &amp; Wind</option>
-                <option value="WATER_AND_ICE_RESOURCES">🧊 Water &amp; Ice Resources</option>
-                <option value="BIOSIGNATURE_PRESERVATION">🔬 Biosignature Preservation</option>
-                <option value="SUBSURFACE_AND_LAVA_TUBES">🌋 Subsurface &amp; Lava Tubes</option>
-                <option value="COMMUNICATION_AND_ILLUMINATION">📡 Communication &amp; Illumination</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Engineering Parameters -->
-        <div class="config-section" id="sec-engineering-container">
-          <div class="section-header" onclick="toggleSection('sec-engineering-body', 'chevron-engineering')">
-            <span><i class="fa-solid fa-sliders"></i> ENGINEERING PARAMETERS</span>
-            <i class="fa-solid fa-chevron-up toggle-chevron" id="chevron-engineering"></i>
-          </div>
-
-          <div class="section-content" id="sec-engineering-body">
-            <div class="slider-container">
-              <div class="slider-header">
-                <span class="slider-label">Wheel Diameter (D)</span>
-                <span class="slider-val" id="val-wheel">0.50 m</span>
-              </div>
-              <input type="range" id="slider-wheel" min="0.20" max="1.50" step="0.05" value="0.50" oninput="updateSlider('wheel', this.value, 'm')" onchange="triggerDiscovery()" />
-            </div>
-
-            <div class="slider-container">
-              <div class="slider-header">
-                <span class="slider-label">Contact Pressure (p)</span>
-                <span class="slider-val" id="val-pressure">25 kPa</span>
-              </div>
-              <input type="range" id="slider-pressure" min="5" max="100" step="5" value="25" oninput="updateSlider('pressure', this.value, 'kPa')" onchange="triggerDiscovery()" />
-            </div>
-
-            <div class="slider-container">
-              <div class="slider-header">
-                <span class="slider-label">Mission Duration</span>
-                <span class="slider-val" id="val-duration">14 days</span>
-              </div>
-              <input type="range" id="slider-duration" min="1" max="60" step="1" value="14" oninput="updateSlider('duration', this.value, 'days')" onchange="triggerDiscovery()" />
-            </div>
-
-            <div class="slider-container">
-              <div class="slider-header">
-                <span class="slider-label">Maximum Slope</span>
-                <span class="slider-val" id="val-slope">20°</span>
-              </div>
-              <input type="range" id="slider-slope" min="5" max="35" step="1" value="20" oninput="updateSlider('slope', this.value, '°')" onchange="triggerDiscovery()" />
-            </div>
-
-            <!-- Advanced Collapsible Parameters -->
-            <div style="margin-top: 6px;">
-              <div style="font-size: 10px; color: var(--accent-cyan); cursor: pointer; display: flex; align-items: center; gap: 4px; margin-bottom: 6px;" onclick="toggleAdvancedParams()">
-                <i class="fa-solid fa-angle-right" id="icon-advanced-params"></i> <span>Advanced Parameters &amp; Bridge</span>
-              </div>
-              
-              <div id="advanced-params-drawer" style="display: none; padding-top: 4px;">
-                <div class="slider-container">
-                  <div class="slider-header">
-                    <span class="slider-label">Wheel Width / Footprint (B)</span>
-                    <span class="slider-val" id="val-footprint">0.30 m</span>
-                  </div>
-                  <input type="range" id="slider-footprint" min="0.10" max="1.00" step="0.05" value="0.30" oninput="updateSlider('footprint', this.value, 'm')" onchange="triggerDiscovery()" />
-                </div>
-
-                <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px;">
-                  <label style="margin: 0; cursor: pointer; font-size: 10px;">MMR Diversity Filtering (&lambda;=0.65)</label>
-                  <input type="checkbox" id="check-mmr" checked onchange="triggerDiscovery()" style="cursor: pointer;" />
-                </div>
-
-                <div class="physics-callout">
-                  <div class="physics-formula">AFI_f = M_f &times; (1 - C_f) &times; T_f</div>
-                  <div>GRAVITY BRIDGE: <span id="gravity-bridge-text" style="color: var(--accent-amber); font-weight: 600;">&gamma;=&rho;g (x6.37 Load Scale)</span></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Primary Action Button -->
-            <button class="btn-run-discovery" onclick="triggerDiscovery()">
-              <i class="fa-solid fa-play"></i> RUN DISCOVERY
-            </button>
-          </div>
-        </div>
-
-      </aside>
-
-      <!-- CENTER PANEL: DOMINANT EARTH TERRAIN MAP -->
-      <main class="map-viewport-wrapper">
-        
-        <!-- Floating Layer Selector Toolbar (Top-Left) -->
-        <div class="map-floating-toolbar">
-          <button class="map-layer-pill active" id="btn-layer-sat" onclick="setEarthBaseLayer('satellite')">
-            <i class="fa-solid fa-satellite"></i> SATELLITE
-          </button>
-          <button class="map-layer-pill" id="btn-layer-dem" onclick="setEarthBaseLayer('elevation')">
-            <i class="fa-solid fa-mountain"></i> ELEVATION
-          </button>
-          <button class="map-layer-pill" id="btn-layer-slope" onclick="setEarthBaseLayer('slope')">
-            <i class="fa-solid fa-chart-line"></i> SLOPE
-          </button>
-          <button class="map-layer-pill" id="btn-layer-rough" onclick="setEarthBaseLayer('roughness')">
-            <i class="fa-solid fa-wave-square"></i> ROUGHNESS
-          </button>
-        </div>
-
-        <!-- Interactive Map Container -->
-        <div id="map-earth"></div>
-
-        <!-- Scale Indicator (Bottom-Left) -->
-        <div class="map-scale-badge">
-          <span class="map-scale-line"></span>
-          <span>100 km</span>
-        </div>
-
-        <!-- Coordinates Badge (Bottom-Right) -->
-        <div class="map-coords-badge" id="earth-coords-badge">
-          18.73&deg;N, 17.42&deg;E
-        </div>
-
-      </main>
-
-      <!-- RIGHT PANEL: RANKED ANALOG SITES -->
-      <aside class="panel-results">
-        
-        <div class="results-header-bar">
-          <div class="results-title-group">
-            <div class="results-title">
-              <i class="fa-solid fa-chart-simple" style="color: var(--accent-cyan);"></i>
-              <span>RANKED ANALOG SITES</span>
-            </div>
-            <div class="results-count-sub" id="results-count-text">14 CANDIDATES EVALUATED</div>
-          </div>
-          <button class="results-filter-toggle" title="Toggle Sort/Filter" onclick="toggleSortDrawer()">
-            <i class="fa-solid fa-filter"></i>
-          </button>
-        </div>
-
-        <div class="sort-controls-bar" id="sort-drawer">
-          <select class="form-select" id="sort-ranking" onchange="sortCandidates(this.value)">
-            <option value="afi">Sort by AFI Score (P50)</option>
-            <option value="confidence">Sort by Evidence Confidence (Q)</option>
-            <option value="match">Sort by Raw Match (M)</option>
-            <option value="transfer">Sort by Transferability (T)</option>
+      <!-- Top Mission Selectors -->
+      <div class="chat-mission-controls">
+        <div class="mission-control-row">
+          <label><i class="fa-solid fa-satellite"></i> TARGET</label>
+          <select class="compact-select" id="select-target" onchange="onTargetSelectChange(this.value)">
+            <optgroup label="Official Artemis III Candidates (NASA 2024)">
+              <option value="MOON_ARTEMIS3_CABEUS_B" selected>Peak near Cabeus B (-84.9° Lat)</option>
+              <option value="MOON_ARTEMIS3_HAWORTH">Haworth Rim (-87.4° Lat)</option>
+              <option value="MOON_ARTEMIS3_MALAPERT">Malapert Massif (-85.9° Lat)</option>
+              <option value="MOON_ARTEMIS3_MONS_MOUTON_PLATEAU">Mons Mouton Plateau (-84.5°)</option>
+              <option value="MOON_ARTEMIS3_NOBILE_RIM_1">Nobile Rim 1 (-85.2° Lat)</option>
+              <option value="MOON_ARTEMIS3_DE_GERLACHE_RIM_2">de Gerlache Rim 2 (-88.3°)</option>
+              <option value="MOON_ARTEMIS3_SLATER_PLAIN">Slater Plain (-88.1° Lat)</option>
+            </optgroup>
+            <optgroup label="Independent Lunar Research Areas">
+              <option value="MOON_RESEARCH_SHACKLETON">Shackleton Crater Rim (-89.9°)</option>
+              <option value="MOON_RESEARCH_OCEANUS_PROCELLARUM">Oceanus Procellarum / Marius Hills Pit</option>
+            </optgroup>
+            <optgroup label="Mars Planetary Study Regions">
+              <option value="MARS_STUDY_OXIA_PLANUM">Oxia Planum (ExoMars Rosalind Franklin)</option>
+              <option value="MARS_STUDY_JEZERO_DELTA">Jezero Crater Delta (M2020 Perseverance)</option>
+              <option value="MARS_STUDY_GALE_CRATER">Gale Crater Mt. Sharp (MSL Curiosity)</option>
+            </optgroup>
           </select>
         </div>
 
-        <!-- Candidate Cards Feed -->
-        <div class="site-cards-container" id="site-cards-container">
-          <!-- Dynamically populated via app.js -->
-        </div>
-
-        <!-- Results Footer -->
-        <div class="results-footer">
-          <button class="btn-view-all-candidates" onclick="openAllCandidatesModal()">
-            <span>VIEW ALL CANDIDATES</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-
-      </aside>
-
-    </div>
-
-    <!-- ========================================================================
-         WORKSPACE 2: COMPARE VIEW
-         ======================================================================== -->
-    <div class="workspace-view" id="view-compare">
-      <div class="compare-workspace">
-        <div class="compare-top-split">
-          <!-- Earth Candidate Viewport -->
-          <div class="compare-viewport-box">
-            <div class="compare-viewport-header">
-              <span><i class="fa-solid fa-earth-americas" style="color: var(--accent-cyan);"></i> EARTH ANALOG TEST ARTICLE</span>
-              <span id="compare-earth-name" style="font-family: var(--font-mono); color: var(--accent-cyan);">Tibesti Volcanic Range</span>
-            </div>
-            <div class="compare-map-container" id="map-compare-earth"></div>
-          </div>
-
-          <!-- Planetary Target Viewport -->
-          <div class="compare-viewport-box">
-            <div class="compare-viewport-header">
-              <span><i class="fa-solid fa-satellite" style="color: var(--accent-amber);"></i> TARGET RECONNAISSANCE CONTEXT</span>
-              <span id="compare-planet-name" style="font-family: var(--font-mono); color: var(--accent-amber);">Peak near Cabeus B</span>
-            </div>
-            <div class="compare-map-container" id="map-compare-target"></div>
-          </div>
-        </div>
-
-        <!-- Aligned Dimensionless Physics Metrics -->
-        <div class="compare-bottom-physics">
-          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 4px;">
-            <i class="fa-solid fa-scale-balanced"></i> Aligned Dimensionless Physics Metrics (Similitude Analysis)
-          </div>
-          <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
-            Governing dimensionless Pi-groups comparing candidate Earth site against target planetary environment under the <strong style="color: var(--accent-amber);">&gamma;=&rho;g load-scale bridge</strong>.
-          </p>
-
-          <div class="aligned-bars-container" id="aligned-bars-container">
-            <!-- Dynamically populated via app.js -->
-          </div>
+        <div class="mission-control-row">
+          <label><i class="fa-solid fa-crosshairs"></i> FUNCTION</label>
+          <select class="compact-select" id="select-function" onchange="onFunctionSelectChange(this.value)">
+            <option value="ROVER_MOBILITY" selected>🚜 Rover Mobility &amp; Traversability</option>
+            <option value="LANDING_PAD_CONSTRUCTION">🚀 Landing-Pad Blast &amp; Ejecta</option>
+            <option value="REGOLITH_EXCAVATION">⛏️ Regolith Excavation &amp; Shear</option>
+            <option value="ISRU_CONSTRUCTION">🏗️ ISRU Compaction &amp; Sintering</option>
+            <option value="THERMAL_SURVIVABILITY">❄️ Extreme Thermal &amp; Radiative Sink</option>
+            <option value="DUST_AND_WIND">🌪️ Dust Saltation &amp; Electrostatics</option>
+            <option value="WATER_AND_ICE_RESOURCES">🧊 Cryo Volatiles &amp; PSR Cold Traps</option>
+            <option value="BIOSIGNATURE_PRESERVATION">🔬 Biosignature &amp; Clay Preservation</option>
+            <option value="SUBSURFACE_AND_LAVA_TUBES">🌋 Basalt Lava Tubes &amp; Skylights</option>
+            <option value="COMMUNICATION_AND_ILLUMINATION">📡 TRN Navigation &amp; Grazing Sun</option>
+          </select>
         </div>
       </div>
-    </div>
+
+      <!-- Chat Messages Stream -->
+      <div class="chat-messages-stream" id="chat-stream">
+        <!-- Welcoming & conversational messages populated by app.js -->
+      </div>
+
+      <!-- Quick Query Prompt Chips -->
+      <div class="chat-prompt-chips">
+        <button class="prompt-chip" onclick="sendQuickPrompt('Where can we test lunar rover mobility on steep slopes?')">🚜 Rover Mobility</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Best Earth analog for cryogenic volatile drilling & PSR cold traps?')">🧊 Volatiles &amp; Ice</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Where to rehearse Mars Jezero delta clay excavation?')">⛏️ Regolith Excavation</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Where should we test dust abrasion and seal degradation?')">🌪️ Dust &amp; Wind</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Find lava tube analog with basalt vault structural integrity')">🌋 Lava Tubes</button>
+      </div>
+
+      <!-- Chat Input Bar -->
+      <div class="chat-input-bar">
+        <input type="text" id="chat-user-input" class="chat-input-field" placeholder="Ask TERRA-X: e.g. Where to test rover mobility..." onkeydown="if(event.key==='Enter') submitUserChat()" />
+        <button class="chat-send-btn" id="btn-chat-send" onclick="submitUserChat()" title="Send Mission Query">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+    </aside>
 
     <!-- ========================================================================
-         WORKSPACE 3: DATA OBSERVATORY
+         CENTER PANEL: DOMINANT MAP + VISUAL DATA ANALYTICS DOSSIER
          ======================================================================== -->
-    <div class="workspace-view" id="view-observatory">
-      <div class="observatory-container">
-        <div class="observatory-header">
-          <h1 class="observatory-title"><i class="fa-solid fa-satellite-dish" style="color: var(--accent-cyan);"></i> Multi-Agency Scientific Data Observatory</h1>
-          <p class="observatory-desc">
-            Traceable provenance and 6-stage lifecycle tracking (DISCOVERED &rarr; AVAILABLE &rarr; DOWNLOADED &rarr; PROCESSED &rarr; QA VALIDATED &rarr; USED IN ANALYSIS) across NASA, ESA, JAXA, CSA, and USGS Earth &amp; Planetary archives.
-          </p>
+    <main class="map-viewport-wrapper">
+      
+      <!-- Floating Layer Selector Toolbar -->
+      <div class="map-floating-toolbar">
+        <button class="map-layer-pill active" id="btn-layer-sat" onclick="setEarthBaseLayer('satellite')">
+          <i class="fa-solid fa-satellite"></i> SATELLITE
+        </button>
+        <button class="map-layer-pill" id="btn-layer-dem" onclick="setEarthBaseLayer('elevation')">
+          <i class="fa-solid fa-mountain"></i> ELEVATION
+        </button>
+        <button class="map-layer-pill" id="btn-layer-slope" onclick="setEarthBaseLayer('slope')">
+          <i class="fa-solid fa-chart-line"></i> SLOPE
+        </button>
+        <button class="map-layer-pill" id="btn-layer-rough" onclick="setEarthBaseLayer('roughness')">
+          <i class="fa-solid fa-wave-square"></i> ROUGHNESS
+        </button>
+      </div>
+
+      <!-- Interactive MapLibre GL Canvas -->
+      <div id="map-earth"></div>
+
+      <!-- Scale Indicator -->
+      <div class="map-scale-badge" id="map-scale-badge">
+        <span class="map-scale-line"></span>
+        <span>100 km</span>
+      </div>
+
+      <!-- Real-time Coordinates Tracking Badge -->
+      <div class="map-coords-badge" id="earth-coords-badge">
+        77.30°S, 160.70°E
+      </div>
+
+      <!-- Visual Data Analytics Dossier Drawer (Center Lower) -->
+      <div class="map-dossier-panel" id="map-dossier-panel">
+        <div class="dossier-toggle-bar" onclick="toggleDossierDrawer()">
+          <span class="dossier-title">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span id="dossier-bar-title">ACTIVE SITE DOSSIER &amp; DATA ANALYTICS</span>
+          </span>
+          <i class="fa-solid fa-chevron-down dossier-toggle-chevron" id="dossier-chevron"></i>
         </div>
 
-        <table class="data-source-table">
-          <thead>
-            <tr>
-              <th>Agency / Provider</th>
-              <th>Mission &amp; Sensor</th>
-              <th>Product Identifier</th>
-              <th>Spatial Res</th>
-              <th>Temporal Extent</th>
-              <th>Lifecycle State</th>
-              <th>Live Status</th>
-              <th>Granules Ingested</th>
-            </tr>
-          </thead>
-          <tbody id="observatory-table-body">
-            <!-- Populated via app.js -->
-          </tbody>
-        </table>
+        <div class="dossier-content-grid" id="dossier-content-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
       </div>
-    </div>
+
+    </main>
+
+    <!-- ========================================================================
+         RIGHT PANEL: RANKED ANALOG SITES (BULLETPROOF NON-OVERLAPPING CARDS)
+         ======================================================================== -->
+    <aside class="panel-results">
+      
+      <div class="results-header-bar">
+        <div class="results-title-group">
+          <div class="results-title">
+            <i class="fa-solid fa-chart-simple" style="color: var(--accent-cyan);"></i>
+            <span>RANKED ANALOG SITES</span>
+          </div>
+          <div class="results-count-sub" id="results-count-text">14 CANDIDATES EVALUATED</div>
+        </div>
+
+        <select class="sort-select-compact" id="sort-ranking" onchange="sortCandidates(this.value)">
+          <option value="afi">Sort by AFI Score (P50)</option>
+          <option value="confidence">Sort by Evidence Confidence (Q)</option>
+          <option value="match">Sort by Raw Match (M)</option>
+          <option value="transfer">Sort by Transferability (T)</option>
+        </select>
+      </div>
+
+      <!-- Candidate Cards Feed -->
+      <div class="site-cards-container" id="site-cards-container">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+
+    </aside>
 
   </div>
 
-  <!-- TIER 4: BOTTOM TECHNICAL STATUS BAR -->
+  <!-- FIXED BOTTOM TECHNICAL STATUS BAR -->
   <footer class="orbital-status-bar">
     <div class="status-bar-item">
       <i class="fa-solid fa-database"></i>
@@ -437,7 +227,7 @@
     <div class="status-bar-divider"></div>
     <div class="status-bar-item">
       <i class="fa-solid fa-expand"></i>
-      <span>RESOLUTION - DATA DEPENDENT</span>
+      <span>RESOLUTION - COP-DEM 30M / LANDSAT-9</span>
     </div>
     <div class="status-bar-divider"></div>
     <div class="status-bar-item" id="status-bar-process">
@@ -458,27 +248,11 @@
       <div class="modal-header">
         <div>
           <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 1px;">VERIFIABLE SITE PASSPORT</div>
-          <h2 id="modal-site-name" style="font-size: 16px; color: var(--text-main);">Tibesti Volcanic Range</h2>
+          <h2 id="modal-site-name" style="font-size: 16px; color: var(--text-main);">McMurdo Dry Valleys</h2>
         </div>
         <button class="modal-close-btn" onclick="closePassportModal()"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body" id="modal-passport-body">
-        <!-- Injected via app.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- All Candidates Modal / Drawer -->
-  <div class="modal-overlay" id="all-candidates-modal">
-    <div class="modal-content" style="max-width: 850px;">
-      <div class="modal-header">
-        <div>
-          <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 1px;">EVALUATION REGISTRY</div>
-          <h2 style="font-size: 16px; color: var(--text-main);">All Evaluated Earth Analog Sites</h2>
-        </div>
-        <button class="modal-close-btn" onclick="closeAllCandidatesModal()"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modal-body" id="all-candidates-table-body">
         <!-- Injected via app.js -->
       </div>
     </div>
@@ -496,33 +270,33 @@
           Ingest ground-truth measurements (shear vane, cone penetrometer, micro-grain morphology) to upgrade Fidelity Ledger statuses from UNCONSTRAINED/PARTIAL to STRONG.
         </p>
 
-        <div class="form-group">
-          <label>Select Test Article Site</label>
-          <select class="form-select" id="fieldkit-cell-select">
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label style="display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Select Test Article Site</label>
+          <select class="compact-select" id="fieldkit-cell-select" style="width: 100%;">
             <!-- Populated via JavaScript -->
           </select>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-          <div class="form-group">
-            <label>Shear-Vane Friction Angle (&deg;)</label>
-            <input type="number" class="form-input" id="fk-friction" value="38.5" step="0.5" />
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+          <div>
+            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Shear-Vane Friction Angle (&deg;)</label>
+            <input type="number" class="compact-select" id="fk-friction" value="38.5" step="0.5" style="width: 100%;" />
           </div>
-          <div class="form-group">
-            <label>Shear-Vane Cohesion (kPa)</label>
-            <input type="number" class="form-input" id="fk-cohesion" value="3.2" step="0.1" />
+          <div>
+            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Shear-Vane Cohesion (kPa)</label>
+            <input type="number" class="compact-select" id="fk-cohesion" value="3.2" step="0.1" style="width: 100%;" />
           </div>
-          <div class="form-group">
-            <label>Cone Penetrometer Bearing (kPa)</label>
-            <input type="number" class="form-input" id="fk-bearing" value="45.0" step="1.0" />
+          <div>
+            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Cone Penetrometer Bearing (kPa)</label>
+            <input type="number" class="compact-select" id="fk-bearing" value="45.0" step="1.0" style="width: 100%;" />
           </div>
-          <div class="form-group">
-            <label>Micro-Grain Wadell Roundness</label>
-            <input type="number" class="form-input" id="fk-roundness" value="0.22" step="0.02" />
+          <div>
+            <label style="display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 3px;">Micro-Grain Wadell Roundness</label>
+            <input type="number" class="compact-select" id="fk-roundness" value="0.22" step="0.02" style="width: 100%;" />
           </div>
         </div>
 
-        <button class="btn-run-discovery" onclick="submitFieldKitData()" style="margin-top: 12px;">
+        <button class="header-btn" onclick="submitFieldKitData()" style="width: 100%; background: var(--accent-cyan); color: var(--bg-main); font-weight: 700; padding: 10px; justify-content: center;">
           <i class="fa-solid fa-flask"></i> Ingest Field Data &amp; Re-Score
         </button>
       </div>
@@ -543,8 +317,8 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
           <span id="tour-step-indicator" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber);">Step 1 of 6</span>
           <div style="display: flex; gap: 8px;">
-            <button class="header-action-btn" id="btn-tour-prev" onclick="prevTourStep()">Previous</button>
-            <button class="header-action-btn" id="btn-tour-next" onclick="nextTourStep()" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 600;">Next Step</button>
+            <button class="header-btn" id="btn-tour-prev" onclick="prevTourStep()">Previous</button>
+            <button class="header-btn" id="btn-tour-next" onclick="nextTourStep()" style="background: var(--accent-cyan); color: var(--bg-main); font-weight: 600;">Next Step</button>
           </div>
         </div>
       </div>
