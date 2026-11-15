@@ -1,12 +1,307 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
-  "description": "Planetary exploration target sites with geotechnical, thermal, and optical reference states.",
+  "version": "2.0.0",
+  "description": "Planetary exploration target sites with geotechnical, thermal, and optical reference states for NASA Space Apps 2026.",
   "targets": [
     {
-      "target_id": "MOON_SOUTH_POLE_SHACKLETON",
-      "target_name": "Shackleton Crater Rim & Ridge (Artemis III/IV Candidate)",
+      "target_id": "MOON_ARTEMIS3_CABEUS_B",
+      "target_name": "Peak near Cabeus B (Official Artemis III Candidate)",
       "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -84.9,
+      "longitude": -35.2,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1520.0,
+      "gamma_unit_weight_n_m3": 2462.4,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["ROVER_MOBILITY", "COMMUNICATION_AND_ILLUMINATION", "THERMAL_SURVIVABILITY", "WATER_AND_ICE_RESOURCES"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION (unshielded magnetosphere)",
+        "LOW_ELEVATION_GRAZING_SUN (< 1.8 deg solar elevation)",
+        "DEEP_CRYOGENIC_PSR_COLD_TRAP (< 60 Kelvin)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.36,
+        "h_rms_over_D": 0.24,
+        "p_over_gamma_B": 19.2,
+        "F_over_gamma_d3": 620.0,
+        "cohesion_over_gamma_d": 4.1,
+        "delta_T_over_T_mean": 0.38,
+        "horizon_blocked_fraction": 0.52,
+        "sky_view_factor": 0.48,
+        "thermal_inertia_si": 52.0,
+        "friction_angle_deg": 37.5,
+        "cohesion_kpa": 1.7
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_CABEUS",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.78
+      },
+      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "NASA Artemis III Candidate Landing Regions Update (2024); LRO LOLA/Diviner Polar Atlas"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_HAWORTH",
+      "target_name": "Haworth Rim (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -87.4,
+      "longitude": -5.1,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1490.0,
+      "gamma_unit_weight_n_m3": 2413.8,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["WATER_AND_ICE_RESOURCES", "THERMAL_SURVIVABILITY", "ROVER_MOBILITY", "REGOLITH_EXCAVATION"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "PERMANENT_SHADOW_COLD_TRAP (40 K - 55 K in crater interior)",
+        "STEEP_CRATER_WALL_SLOPES (> 24 deg scarp)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.48,
+        "h_rms_over_D": 0.31,
+        "p_over_gamma_B": 17.0,
+        "F_over_gamma_d3": 710.0,
+        "cohesion_over_gamma_d": 4.8,
+        "delta_T_over_T_mean": 0.25,
+        "horizon_blocked_fraction": 0.68,
+        "sky_view_factor": 0.32,
+        "thermal_inertia_si": 45.0,
+        "friction_angle_deg": 39.0,
+        "cohesion_kpa": 2.1
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_HAWORTH",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.82
+      },
+      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX07.1_EXTREME_TEMP_CRYOGENIC_MECH"],
+      "reference_source": "NASA Artemis III Science Definition Team Report (2024 Update); LRO LEND/Diviner"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_MALAPERT",
+      "target_name": "Malapert Massif (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -85.9,
+      "longitude": 0.0,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1550.0,
+      "gamma_unit_weight_n_m3": 2511.0,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["COMMUNICATION_AND_ILLUMINATION", "LANDING_PAD_CONSTRUCTION", "ROVER_MOBILITY", "ISRU_CONSTRUCTION"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "PROLONGED_DIRECT_EARTH_VISIBILITY",
+        "HIGH_RELIEF_MASSIF_SLOPES (up to 5 km summit elevation)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.29,
+        "h_rms_over_D": 0.21,
+        "p_over_gamma_B": 22.0,
+        "F_over_gamma_d3": 540.0,
+        "cohesion_over_gamma_d": 3.5,
+        "delta_T_over_T_mean": 0.45,
+        "horizon_blocked_fraction": 0.28,
+        "sky_view_factor": 0.72,
+        "thermal_inertia_si": 58.0,
+        "friction_angle_deg": 36.5,
+        "cohesion_kpa": 1.5
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_MALAPERT",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.65
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "NASA Human Exploration and Operations Directorate; LROC NAC Elevation Models"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_MONS_MOUTON_PLATEAU",
+      "target_name": "Mons Mouton Plateau (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -84.5,
+      "longitude": -31.0,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1530.0,
+      "gamma_unit_weight_n_m3": 2478.6,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["ROVER_MOBILITY", "LANDING_PAD_CONSTRUCTION", "ISRU_CONSTRUCTION", "DUST_AND_WIND"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "ELEVATED_PLATEAU_EDGE_DROP_OFFS",
+        "INTERMITTENT_SHADOW_PASSAGES"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.18,
+        "h_rms_over_D": 0.17,
+        "p_over_gamma_B": 24.5,
+        "F_over_gamma_d3": 490.0,
+        "cohesion_over_gamma_d": 3.2,
+        "delta_T_over_T_mean": 0.40,
+        "horizon_blocked_fraction": 0.22,
+        "sky_view_factor": 0.78,
+        "thermal_inertia_si": 54.0,
+        "friction_angle_deg": 35.0,
+        "cohesion_kpa": 1.4
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_MOUTON_PLT",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.70
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX07.2_REGOLITH_EXCAVATION_BENEFICIATION"],
+      "reference_source": "NASA VIPER / Artemis Landing Site Evaluation (2024); USGS LOLA 5m"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_NOBILE_RIM_1",
+      "target_name": "Nobile Rim 1 (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -85.2,
+      "longitude": 37.8,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1510.0,
+      "gamma_unit_weight_n_m3": 2446.2,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["WATER_AND_ICE_RESOURCES", "ROVER_MOBILITY", "REGOLITH_EXCAVATION", "THERMAL_SURVIVABILITY"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "MICRO-COLD_TRAP_PERMAFROST_SIMULANT",
+        "EXTREME_THERMAL_CONTRAST (70 K to 220 K across rim)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.32,
+        "h_rms_over_D": 0.25,
+        "p_over_gamma_B": 18.0,
+        "F_over_gamma_d3": 640.0,
+        "cohesion_over_gamma_d": 4.2,
+        "delta_T_over_T_mean": 0.55,
+        "horizon_blocked_fraction": 0.44,
+        "sky_view_factor": 0.56,
+        "thermal_inertia_si": 50.0,
+        "friction_angle_deg": 37.0,
+        "cohesion_kpa": 1.8
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_NOBILE1",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.74
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX07.1_EXTREME_TEMP_CRYOGENIC_MECH"],
+      "reference_source": "NASA Lunar Exploration Analysis Group (LEAG) / Artemis Site Assessment"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_DE_GERLACHE_RIM_2",
+      "target_name": "de Gerlache Rim 2 (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -88.3,
+      "longitude": -68.8,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1500.0,
+      "gamma_unit_weight_n_m3": 2430.0,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["COMMUNICATION_AND_ILLUMINATION", "ROVER_MOBILITY", "THERMAL_SURVIVABILITY", "WATER_AND_ICE_RESOURCES"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "NARROW_RIDGE_TRAVERSAL_CORRIDORS (< 50m wide)",
+        "LOW_SOLAR_INCIDENCE_BLOOMING"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.41,
+        "h_rms_over_D": 0.27,
+        "p_over_gamma_B": 18.5,
+        "F_over_gamma_d3": 670.0,
+        "cohesion_over_gamma_d": 4.3,
+        "delta_T_over_T_mean": 0.48,
+        "horizon_blocked_fraction": 0.58,
+        "sky_view_factor": 0.42,
+        "thermal_inertia_si": 49.0,
+        "friction_angle_deg": 38.0,
+        "cohesion_kpa": 1.9
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_DEGERLACHE2",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.80
+      },
+      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY"],
+      "reference_source": "NASA Planetary Geodesy & Data Analysis (PGDA) Lunar DEM Polar Suite"
+    },
+    {
+      "target_id": "MOON_ARTEMIS3_SLATER_PLAIN",
+      "target_name": "Slater Plain (Official Artemis III Candidate)",
+      "body": "MOON",
+      "category": "ARTEMIS_III_OFFICIAL",
+      "latitude": -88.1,
+      "longitude": 113.5,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1540.0,
+      "gamma_unit_weight_n_m3": 2494.8,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["LANDING_PAD_CONSTRUCTION", "ISRU_CONSTRUCTION", "ROVER_MOBILITY", "REGOLITH_EXCAVATION"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "CONTINUOUS_REGOLITH_BED (< 5% exposed blocky bedrock)",
+        "14_DAY_NIGHT_CRYOGENIC_FREEZE"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.14,
+        "h_rms_over_D": 0.15,
+        "p_over_gamma_B": 25.0,
+        "F_over_gamma_d3": 460.0,
+        "cohesion_over_gamma_d": 3.0,
+        "delta_T_over_T_mean": 0.35,
+        "horizon_blocked_fraction": 0.18,
+        "sky_view_factor": 0.82,
+        "thermal_inertia_si": 56.0,
+        "friction_angle_deg": 34.5,
+        "cohesion_kpa": 1.3
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M_SLATER",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.68
+      },
+      "tech_gaps": ["TX07.2_REGOLITH_EXCAVATION_BENEFICIATION", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "NASA Artemis III 2024 Candidate Review Board; LROC NAC Cartography"
+    },
+    {
+      "target_id": "MOON_RESEARCH_SHACKLETON",
+      "target_name": "Shackleton Crater Rim & Ridge (Independent Lunar Research Area)",
+      "body": "MOON",
+      "category": "LUNAR_RESEARCH_INDEPENDENT",
       "latitude": -89.9,
       "longitude": 0.0,
       "gravity_ms2": 1.62,
@@ -14,7 +309,7 @@
       "regolith_density_kg_m3": 1520.0,
       "gamma_unit_weight_n_m3": 2462.4,
       "load_scale_factor": 6.37,
-      "primary_functions": ["PNT_DENIED_NAV", "MOBILITY", "CONSTRUCTION_ISRU", "HUMAN_OPS_THERMAL"],
+      "primary_functions": ["ROVER_MOBILITY", "COMMUNICATION_AND_ILLUMINATION", "THERMAL_SURVIVABILITY", "WATER_AND_ICE_RESOURCES"],
       "hard_breaks": [
         "LUNAR_VACUUM (1e-15 bar)",
         "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
@@ -27,6 +322,7 @@
         "h_rms_over_D": 0.28,
         "p_over_gamma_B": 18.5,
         "F_over_gamma_d3": 650.0,
+        "cohesion_over_gamma_d": 4.0,
         "delta_T_over_T_mean": 0.32,
         "horizon_blocked_fraction": 0.58,
         "sky_view_factor": 0.42,
@@ -40,12 +336,14 @@
         "clones_ensemble_n": 100,
         "vertical_rmse_m": 0.85
       },
-      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX06.2_DUST_MITIGATION_MECHANISMS", "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY"]
+      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX06.2_DUST_MITIGATION_MECHANISMS", "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY"],
+      "reference_source": "Planetary Geodesy & Data Analysis (PGDA) Lunar DEM Polar Suite; Note: Independent Research Target, not official Artemis III 2024 landing region"
     },
     {
-      "target_id": "MOON_OCEANUS_PROCELLARUM",
-      "target_name": "Oceanus Procellarum / Marius Hills (Mare Basalt Plains & Pit)",
+      "target_id": "MOON_RESEARCH_OCEANUS_PROCELLARUM",
+      "target_name": "Oceanus Procellarum / Marius Hills (Mare Basalt & Lava Tube Pit)",
       "body": "MOON",
+      "category": "LUNAR_RESEARCH_INDEPENDENT",
       "latitude": 14.1,
       "longitude": -56.7,
       "gravity_ms2": 1.62,
@@ -53,12 +351,12 @@
       "regolith_density_kg_m3": 1680.0,
       "gamma_unit_weight_n_m3": 2721.6,
       "load_scale_factor": 5.76,
-      "primary_functions": ["LANDING_PAD_PSI", "CONSTRUCTION_ISRU", "HUMAN_OPS_THERMAL"],
+      "primary_functions": ["SUBSURFACE_AND_LAVA_TUBES", "LANDING_PAD_CONSTRUCTION", "ISRU_CONSTRUCTION", "THERMAL_SURVIVABILITY"],
       "hard_breaks": [
         "LUNAR_VACUUM (1e-15 bar)",
         "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
-        "GCR_SPE_COSMIC_RADIATION",
-        "14_DAY_LUNAR_NIGHT (100 K thermal sink)",
+        "GCR_SPE_COSMIC_RADIATION (exterior)",
+        "14_DAY_LUNAR_NIGHT (100 K exterior sink)",
         "NOON_THERMAL_PEAK (390 Kelvin)"
       ],
       "dimensionless_reference": {
@@ -66,6 +364,7 @@
         "h_rms_over_D": 0.12,
         "p_over_gamma_B": 24.0,
         "F_over_gamma_d3": 480.0,
+        "cohesion_over_gamma_d": 2.8,
         "delta_T_over_T_mean": 1.15,
         "horizon_blocked_fraction": 0.04,
         "sky_view_factor": 0.96,
@@ -79,12 +378,56 @@
         "clones_ensemble_n": 100,
         "vertical_rmse_m": 1.2
       },
-      "tech_gaps": ["TX07.2_REGOLITH_EXCAVATION_BENEFICIATION", "TX03.3_ROBOTIC_CABLE_MATING_REGOLITH"]
+      "tech_gaps": ["TX07.2_REGOLITH_EXCAVATION_BENEFICIATION", "TX03.3_ROBOTIC_CABLE_MATING_REGOLITH"],
+      "reference_source": "JAXA SELENE/Kaguya Terrain Camera Pit Discovery; USGS LOLA 118m GDR"
     },
     {
-      "target_id": "MARS_JEZERO_DELTA",
+      "target_id": "MARS_STUDY_OXIA_PLANUM",
+      "target_name": "Oxia Planum (ExoMars Rosalind Franklin Landing Site)",
+      "body": "MARS",
+      "category": "MARS_STUDY_REGION",
+      "latitude": 18.27,
+      "longitude": -24.63,
+      "gravity_ms2": 3.72,
+      "atmosphere_bar": 0.0065,
+      "regolith_density_kg_m3": 1420.0,
+      "gamma_unit_weight_n_m3": 5282.4,
+      "load_scale_factor": 2.91,
+      "primary_functions": ["BIOSIGNATURE_PRESERVATION", "ROVER_MOBILITY", "REGOLITH_EXCAVATION", "WATER_AND_ICE_RESOURCES"],
+      "hard_breaks": [
+        "MARS_LOW_PRESSURE (~6.5 mbar CO2)",
+        "MARS_0_38TH_GRAVITY (3.72 m/s²)",
+        "SURFACE_UV_C_IRRADIATION (unattenuated photolysis)",
+        "PERCHLORATE_SURFACE_OXIDATION (ClO4- up to 0.5 wt%)",
+        "WIND_DRIVEN_DUST_STORMS"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.10,
+        "h_rms_over_D": 0.14,
+        "p_over_gamma_B": 14.5,
+        "F_over_gamma_d3": 390.0,
+        "cohesion_over_gamma_d": 3.6,
+        "delta_T_over_T_mean": 0.42,
+        "horizon_blocked_fraction": 0.02,
+        "sky_view_factor": 0.98,
+        "thermal_inertia_si": 280.0,
+        "friction_angle_deg": 33.0,
+        "cohesion_kpa": 1.9
+      },
+      "pgda_dem_specs": {
+        "product_id": "CTX_OXIA_DEM_20M",
+        "resolution_m": 20.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 1.8
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "ESA / Roscosmos ExoMars Landing Site Selection; OMEGA/CRISM Phyllosilicate Clay Maps"
+    },
+    {
+      "target_id": "MARS_STUDY_JEZERO_DELTA",
       "target_name": "Jezero Crater Western Fan Delta & Scarp (Mars 2020 Perseverance)",
       "body": "MARS",
+      "category": "MARS_STUDY_REGION",
       "latitude": 18.38,
       "longitude": 77.58,
       "gravity_ms2": 3.72,
@@ -92,73 +435,77 @@
       "regolith_density_kg_m3": 1450.0,
       "gamma_unit_weight_n_m3": 5394.0,
       "load_scale_factor": 2.91,
-      "primary_functions": ["ASTROBIO", "MOBILITY", "PNT_DENIED_NAV"],
+      "primary_functions": ["BIOSIGNATURE_PRESERVATION", "ROVER_MOBILITY", "REGOLITH_EXCAVATION", "DUST_AND_WIND"],
       "hard_breaks": [
         "MARS_LOW_PRESSURE (~6.2 mbar CO2)",
         "MARS_0_38TH_GRAVITY (3.72 m/s²)",
         "SURFACE_UV_C_IRRADIATION (no ozone shield)",
         "SOIL_PERCHLORATES (oxidizing salts)",
-        "SEASONAL_GLOBAL_DUST_STORMS"
-      ],
-      "dimensionless_reference": {
-        "tan_theta_over_tan_phi": 0.26,
-        "h_rms_over_D": 0.32,
-        "p_over_gamma_B": 14.2,
-        "F_over_gamma_d3": 720.0,
-        "delta_T_over_T_mean": 0.42,
-        "horizon_blocked_fraction": 0.34,
-        "sky_view_factor": 0.66,
-        "thermal_inertia_si": 320.0,
-        "friction_angle_deg": 34.0,
-        "cohesion_kpa": 2.5
-      },
-      "pgda_dem_specs": {
-        "product_id": "MOLA_HRSC_BLENDED_200M",
-        "resolution_m": 50.0,
-        "clones_ensemble_n": 100,
-        "vertical_rmse_m": 2.1
-      },
-      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX04.1_PRECISION_LANDING_SHADOW"]
-    },
-    {
-      "target_id": "MARS_GALE_CRATER",
-      "target_name": "Gale Crater Mount Sharp / Clay-Sulfate Transition (MSL Curiosity)",
-      "body": "MARS",
-      "latitude": -5.37,
-      "longitude": 137.44,
-      "gravity_ms2": 3.72,
-      "atmosphere_bar": 0.0075,
-      "regolith_density_kg_m3": 1500.0,
-      "gamma_unit_weight_n_m3": 5580.0,
-      "load_scale_factor": 2.81,
-      "primary_functions": ["ASTROBIO", "MOBILITY", "CONSTRUCTION_ISRU"],
-      "hard_breaks": [
-        "MARS_LOW_PRESSURE (~7.5 mbar CO2)",
-        "MARS_0_38TH_GRAVITY (3.72 m/s²)",
-        "SURFACE_UV_C_IRRADIATION",
-        "SURFACE_PERCHLORATES",
-        "WHEEL_GOUGE_VENTIFACT_TERRAIN"
+        "ACTIVE_DUST_DEVILS_AND_AEOLIAN_ABRASION"
       ],
       "dimensionless_reference": {
         "tan_theta_over_tan_phi": 0.22,
-        "h_rms_over_D": 0.38,
-        "p_over_gamma_B": 15.8,
-        "F_over_gamma_d3": 690.0,
-        "delta_T_over_T_mean": 0.38,
-        "horizon_blocked_fraction": 0.42,
-        "sky_view_factor": 0.58,
-        "thermal_inertia_si": 360.0,
-        "friction_angle_deg": 36.0,
-        "cohesion_kpa": 3.0
+        "h_rms_over_D": 0.18,
+        "p_over_gamma_B": 13.8,
+        "F_over_gamma_d3": 410.0,
+        "cohesion_over_gamma_d": 3.8,
+        "delta_T_over_T_mean": 0.44,
+        "horizon_blocked_fraction": 0.08,
+        "sky_view_factor": 0.92,
+        "thermal_inertia_si": 265.0,
+        "friction_angle_deg": 34.0,
+        "cohesion_kpa": 2.1
       },
       "pgda_dem_specs": {
-        "product_id": "CTX_HIRISE_BLENDED_DEM",
+        "product_id": "HIRISE_JEZERO_DEM_1M",
+        "resolution_m": 1.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.45
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "NASA PDS Mars 2020 HiRISE/CRISM Delta Front Maps; THEMIS Quantitative Thermal Inertia"
+    },
+    {
+      "target_id": "MARS_STUDY_GALE_CRATER",
+      "target_name": "Gale Crater / Mt. Sharp Layered Sulfate Ridge (MSL Curiosity)",
+      "body": "MARS",
+      "category": "MARS_STUDY_REGION",
+      "latitude": -4.59,
+      "longitude": 137.44,
+      "gravity_ms2": 3.72,
+      "atmosphere_bar": 0.0071,
+      "regolith_density_kg_m3": 1500.0,
+      "gamma_unit_weight_n_m3": 5580.0,
+      "load_scale_factor": 2.76,
+      "primary_functions": ["ROVER_MOBILITY", "DUST_AND_WIND", "BIOSIGNATURE_PRESERVATION", "THERMAL_SURVIVABILITY"],
+      "hard_breaks": [
+        "MARS_LOW_PRESSURE (~7.1 mbar CO2)",
+        "MARS_0_38TH_GRAVITY (3.72 m/s²)",
+        "VENTIFACT_WHEEL_GOUGE_TERRAIN (sharp lithified flutes)",
+        "SURFACE_UV_C_IRRADIATION",
+        "DIURNAL_THERMAL_SWING (~90 K swing)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.28,
+        "h_rms_over_D": 0.26,
+        "p_over_gamma_B": 15.2,
+        "F_over_gamma_d3": 440.0,
+        "cohesion_over_gamma_d": 3.9,
+        "delta_T_over_T_mean": 0.49,
+        "horizon_blocked_fraction": 0.14,
+        "sky_view_factor": 0.86,
+        "thermal_inertia_si": 290.0,
+        "friction_angle_deg": 35.5,
+        "cohesion_kpa": 2.3
+      },
+      "pgda_dem_specs": {
+        "product_id": "CTX_GALE_DEM_20M",
         "resolution_m": 20.0,
         "clones_ensemble_n": 100,
         "vertical_rmse_m": 1.5
       },
-      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"]
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"],
+      "reference_source": "NASA PDS MSL CTX/HiRISE Mt. Sharp Traverse; THEMIS 32-bit Quantitative TI"
     }
   ]
 }
-
