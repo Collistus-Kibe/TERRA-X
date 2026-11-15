@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Registry of benchmarked planetary analog test sites used for validation, recall evaluation, and novelty distance penalties.",
+  "sites": [
+    {
+      "id": "GOLDEN-ATACAMA-YUNGAY",
+      "name": "Atacama Desert (Yungay Hyper-Arid Core)",
+      "country": "Chile",
+      "continent": "South America",
+      "latitude": -24.0833,
+      "longitude": -69.8667,
+      "h3_r6": "86bfb104fffffff",
+      "elevation_m": 1020,
+      "primary_functions": ["ASTROBIO", "HUMAN_OPS_THERMAL", "MOBILITY"],
+      "planetary_targets": ["MARS_JEZERO_FLOOR", "MARS_GALE_CRATER"],
+      "benchmark_role": "HELD_OUT_VALIDATION",
+      "literature_dois": ["10.1126/science.1087369", "10.1089/ast.2006.0123"],
+      "ground_truth": {
+        "tan_theta": 0.04,
+        "h_rms_D": 0.08,
+        "cohesion_kpa": 1.2,
+        "friction_angle_deg": 33.5,
+        "thermal_inertia_si": 380,
+        "moisture_wtd": 0.008,
+        "vegetation_ndvi": 0.02
+      }
+    },
+    {
+      "id": "GOLDEN-HAUGHTON-DEVON",
+      "name": "Haughton Impact Structure (Devon Island)",
+      "country": "Canada",
+      "continent": "North America",
+      "latitude": 75.3833,
+      "longitude": -89.6833,
+      "h3_r6": "86043644fffffff",
+      "elevation_m": 220,
+      "primary_functions": ["CONSTRUCTION_ISRU", "PNT_DENIED_NAV", "MOBILITY"],
+      "planetary_targets": ["MOON_SOUTH_POLE_SHACKLETON", "MARS_JEZERO_DELTA"],
+      "benchmark_role": "HELD_OUT_VALIDATION",
+      "literature_dois": ["10.1111/j.1945-5100.1998.tb01332.x", "10.1089/ast.2005.5.422"],
+      "ground_truth": {
+        "tan_theta": 0.18,
+        "h_rms_D": 0.28,
+        "cohesion_kpa": 3.8,
+        "friction_angle_deg": 38.0,
+        "thermal_inertia_si": 520,
+        "moisture_wtd": 0.065,
+        "vegetation_ndvi": 0.03
+      }
+    },
+    {
+      "id": "GOLDEN-DEATH-VALLEY",
+      "name": "Death Valley (Mars Hill & Badwater Salt Flats)",
+      "country": "United States",
+      "continent": "North America",
+      "latitude": 36.5050,
+      "longitude": -116.8750,
+      "h3_r6": "8626b00efffffff",
+      "elevation_m": -86,
+      "primary_functions": ["MOBILITY", "LANDING_PAD_PSI", "HUMAN_OPS_THERMAL"],
+      "planetary_targets": ["MARS_GALE_CRATER", "MOON_OCEANUS_PROCELLARUM"],
+      "benchmark_role": "HELD_OUT_VALIDATION",
+      "literature_dois": ["10.1029/2004JE002364"],
+      "ground_truth": {
+        "tan_theta": 0.08,
+        "h_rms_D": 0.22,
+        "cohesion_kpa": 2.1,
+        "friction_angle_deg": 35.0,
+        "thermal_inertia_si": 450,
+        "moisture_wtd": 0.015,
+        "vegetation_ndvi": 0.01
+      }
+    },
+    {
+      "id": "GOLDEN-MAUNA-KEA",
+      "name": "Mauna Kea Basaltic Tephra Cone",
+      "country": "United States",
+      "continent": "Oceania",
+      "latitude": 19.8206,
+      "longitude": -155.4681,
+      "h3_r6": "8644485afffffff",
+      "elevation_m": 4207,
+      "primary_functions": ["CONSTRUCTION_ISRU", "LANDING_PAD_PSI"],
+      "planetary_targets": ["MOON_SOUTH_POLE_SHACKLETON", "MOON_OCEANUS_PROCELLARUM"],
+      "benchmark_role": "REGISTRY_CONTROL",
+      "literature_dois": ["10.1016/j.pss.2010.05.006"],
+      "ground_truth": {
+        "tan_theta": 0.32,
+        "h_rms_D": 0.15,
+        "cohesion_kpa": 1.5,
+        "friction_angle_deg": 41.0,
+        "thermal_inertia_si": 310,
+        "moisture_wtd": 0.02,
+        "vegetation_ndvi": 0.02
+      }
+    },
+    {
+      "id": "GOLDEN-SVALBARD-BOCKFJORDEN",
+      "name": "Svalbard Bockfjorden Volcanic Complex (AMASE)",
+      "country": "Norway",
+      "continent": "Europe",
+      "latitude": 79.4500,
+      "longitude": 13.3500,
+      "h3_r6": "860e6545fffffff",
+      "elevation_m": 450,
+      "primary_functions": ["ASTROBIO", "HUMAN_OPS_THERMAL"],
+      "planetary_targets": ["MARS_JEZERO_FLOOR"],
+      "benchmark_role": "REGISTRY_CONTROL",
+      "literature_dois": ["10.1089/ast.2007.0199"],
+      "ground_truth": {
+        "tan_theta": 0.15,
+        "h_rms_D": 0.25,
+        "cohesion_kpa": 4.5,
+        "friction_angle_deg": 37.0,
+        "thermal_inertia_si": 610,
+        "moisture_wtd": 0.08,
+        "vegetation_ndvi": 0.04
+      }
+    },
+    {
+      "id": "GOLDEN-RIO-TINTO",
+      "name": "Rio Tinto Iron Gossan & Sulfates",
+      "country": "Spain",
+      "continent": "Europe",
+      "latitude": 37.6961,
+      "longitude": -6.5544,
+      "h3_r6": "86395b21fffffff",
+      "elevation_m": 340,
+      "primary_functions": ["ASTROBIO"],
+      "planetary_targets": ["MARS_GALE_CRATER"],
+      "benchmark_role": "REGISTRY_CONTROL",
+      "literature_dois": ["10.1016/j.pss.2003.08.019"],
+      "ground_truth": {
+        "tan_theta": 0.09,
+        "h_rms_D": 0.12,
+        "cohesion_kpa": 5.0,
+        "friction_angle_deg": 34.0,
+        "thermal_inertia_si": 580,
+        "moisture_wtd": 0.12,
+        "vegetation_ndvi": 0.08
+      }
+    },
+    {
+      "id": "GOLDEN-TEIDE-TENERIFE",
+      "name": "Teide Las Cañadas Caldera (Basalt Pavement)",
+      "country": "Spain",
+      "continent": "Africa/Atlantic",
+      "latitude": 28.2723,
+      "longitude": -16.6425,
+      "h3_r6": "863fa675fffffff",
+      "elevation_m": 2150,
+      "primary_functions": ["PNT_DENIED_NAV", "MOBILITY"],
+      "planetary_targets": ["MOON_SOUTH_POLE_SHACKLETON", "MARS_JEZERO_DELTA"],
+      "benchmark_role": "REGISTRY_CONTROL",
+      "literature_dois": ["10.1016/j.actaastro.2018.06.012"],
+      "ground_truth": {
+        "tan_theta": 0.22,
+        "h_rms_D": 0.35,
+        "cohesion_kpa": 2.8,
+        "friction_angle_deg": 39.0,
+        "thermal_inertia_si": 480,
+        "moisture_wtd": 0.018,
+        "vegetation_ndvi": 0.03
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "NASA Space Technology Taxonomy & Exploration Tech Gaps addressed by TERRA-X analog test recipes.",
+  "tech_gaps": [
+    {
+      "gap_id": "TX04.1_PRECISION_LANDING_SHADOW",
+      "taxonomy_area": "TX04: Robotics Systems / Autonomous Navigation",
+      "title": "Precision Landing & Hazard Avoidance in Permanently Shadowed Regions (PSR)",
+      "target_function": "PNT_DENIED_NAV",
+      "critical_physics": [
+        "Low-grazing-angle illumination (<3 deg above horizon)",
+        "Zero GNSS/GPS availability",
+        "High-contrast shadowing and optical blooming",
+        "Flash-LIDAR retroreflection on micro-rough regolith"
+      ],
+      "required_analog_test_conditions": {
+        "min_horizon_blocked": 0.45,
+        "max_sun_elevation_deg": 5.0,
+        "roughness_scale": "Sub-meter cratering and block distribution",
+        "recommended_sensors": ["Doppler-LIDAR", "Flash-LIDAR", "High-Dynamic-Range Optical TRN"]
+      },
+      "gravity_compensation_required": "Tethered aerial gantry or drone surrogate with scaled descent velocity sqrt(g_moon/g_earth)=0.406"
+    },
+    {
+      "gap_id": "TX06.2_DUST_MITIGATION_MECHANISMS",
+      "taxonomy_area": "TX06: Human Health, Life Support & Habitation Systems",
+      "title": "Regolith Dust Mitigation & Electrostatic Seal Protection",
+      "target_function": "CONSTRUCTION_ISRU",
+      "critical_physics": [
+        "Sub-20 micron jagged, angular, abrasive regolith particles",
+        "Triboelectric charging and electrostatic clinging",
+        "Vacuum adhesive forces and absence of moisture capillary bridges",
+        "Seal degradation and rotating joint abrasion"
+      ],
+      "required_analog_test_conditions": {
+        "max_moisture_wtd": 0.01,
+        "mineralogy": "Fresh un-weathered basaltic glass / anorthosite",
+        "grain_angularity_wadell": "< 0.40 (highly angular)",
+        "recommended_test_article": "Rotary seals, quick-disconnect fluid couplers, solar array hinges"
+      },
+      "gravity_compensation_required": "Fluidized-bed or vacuum chamber enclosure with electrostatic charge injection"
+    },
+    {
+      "gap_id": "TX07.1_EXTREME_TEMP_CRYOGENIC_MECH",
+      "taxonomy_area": "TX07: Exploration Ground Systems & Surface Mechanisms",
+      "title": "Cryogenic & High-Delta-T Surface Mechanisms (40K to 400K)",
+      "target_function": "HUMAN_OPS_THERMAL",
+      "critical_physics": [
+        "Deep cryogenic cold traps (40K - 70K in lunar PSRs)",
+        "Severe diurnal swings (100K night to 390K noon on lunar equator)",
+        "Solid lubricant freeze-out (MoS2 degradation below 120K)",
+        "Thermal contraction mismatch between composite and metallic joints"
+      ],
+      "required_analog_test_conditions": {
+        "max_ambient_temp_k": 250,
+        "diurnal_delta_t_k": "> 30K diurnal terrestrial swing",
+        "recommended_test_article": "Wheel hub brushless DC actuators, harmonic drives, deployable masts"
+      },
+      "gravity_compensation_required": "Thermal vacuum chamber (TVAC) interface or cold-plate cryo-shroud"
+    },
+    {
+      "gap_id": "TX03.3_ROBOTIC_CABLE_MATING_REGOLITH",
+      "taxonomy_area": "TX03: Power and Energy Storage / Surface Power Grids",
+      "title": "Autonomous Autonomous Wet/Dry Cable & Fluid Mating in Contaminated Regolith",
+      "target_function": "CONSTRUCTION_ISRU",
+      "critical_physics": [
+        "Frictional locking of connector guide pins by abrasive dust",
+        "High-voltage dielectric breakdown across dust paths in low pressure",
+        "Force-torque sensing degradation in non-cohesive terrain",
+        "Blind alignment under shadow occlusions"
+      ],
+      "required_analog_test_conditions": {
+        "surface_bearing_capacity_kpa": "< 50 kPa",
+        "dust_abrasion_index": "High (unweathered basaltic fines)",
+        "recommended_test_article": "Autonomously mated power umbilical plugs, blind-mate optical connectors"
+      },
+      "gravity_compensation_required": "Gravity-offload counterbalance gantry for robotic manipulator (1/6g lunar load bridge)"
+    },
+    {
+      "gap_id": "TX07.2_REGOLITH_EXCAVATION_BENEFICIATION",
+      "taxonomy_area": "TX07: In-Situ Resource Utilization & Surface Infrastructure",
+      "title": "High-Efficiency Autonomous Regolith Excavation, Conveyance & Site Preparation",
+      "target_function": "CONSTRUCTION_ISRU",
+      "critical_physics": [
+        "Dimensionless cutting force scaling F / (gamma * d^3)",
+        "Dilation angle and shearing resistance under low confining stress",
+        "Vacuum cohesion increase (clean mineral contacts)",
+        "Excavator reaction mass limitation under 1/6g Moon (weight-limited tractive effort)"
+      ],
+      "required_analog_test_conditions": {
+        "friction_angle_deg": "> 38.0",
+        "cohesion_kpa": "1.0 - 5.0 kPa",
+        "particle_size_d50_um": "40 - 120 um",
+        "recommended_test_article": "Bucket-wheel excavators, vibratory scoops, pneumatic conveyance tubes"
+      },
+      "gravity_compensation_required": "Dynamic horizontal pull-test rig or 1/6g ballast adjustment (ballast mass = 6x Earth mass to match normal force, or overhead offload cable)"
+    },
+    {
+      "gap_id": "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY",
+      "taxonomy_area": "TX04: Robotics Systems / Surface Mobility",
+      "title": "High-Sinkage & Steep-Slope Autonomous Rover Mobility",
+      "target_function": "MOBILITY",
+      "critical_physics": [
+        "Slope ratio tan(theta)/tan(phi) exceeding slip-critical threshold",
+        "Obstacle clearance scaling h_rms(D)/D > 0.25",
+        "Bekker-Wong sinkage z/D under scaled bearing pressure p/(gamma*B)",
+        "Grouser soil thrust vs wheel compaction resistance"
+      ],
+      "required_analog_test_conditions": {
+        "tan_theta_min": 0.25,
+        "max_moisture_wtd": 0.02,
+        "grain_friction_angle": "32 - 42 deg"
+      },
+      "gravity_compensation_required": "Inclined-plane test track (angle alpha = arcsin(1/6) = 9.6 deg for normal force) or active overhead tension offload"
+    }
+  ]
+}
+

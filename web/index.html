@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TERRA-X | Functional Planetary Analog Discovery Engine</title>
+  
+  <!-- MapLibre GL CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand-section">
+      <div class="brand-badge">TERRA-X</div>
+      <div>
+        <div class="brand-title">
+          <span>Autonomous Functional Analog Engine</span>
+          <span style="font-size: 11px; background: rgba(59,130,246,0.2); color: #60a5fa; padding: 2px 6px; border-radius: 4px;">NASA SPACE APPS 2026</span>
+        </div>
+        <div class="brand-subtitle">Planetary Surface Systems & Geotechnical Architecture</div>
+      </div>
+    </div>
+
+    <div class="header-meta">
+      <div class="header-status-pill">
+        <div class="status-dot"></div>
+        <span>CMR / CDSE / PSA CONNECTORS SYNCHRONIZED</span>
+      </div>
+      <button class="btn btn-secondary" onclick="openFieldKitModal()">
+        <i class="fa-solid fa-flask"></i> Field-Kit Upload
+      </button>
+      <button class="btn btn-secondary" onclick="exportGeoParquetSTAC()">
+        <i class="fa-solid fa-download"></i> Export STAC / GeoParquet
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workstation Container -->
+  <div class="app-container">
+
+    <!-- Left Control Sidebar -->
+    <aside class="control-sidebar">
+      
+      <!-- Target & Profile Panel -->
+      <div class="control-panel">
+        <div class="panel-title">
+          <span><i class="fa-solid fa-globe"></i> Target Body & Function</span>
+        </div>
+        
+        <div class="form-group">
+          <label>Planetary Target Site</label>
+          <select id="select-target" onchange="triggerDiscovery()">
+            <option value="MOON_SOUTH_POLE_SHACKLETON" selected>🌕 Moon: Shackleton Rim (Artemis III/IV)</option>
+            <option value="MOON_OCEANUS_PROCELLARUM">🌕 Moon: Oceanus Procellarum / Marius Hills</option>
+            <option value="MARS_JEZERO_DELTA">🔴 Mars: Jezero Crater Fan Delta (M2020)</option>
+            <option value="MARS_GALE_CRATER">🔴 Mars: Gale Crater Mt. Sharp (MSL)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Exploration Function Profile</label>
+          <select id="select-function" onchange="triggerDiscovery()">
+            <option value="MOBILITY" selected>🚜 MOBILITY: Traversability & Sinkage</option>
+            <option value="CONSTRUCTION_ISRU">🏗️ CONSTRUCTION_ISRU: Excavation & Sintering</option>
+            <option value="LANDING_PAD_PSI">🚀 LANDING_PAD_PSI: Plume Scour & Ejecta</option>
+            <option value="HUMAN_OPS_THERMAL">❄️ HUMAN_OPS_THERMAL: Diurnal Sink Dynamics</option>
+            <option value="PNT_DENIED_NAV">📡 PNT_DENIED_NAV: Shadow Nav & TRN</option>
+            <option value="ASTROBIO">🔬 ASTROBIO: Biosignature Preservation</option>
+          </select>
+        </div>
+
+        <div style="font-size: 10px; color: var(--text-dim); background: var(--bg-deep); padding: 6px; border-radius: 4px; font-family: var(--font-mono);">
+          GRAVITY BRIDGE: <span id="gravity-bridge-text" style="color: var(--accent-amber);">gamma=rho*g (x6.37 Load Scale)</span>
+        </div>
+      </div>
+
+      <!-- Real-Time What-If Sliders Panel -->
+      <div class="control-panel">
+        <div class="panel-title">
+          <span><i class="fa-solid fa-sliders"></i> What-If Mission Parameters</span>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-header">
+            <span>Wheel Diameter (D)</span>
+            <span class="slider-val" id="val-wheel">0.50 m</span>
+          </div>
+          <input type="range" id="slider-wheel" min="0.20" max="1.50" step="0.05" value="0.50" oninput="updateSlider('wheel', this.value, 'm')" onchange="triggerDiscovery()" />
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-header">
+            <span>Footprint Width / Pad Size (B)</span>
+            <span class="slider-val" id="val-footprint">0.30 m</span>
+          </div>
+          <input type="range" id="slider-footprint" min="0.10" max="2.00" step="0.05" value="0.30" oninput="updateSlider('footprint', this.value, 'm')" onchange="triggerDiscovery()" />
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-header">
+            <span>Contact Pressure (p)</span>
+            <span class="slider-val" id="val-pressure">25 kPa</span>
+          </div>
+          <input type="range" id="slider-pressure" min="5" max="80" step="5" value="25" oninput="updateSlider('pressure', this.value, 'kPa')" onchange="triggerDiscovery()" />
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-header">
+            <span>Mission Test Duration</span>
+            <span class="slider-val" id="val-duration">14 days</span>
+          </div>
+          <input type="range" id="slider-duration" min="1" max="60" step="1" value="14" oninput="updateSlider('duration', this.value, 'days')" onchange="triggerDiscovery()" />
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+          <label style="margin: 0; cursor: pointer;">MMR Diversity (λ=0.65)</label>
+          <input type="checkbox" id="check-mmr" checked onchange="triggerDiscovery()" style="width: auto; cursor: pointer;" />
+        </div>
+
+        <button class="btn btn-primary" onclick="triggerDiscovery()" style="margin-top: 6px;">
+          <i class="fa-solid fa-arrows-rotate"></i> Re-Calculate Analogs
+        </button>
+      </div>
+
+      <!-- Governing Law Summary -->
+      <div class="control-panel" style="font-size: 11px; color: var(--text-muted); line-height: 1.4;">
+        <div class="panel-title" style="margin-bottom: 6px;">Core Dimensionless Physics</div>
+        <p>• <strong>AFI_f = M_f * (1 - C_f) * T_f</strong></p>
+        <p>• <strong>M_f:</strong> Wasserstein match with sensor QA uncertainty (tau)</p>
+        <p>• <strong>C_f:</strong> Earth-added confounder severity</p>
+        <p>• <strong>T_f:</strong> Transferable physics fraction</p>
+        <p>• <strong>Missing Data:</strong> Strictly UNCONSTRAINED</p>
+      </div>
+
+    </aside>
+
+    <!-- Center Split-Screen Viewports -->
+    <main class="viewport-container">
+
+      <!-- Viewport 1: Earth Analog Candidate Map -->
+      <div class="split-viewport">
+        <div class="viewport-header">
+          <span><i class="fa-solid fa-earth-americas" style="color: var(--accent-cyan);"></i> EARTH ANALOG TEST ARTICLES (H3 GRID R6)</span>
+          <span style="font-size: 10px; font-family: var(--font-mono); color: var(--text-dim);">PROJECTION: WGS84 / H3 HEXAGONS</span>
+        </div>
+        <div id="map-earth" class="viewport-map"></div>
+      </div>
+
+      <!-- Viewport 2: Target Planetary Surface View -->
+      <div class="split-viewport">
+        <div class="viewport-header">
+          <span id="target-view-title"><i class="fa-solid fa-moon" style="color: var(--accent-amber);"></i> TARGET: MOON SOUTH POLE (SHACKLETON)</span>
+          <span id="target-coords-display" style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-amber);">LAT -89.9° LON 0.0°</span>
+        </div>
+        <div id="map-target" class="viewport-map">
+          <!-- Canvas / High-Res Planetary Target Visualizer -->
+          <div id="planet-canvas-container" style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+            <canvas id="target-radar-canvas" style="width: 100%; height: 100%;"></canvas>
+            <div id="planet-overlay-info" style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(17,23,38,0.9); border: 1px solid var(--border); border-radius: 6px; padding: 10px; font-size: 11px;">
+              <div style="font-weight: 700; color: var(--accent-amber); margin-bottom: 4px;" id="planet-overlay-name">Shackleton Rim & Connecting Ridge</div>
+              <div style="color: var(--text-muted); font-size: 10px;" id="planet-overlay-desc">5m PGDA Polar DEM Ensemble (100 clones). Grazing sun elevation &lt;1.5°, micro-roughness h_rms/D=0.28. Lunar 1/6g.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Right Results Sidebar -->
+    <aside class="results-sidebar">
+      <div class="results-header">
+        <div>
+          <div class="results-title">Ranked Analog Sites</div>
+          <div class="results-count" id="results-count-text">14 CANDIDATES EVALUATED</div>
+        </div>
+        <div style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-emerald);">
+          P(TOP10) MONTE CARLO
+        </div>
+      </div>
+
+      <!-- Dynamic Card Feed -->
+      <div id="site-cards-container">
+        <!-- Rendered by app.js -->
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Site Passport Modal -->
+  <div class="modal-overlay" id="passport-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <div style="font-size: 10px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 1px;">VERIFIABLE SITE PASSPORT</div>
+          <h2 id="modal-site-name" style="font-size: 18px; color: var(--text-main);">Atacama Desert (Yungay Core)</h2>
+        </div>
+        <button class="btn btn-secondary" onclick="closePassportModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-body" id="modal-passport-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Field Kit Upload Modal -->
+  <div class="modal-overlay" id="fieldkit-modal">
+    <div class="modal-content" style="width: 600px;">
+      <div class="modal-header">
+        <h2 style="font-size: 16px;">In-Situ Field-Kit Assay Upload & Re-Scoring</h2>
+        <button class="btn btn-secondary" onclick="closeFieldKitModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 11px; color: var(--text-muted);">
+          Upload in-situ ground-truth measurements to upgrade Fidelity Ledger statuses from UNCONSTRAINED/PARTIAL to STRONG.
+        </p>
+
+        <div class="form-group">
+          <label>Select Test Article H3 Cell</label>
+          <select id="fieldkit-cell-select">
+            <!-- Populated via JavaScript -->
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label>Shear-Vane Friction Angle (°)</label>
+            <input type="number" id="fk-friction" value="38.5" step="0.5" />
+          </div>
+          <div class="form-group">
+            <label>Shear-Vane Cohesion (kPa)</label>
+            <input type="number" id="fk-cohesion" value="3.2" step="0.1" />
+          </div>
+          <div class="form-group">
+            <label>Cone Penetrometer Bearing (kPa)</label>
+            <input type="number" id="fk-bearing" value="45.0" step="1.0" />
+          </div>
+          <div class="form-group">
+            <label>Micro-Grain Wadell Roundness</label>
+            <input type="number" id="fk-roundness" value="0.22" step="0.02" />
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="submitFieldKitData()">
+          <i class="fa-solid fa-microscope"></i> Ingest Field Data & Re-Score
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MapLibre JS -->
+  <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
+

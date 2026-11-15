@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Planetary exploration target sites with geotechnical, thermal, and optical reference states.",
+  "targets": [
+    {
+      "target_id": "MOON_SOUTH_POLE_SHACKLETON",
+      "target_name": "Shackleton Crater Rim & Ridge (Artemis III/IV Candidate)",
+      "body": "MOON",
+      "latitude": -89.9,
+      "longitude": 0.0,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1520.0,
+      "gamma_unit_weight_n_m3": 2462.4,
+      "load_scale_factor": 6.37,
+      "primary_functions": ["PNT_DENIED_NAV", "MOBILITY", "CONSTRUCTION_ISRU", "HUMAN_OPS_THERMAL"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION (unshielded)",
+        "DEEP_CRYOGENIC_PSR_70K (< 70 Kelvin in crater floor)",
+        "LOW_ELEVATION_GRAZING_SUN (< 1.5 deg solar elevation)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.38,
+        "h_rms_over_D": 0.28,
+        "p_over_gamma_B": 18.5,
+        "F_over_gamma_d3": 650.0,
+        "delta_T_over_T_mean": 0.32,
+        "horizon_blocked_fraction": 0.58,
+        "sky_view_factor": 0.42,
+        "thermal_inertia_si": 55.0,
+        "friction_angle_deg": 38.5,
+        "cohesion_kpa": 1.8
+      },
+      "pgda_dem_specs": {
+        "product_id": "LDEM_80S_5M",
+        "resolution_m": 5.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 0.85
+      },
+      "tech_gaps": ["TX04.1_PRECISION_LANDING_SHADOW", "TX06.2_DUST_MITIGATION_MECHANISMS", "TX04.3_SURFACE_MOBILITY_TRAVERSABILITY"]
+    },
+    {
+      "target_id": "MOON_OCEANUS_PROCELLARUM",
+      "target_name": "Oceanus Procellarum / Marius Hills (Mare Basalt Plains & Pit)",
+      "body": "MOON",
+      "latitude": 14.1,
+      "longitude": -56.7,
+      "gravity_ms2": 1.62,
+      "atmosphere_bar": 1e-15,
+      "regolith_density_kg_m3": 1680.0,
+      "gamma_unit_weight_n_m3": 2721.6,
+      "load_scale_factor": 5.76,
+      "primary_functions": ["LANDING_PAD_PSI", "CONSTRUCTION_ISRU", "HUMAN_OPS_THERMAL"],
+      "hard_breaks": [
+        "LUNAR_VACUUM (1e-15 bar)",
+        "LUNAR_1_6TH_GRAVITY (1.62 m/s²)",
+        "GCR_SPE_COSMIC_RADIATION",
+        "14_DAY_LUNAR_NIGHT (100 K thermal sink)",
+        "NOON_THERMAL_PEAK (390 Kelvin)"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.08,
+        "h_rms_over_D": 0.12,
+        "p_over_gamma_B": 24.0,
+        "F_over_gamma_d3": 480.0,
+        "delta_T_over_T_mean": 1.15,
+        "horizon_blocked_fraction": 0.04,
+        "sky_view_factor": 0.96,
+        "thermal_inertia_si": 48.0,
+        "friction_angle_deg": 35.0,
+        "cohesion_kpa": 1.2
+      },
+      "pgda_dem_specs": {
+        "product_id": "LOLA_GDR_118M",
+        "resolution_m": 118.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 1.2
+      },
+      "tech_gaps": ["TX07.2_REGOLITH_EXCAVATION_BENEFICIATION", "TX03.3_ROBOTIC_CABLE_MATING_REGOLITH"]
+    },
+    {
+      "target_id": "MARS_JEZERO_DELTA",
+      "target_name": "Jezero Crater Western Fan Delta & Scarp (Mars 2020 Perseverance)",
+      "body": "MARS",
+      "latitude": 18.38,
+      "longitude": 77.58,
+      "gravity_ms2": 3.72,
+      "atmosphere_bar": 0.0062,
+      "regolith_density_kg_m3": 1450.0,
+      "gamma_unit_weight_n_m3": 5394.0,
+      "load_scale_factor": 2.91,
+      "primary_functions": ["ASTROBIO", "MOBILITY", "PNT_DENIED_NAV"],
+      "hard_breaks": [
+        "MARS_LOW_PRESSURE (~6.2 mbar CO2)",
+        "MARS_0_38TH_GRAVITY (3.72 m/s²)",
+        "SURFACE_UV_C_IRRADIATION (no ozone shield)",
+        "SOIL_PERCHLORATES (oxidizing salts)",
+        "SEASONAL_GLOBAL_DUST_STORMS"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.26,
+        "h_rms_over_D": 0.32,
+        "p_over_gamma_B": 14.2,
+        "F_over_gamma_d3": 720.0,
+        "delta_T_over_T_mean": 0.42,
+        "horizon_blocked_fraction": 0.34,
+        "sky_view_factor": 0.66,
+        "thermal_inertia_si": 320.0,
+        "friction_angle_deg": 34.0,
+        "cohesion_kpa": 2.5
+      },
+      "pgda_dem_specs": {
+        "product_id": "MOLA_HRSC_BLENDED_200M",
+        "resolution_m": 50.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 2.1
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX04.1_PRECISION_LANDING_SHADOW"]
+    },
+    {
+      "target_id": "MARS_GALE_CRATER",
+      "target_name": "Gale Crater Mount Sharp / Clay-Sulfate Transition (MSL Curiosity)",
+      "body": "MARS",
+      "latitude": -5.37,
+      "longitude": 137.44,
+      "gravity_ms2": 3.72,
+      "atmosphere_bar": 0.0075,
+      "regolith_density_kg_m3": 1500.0,
+      "gamma_unit_weight_n_m3": 5580.0,
+      "load_scale_factor": 2.81,
+      "primary_functions": ["ASTROBIO", "MOBILITY", "CONSTRUCTION_ISRU"],
+      "hard_breaks": [
+        "MARS_LOW_PRESSURE (~7.5 mbar CO2)",
+        "MARS_0_38TH_GRAVITY (3.72 m/s²)",
+        "SURFACE_UV_C_IRRADIATION",
+        "SURFACE_PERCHLORATES",
+        "WHEEL_GOUGE_VENTIFACT_TERRAIN"
+      ],
+      "dimensionless_reference": {
+        "tan_theta_over_tan_phi": 0.22,
+        "h_rms_over_D": 0.38,
+        "p_over_gamma_B": 15.8,
+        "F_over_gamma_d3": 690.0,
+        "delta_T_over_T_mean": 0.38,
+        "horizon_blocked_fraction": 0.42,
+        "sky_view_factor": 0.58,
+        "thermal_inertia_si": 360.0,
+        "friction_angle_deg": 36.0,
+        "cohesion_kpa": 3.0
+      },
+      "pgda_dem_specs": {
+        "product_id": "CTX_HIRISE_BLENDED_DEM",
+        "resolution_m": 20.0,
+        "clones_ensemble_n": 100,
+        "vertical_rmse_m": 1.5
+      },
+      "tech_gaps": ["TX04.3_SURFACE_MOBILITY_TRAVERSABILITY", "TX06.2_DUST_MITIGATION_MECHANISMS"]
+    }
+  ]
+}
+

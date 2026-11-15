@@ -1,0 +1,20 @@
+# Environment & Credentials
+.env
+.env.local
+*.secret
+*.token
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Data Cache
+data/cache/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+

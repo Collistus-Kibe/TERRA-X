@@ -1,0 +1,5673 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "id": "terrax-global-functional-analogs",
+  "description": "TERRA-X NASA Space Apps 2026 Functional Planetary Analog Open STAC Collection",
+  "license": "CC-BY-4.0",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1041,
+        "afi_score_p10": 0.104,
+        "afi_score_p90": 0.1042,
+        "M_match": 0.5369,
+        "C_confounder": 0.0605,
+        "T_transferable": 0.34,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1041,
+        "afi_score_p10": 0.1039,
+        "afi_score_p90": 0.1042,
+        "M_match": 0.545,
+        "C_confounder": 0.081,
+        "T_transferable": 0.34,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1007,
+        "afi_score_p10": 0.1006,
+        "afi_score_p90": 0.1008,
+        "M_match": 0.5646,
+        "C_confounder": 0.0555,
+        "T_transferable": 0.34,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1006,
+        "afi_score_p10": 0.1005,
+        "afi_score_p90": 0.1007,
+        "M_match": 0.5137,
+        "C_confounder": 0.0738,
+        "T_transferable": 0.34,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0936,
+        "afi_score_p10": 0.0935,
+        "afi_score_p90": 0.0937,
+        "M_match": 0.5924,
+        "C_confounder": 0.2008,
+        "T_transferable": 0.34,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0917,
+        "afi_score_p10": 0.0915,
+        "afi_score_p90": 0.0917,
+        "M_match": 0.5351,
+        "C_confounder": 0.0797,
+        "T_transferable": 0.34,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0843,
+        "afi_score_p10": 0.0842,
+        "afi_score_p90": 0.0845,
+        "M_match": 0.439,
+        "C_confounder": 0.1127,
+        "T_transferable": 0.34,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0824,
+        "afi_score_p10": 0.0823,
+        "afi_score_p90": 0.0826,
+        "M_match": 0.3515,
+        "C_confounder": 0.094,
+        "T_transferable": 0.34,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0817,
+        "afi_score_p10": 0.0816,
+        "afi_score_p90": 0.0819,
+        "M_match": 0.3775,
+        "C_confounder": 0.097,
+        "T_transferable": 0.34,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0848,
+        "afi_score_p10": 0.0846,
+        "afi_score_p90": 0.0849,
+        "M_match": 0.4755,
+        "C_confounder": 0.0872,
+        "T_transferable": 0.34,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0783,
+        "afi_score_p10": 0.0782,
+        "afi_score_p90": 0.0785,
+        "M_match": 0.3512,
+        "C_confounder": 0.1252,
+        "T_transferable": 0.34,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0772,
+        "afi_score_p10": 0.0771,
+        "afi_score_p90": 0.0773,
+        "M_match": 0.543,
+        "C_confounder": 0.2493,
+        "T_transferable": 0.34,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0643,
+        "afi_score_p10": 0.0641,
+        "afi_score_p90": 0.0644,
+        "M_match": 0.3054,
+        "C_confounder": 0.3005,
+        "T_transferable": 0.34,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0188,
+        "afi_score_p10": 0.0188,
+        "afi_score_p90": 0.0188,
+        "M_match": 0.3216,
+        "C_confounder": 0.7889,
+        "T_transferable": 0.34,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0526,
+        "afi_score_p10": 0.0525,
+        "afi_score_p90": 0.0527,
+        "M_match": 0.3999,
+        "C_confounder": 0.4399,
+        "T_transferable": 0.34,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MOON_SOUTH_POLE_SHACKLETON_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0754,
+        "afi_score_p10": 0.0753,
+        "afi_score_p90": 0.0755,
+        "M_match": 0.3286,
+        "C_confounder": 0.153,
+        "T_transferable": 0.34,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0991,
+        "afi_score_p10": 0.0989,
+        "afi_score_p90": 0.0992,
+        "M_match": 0.545,
+        "C_confounder": 0.125,
+        "T_transferable": 0.34,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0988,
+        "afi_score_p10": 0.0987,
+        "afi_score_p90": 0.0989,
+        "M_match": 0.5369,
+        "C_confounder": 0.1085,
+        "T_transferable": 0.34,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0955,
+        "afi_score_p10": 0.0954,
+        "afi_score_p90": 0.0956,
+        "M_match": 0.5646,
+        "C_confounder": 0.1045,
+        "T_transferable": 0.34,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0952,
+        "afi_score_p10": 0.0951,
+        "afi_score_p90": 0.0953,
+        "M_match": 0.5137,
+        "C_confounder": 0.1238,
+        "T_transferable": 0.34,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0882,
+        "afi_score_p10": 0.0881,
+        "afi_score_p90": 0.0883,
+        "M_match": 0.5924,
+        "C_confounder": 0.2468,
+        "T_transferable": 0.34,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0869,
+        "afi_score_p10": 0.0867,
+        "afi_score_p90": 0.0869,
+        "M_match": 0.5351,
+        "C_confounder": 0.1277,
+        "T_transferable": 0.34,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0805,
+        "afi_score_p10": 0.0804,
+        "afi_score_p90": 0.0806,
+        "M_match": 0.439,
+        "C_confounder": 0.1527,
+        "T_transferable": 0.34,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0786,
+        "afi_score_p10": 0.0784,
+        "afi_score_p90": 0.0788,
+        "M_match": 0.3515,
+        "C_confounder": 0.136,
+        "T_transferable": 0.34,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.078,
+        "afi_score_p10": 0.0779,
+        "afi_score_p90": 0.0782,
+        "M_match": 0.3775,
+        "C_confounder": 0.138,
+        "T_transferable": 0.34,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0806,
+        "afi_score_p10": 0.0805,
+        "afi_score_p90": 0.0807,
+        "M_match": 0.4755,
+        "C_confounder": 0.1322,
+        "T_transferable": 0.34,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0748,
+        "afi_score_p10": 0.0747,
+        "afi_score_p90": 0.075,
+        "M_match": 0.3512,
+        "C_confounder": 0.1642,
+        "T_transferable": 0.34,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0727,
+        "afi_score_p10": 0.0726,
+        "afi_score_p90": 0.0727,
+        "M_match": 0.543,
+        "C_confounder": 0.2933,
+        "T_transferable": 0.34,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0643,
+        "afi_score_p10": 0.0641,
+        "afi_score_p90": 0.0644,
+        "M_match": 0.3054,
+        "C_confounder": 0.3005,
+        "T_transferable": 0.34,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0188,
+        "afi_score_p10": 0.0188,
+        "afi_score_p90": 0.0188,
+        "M_match": 0.3216,
+        "C_confounder": 0.7889,
+        "T_transferable": 0.34,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0493,
+        "afi_score_p10": 0.0492,
+        "afi_score_p90": 0.0494,
+        "M_match": 0.3999,
+        "C_confounder": 0.4749,
+        "T_transferable": 0.34,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MOON_SOUTH_POLE_SHACKLETON_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0721,
+        "afi_score_p10": 0.072,
+        "afi_score_p90": 0.0722,
+        "M_match": 0.3286,
+        "C_confounder": 0.19,
+        "T_transferable": 0.34,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0963,
+        "afi_score_p10": 0.0961,
+        "afi_score_p90": 0.0964,
+        "M_match": 0.545,
+        "C_confounder": 0.15,
+        "T_transferable": 0.34,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0943,
+        "afi_score_p10": 0.0942,
+        "afi_score_p90": 0.0944,
+        "M_match": 0.5369,
+        "C_confounder": 0.149,
+        "T_transferable": 0.34,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0909,
+        "afi_score_p10": 0.0908,
+        "afi_score_p90": 0.091,
+        "M_match": 0.5137,
+        "C_confounder": 0.1637,
+        "T_transferable": 0.34,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0909,
+        "afi_score_p10": 0.0907,
+        "afi_score_p90": 0.0909,
+        "M_match": 0.5646,
+        "C_confounder": 0.148,
+        "T_transferable": 0.34,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0901,
+        "afi_score_p10": 0.09,
+        "afi_score_p90": 0.0902,
+        "M_match": 0.5924,
+        "C_confounder": 0.2307,
+        "T_transferable": 0.34,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0837,
+        "afi_score_p10": 0.0836,
+        "afi_score_p90": 0.0838,
+        "M_match": 0.5351,
+        "C_confounder": 0.1593,
+        "T_transferable": 0.34,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0796,
+        "afi_score_p10": 0.0795,
+        "afi_score_p90": 0.0797,
+        "M_match": 0.439,
+        "C_confounder": 0.1623,
+        "T_transferable": 0.34,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0824,
+        "afi_score_p10": 0.0822,
+        "afi_score_p90": 0.0825,
+        "M_match": 0.4755,
+        "C_confounder": 0.1133,
+        "T_transferable": 0.34,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0788,
+        "afi_score_p10": 0.0786,
+        "afi_score_p90": 0.0789,
+        "M_match": 0.3515,
+        "C_confounder": 0.134,
+        "T_transferable": 0.34,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0772,
+        "afi_score_p10": 0.0771,
+        "afi_score_p90": 0.0774,
+        "M_match": 0.3775,
+        "C_confounder": 0.147,
+        "T_transferable": 0.34,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0747,
+        "afi_score_p10": 0.0746,
+        "afi_score_p90": 0.0749,
+        "M_match": 0.3512,
+        "C_confounder": 0.1653,
+        "T_transferable": 0.34,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0785,
+        "afi_score_p10": 0.0784,
+        "afi_score_p90": 0.0786,
+        "M_match": 0.543,
+        "C_confounder": 0.2367,
+        "T_transferable": 0.34,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0504,
+        "afi_score_p10": 0.0503,
+        "afi_score_p90": 0.0505,
+        "M_match": 0.3216,
+        "C_confounder": 0.4336,
+        "T_transferable": 0.34,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0763,
+        "afi_score_p10": 0.0761,
+        "afi_score_p90": 0.0764,
+        "M_match": 0.3999,
+        "C_confounder": 0.1876,
+        "T_transferable": 0.34,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0738,
+        "afi_score_p10": 0.0736,
+        "afi_score_p90": 0.0739,
+        "M_match": 0.3054,
+        "C_confounder": 0.197,
+        "T_transferable": 0.34,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MOON_SOUTH_POLE_SHACKLETON_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MOON_SOUTH_POLE_SHACKLETON",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0739,
+        "afi_score_p10": 0.0737,
+        "afi_score_p90": 0.074,
+        "M_match": 0.3286,
+        "C_confounder": 0.17,
+        "T_transferable": 0.34,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.2037,
+        "afi_score_p10": 0.2035,
+        "afi_score_p90": 0.2038,
+        "M_match": 0.7086,
+        "C_confounder": 0.081,
+        "T_transferable": 0.385,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.2029,
+        "afi_score_p10": 0.2027,
+        "afi_score_p90": 0.2029,
+        "M_match": 0.7633,
+        "C_confounder": 0.0605,
+        "T_transferable": 0.385,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1945,
+        "afi_score_p10": 0.1943,
+        "afi_score_p90": 0.1946,
+        "M_match": 0.6282,
+        "C_confounder": 0.0738,
+        "T_transferable": 0.385,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1936,
+        "afi_score_p10": 0.1935,
+        "afi_score_p90": 0.1937,
+        "M_match": 0.7347,
+        "C_confounder": 0.0555,
+        "T_transferable": 0.385,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1798,
+        "afi_score_p10": 0.1797,
+        "afi_score_p90": 0.1799,
+        "M_match": 0.7884,
+        "C_confounder": 0.2008,
+        "T_transferable": 0.385,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1723,
+        "afi_score_p10": 0.1722,
+        "afi_score_p90": 0.1724,
+        "M_match": 0.6926,
+        "C_confounder": 0.0797,
+        "T_transferable": 0.385,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1567,
+        "afi_score_p10": 0.1565,
+        "afi_score_p90": 0.1568,
+        "M_match": 0.6085,
+        "C_confounder": 0.1127,
+        "T_transferable": 0.385,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1559,
+        "afi_score_p10": 0.1558,
+        "afi_score_p90": 0.156,
+        "M_match": 0.6705,
+        "C_confounder": 0.0872,
+        "T_transferable": 0.385,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1509,
+        "afi_score_p10": 0.1507,
+        "afi_score_p90": 0.1511,
+        "M_match": 0.51,
+        "C_confounder": 0.094,
+        "T_transferable": 0.385,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1494,
+        "afi_score_p10": 0.1492,
+        "afi_score_p90": 0.1495,
+        "M_match": 0.5318,
+        "C_confounder": 0.097,
+        "T_transferable": 0.385,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1426,
+        "afi_score_p10": 0.1424,
+        "afi_score_p90": 0.1427,
+        "M_match": 0.5016,
+        "C_confounder": 0.1252,
+        "T_transferable": 0.385,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1469,
+        "afi_score_p10": 0.1467,
+        "afi_score_p90": 0.1469,
+        "M_match": 0.7372,
+        "C_confounder": 0.2493,
+        "T_transferable": 0.385,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.1183,
+        "afi_score_p10": 0.1181,
+        "afi_score_p90": 0.1185,
+        "M_match": 0.4248,
+        "C_confounder": 0.3005,
+        "T_transferable": 0.385,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0342,
+        "afi_score_p10": 0.0341,
+        "afi_score_p90": 0.0342,
+        "M_match": 0.4743,
+        "C_confounder": 0.7889,
+        "T_transferable": 0.385,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.0972,
+        "afi_score_p10": 0.0971,
+        "afi_score_p90": 0.0973,
+        "M_match": 0.5774,
+        "C_confounder": 0.4399,
+        "T_transferable": 0.385,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MARS_JEZERO_DELTA_MOBILITY",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "MOBILITY",
+        "afi_score_p50": 0.137,
+        "afi_score_p10": 0.1369,
+        "afi_score_p90": 0.1372,
+        "M_match": 0.4761,
+        "C_confounder": 0.153,
+        "T_transferable": 0.385,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.194,
+        "afi_score_p10": 0.1938,
+        "afi_score_p90": 0.1941,
+        "M_match": 0.7086,
+        "C_confounder": 0.125,
+        "T_transferable": 0.385,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1925,
+        "afi_score_p10": 0.1923,
+        "afi_score_p90": 0.1925,
+        "M_match": 0.7633,
+        "C_confounder": 0.1085,
+        "T_transferable": 0.385,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.184,
+        "afi_score_p10": 0.1838,
+        "afi_score_p90": 0.1841,
+        "M_match": 0.6282,
+        "C_confounder": 0.1238,
+        "T_transferable": 0.385,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1836,
+        "afi_score_p10": 0.1835,
+        "afi_score_p90": 0.1837,
+        "M_match": 0.7347,
+        "C_confounder": 0.1045,
+        "T_transferable": 0.385,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1695,
+        "afi_score_p10": 0.1693,
+        "afi_score_p90": 0.1695,
+        "M_match": 0.7884,
+        "C_confounder": 0.2468,
+        "T_transferable": 0.385,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1634,
+        "afi_score_p10": 0.1632,
+        "afi_score_p90": 0.1634,
+        "M_match": 0.6926,
+        "C_confounder": 0.1277,
+        "T_transferable": 0.385,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1496,
+        "afi_score_p10": 0.1495,
+        "afi_score_p90": 0.1497,
+        "M_match": 0.6085,
+        "C_confounder": 0.1527,
+        "T_transferable": 0.385,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1482,
+        "afi_score_p10": 0.1481,
+        "afi_score_p90": 0.1483,
+        "M_match": 0.6705,
+        "C_confounder": 0.1322,
+        "T_transferable": 0.385,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1439,
+        "afi_score_p10": 0.1438,
+        "afi_score_p90": 0.1441,
+        "M_match": 0.51,
+        "C_confounder": 0.136,
+        "T_transferable": 0.385,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1426,
+        "afi_score_p10": 0.1424,
+        "afi_score_p90": 0.1427,
+        "M_match": 0.5318,
+        "C_confounder": 0.138,
+        "T_transferable": 0.385,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1362,
+        "afi_score_p10": 0.1361,
+        "afi_score_p90": 0.1363,
+        "M_match": 0.5016,
+        "C_confounder": 0.1642,
+        "T_transferable": 0.385,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1382,
+        "afi_score_p10": 0.1381,
+        "afi_score_p90": 0.1383,
+        "M_match": 0.7372,
+        "C_confounder": 0.2933,
+        "T_transferable": 0.385,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.1183,
+        "afi_score_p10": 0.1181,
+        "afi_score_p90": 0.1185,
+        "M_match": 0.4248,
+        "C_confounder": 0.3005,
+        "T_transferable": 0.385,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0342,
+        "afi_score_p10": 0.0341,
+        "afi_score_p90": 0.0342,
+        "M_match": 0.4743,
+        "C_confounder": 0.7889,
+        "T_transferable": 0.385,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.0911,
+        "afi_score_p10": 0.091,
+        "afi_score_p90": 0.0912,
+        "M_match": 0.5774,
+        "C_confounder": 0.4749,
+        "T_transferable": 0.385,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MARS_JEZERO_DELTA_CONSTRUCTION_ISRU",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "CONSTRUCTION_ISRU",
+        "afi_score_p50": 0.131,
+        "afi_score_p10": 0.1309,
+        "afi_score_p90": 0.1312,
+        "M_match": 0.4761,
+        "C_confounder": 0.19,
+        "T_transferable": 0.385,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ef3600000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -132.33271,
+              37.84124
+            ],
+            [
+              -132.36452,
+              37.85575
+            ],
+            [
+              -132.39633,
+              37.84124
+            ],
+            [
+              -132.39633,
+              37.81222
+            ],
+            [
+              -132.36452,
+              37.79771
+            ],
+            [
+              -132.33271,
+              37.81222
+            ],
+            [
+              -132.33271,
+              37.84124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Qaidam Basin Hyper-Arid Mars Analog Yardang Field",
+        "country": "China",
+        "continent": "Asia",
+        "cell_id_h3": "869ef3600000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1884,
+        "afi_score_p10": 0.1883,
+        "afi_score_p90": 0.1885,
+        "M_match": 0.7086,
+        "C_confounder": 0.15,
+        "T_transferable": 0.385,
+        "rank_p50": 1,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-860f166d0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.75257,
+              -77.84861
+            ],
+            [
+              160.63305,
+              -77.8341
+            ],
+            [
+              160.51353,
+              -77.84861
+            ],
+            [
+              160.51353,
+              -77.87763
+            ],
+            [
+              160.63305,
+              -77.89214
+            ],
+            [
+              160.75257,
+              -77.87763
+            ],
+            [
+              160.75257,
+              -77.84861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "McMurdo Dry Valleys (University Valley Dry Permafrost)",
+        "country": "Antarctica",
+        "continent": "Antarctica",
+        "cell_id_h3": "860f166d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1837,
+        "afi_score_p10": 0.1836,
+        "afi_score_p90": 0.1838,
+        "M_match": 0.7633,
+        "C_confounder": 0.149,
+        "T_transferable": 0.385,
+        "rank_p50": 2,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-868892120000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -155.42807,
+              19.84951
+            ],
+            [
+              -155.45478,
+              19.86402
+            ],
+            [
+              -155.48149,
+              19.84951
+            ],
+            [
+              -155.48149,
+              19.82049
+            ],
+            [
+              -155.45478,
+              19.80598
+            ],
+            [
+              -155.42807,
+              19.82049
+            ],
+            [
+              -155.42807,
+              19.84951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Mauna Kea Basaltic Tephra Cone",
+        "country": "United States",
+        "continent": "Oceania",
+        "cell_id_h3": "868892120000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1756,
+        "afi_score_p10": 0.1754,
+        "afi_score_p90": 0.1757,
+        "M_match": 0.6282,
+        "C_confounder": 0.1637,
+        "T_transferable": 0.385,
+        "rank_p50": 3,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8689f08a0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -173.51883,
+              20.95515
+            ],
+            [
+              -173.54574,
+              20.96966
+            ],
+            [
+              -173.57265,
+              20.95515
+            ],
+            [
+              -173.57265,
+              20.92613
+            ],
+            [
+              -173.54574,
+              20.91162
+            ],
+            [
+              -173.51883,
+              20.92613
+            ],
+            [
+              -173.51883,
+              20.95515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Tibesti Volcanic Range (Tarso Voon Caldera)",
+        "country": "Chad",
+        "continent": "Africa",
+        "cell_id_h3": "8689f08a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1747,
+        "afi_score_p10": 0.1745,
+        "afi_score_p90": 0.1748,
+        "M_match": 0.7347,
+        "C_confounder": 0.148,
+        "T_transferable": 0.385,
+        "rank_p50": 4,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86cda20b0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.70371,
+              75.38265
+            ],
+            [
+              -89.80318,
+              75.39716
+            ],
+            [
+              -89.90265,
+              75.38265
+            ],
+            [
+              -89.90265,
+              75.35363
+            ],
+            [
+              -89.80318,
+              75.33912
+            ],
+            [
+              -89.70371,
+              75.35363
+            ],
+            [
+              -89.70371,
+              75.38265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Haughton Impact Structure (Devon Island)",
+        "country": "Canada",
+        "continent": "North America",
+        "cell_id_h3": "86cda20b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1731,
+        "afi_score_p10": 0.1729,
+        "afi_score_p90": 0.1731,
+        "M_match": 0.7884,
+        "C_confounder": 0.2307,
+        "T_transferable": 0.385,
+        "rank_p50": 5,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86931ce90000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.60986,
+              28.29256
+            ],
+            [
+              -16.63839,
+              28.30707
+            ],
+            [
+              -16.66692,
+              28.29256
+            ],
+            [
+              -16.66692,
+              28.26354
+            ],
+            [
+              -16.63839,
+              28.24903
+            ],
+            [
+              -16.60986,
+              28.26354
+            ],
+            [
+              -16.60986,
+              28.29256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Teide Las Ca\u00f1adas Basaltic Caldera",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "86931ce90000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1574,
+        "afi_score_p10": 0.1573,
+        "afi_score_p90": 0.1575,
+        "M_match": 0.6926,
+        "C_confounder": 0.1593,
+        "T_transferable": 0.385,
+        "rank_p50": 6,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8681a32a0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -143.57762,
+              14.27107
+            ],
+            [
+              -143.60355,
+              14.28558
+            ],
+            [
+              -143.62948,
+              14.27107
+            ],
+            [
+              -143.62948,
+              14.24205
+            ],
+            [
+              -143.60355,
+              14.22754
+            ],
+            [
+              -143.57762,
+              14.24205
+            ],
+            [
+              -143.57762,
+              14.27107
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Danakil Depression (Dallol Hydrothermal Salt Domes)",
+        "country": "Ethiopia",
+        "continent": "Africa",
+        "cell_id_h3": "8681a32a0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1515,
+        "afi_score_p10": 0.1513,
+        "afi_score_p90": 0.1515,
+        "M_match": 0.6705,
+        "C_confounder": 0.1133,
+        "T_transferable": 0.385,
+        "rank_p50": 7,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869d548d0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.84876,
+              36.53458
+            ],
+            [
+              -116.88003,
+              36.54909
+            ],
+            [
+              -116.9113,
+              36.53458
+            ],
+            [
+              -116.9113,
+              36.50556
+            ],
+            [
+              -116.88003,
+              36.49105
+            ],
+            [
+              -116.84876,
+              36.50556
+            ],
+            [
+              -116.84876,
+              36.53458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Death Valley (Mars Hill & Badwater)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869d548d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.148,
+        "afi_score_p10": 0.1478,
+        "afi_score_p90": 0.1481,
+        "M_match": 0.6085,
+        "C_confounder": 0.1623,
+        "T_transferable": 0.385,
+        "rank_p50": 9,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8651f9060000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.81925,
+              -24.07444
+            ],
+            [
+              -69.84678,
+              -24.05993
+            ],
+            [
+              -69.87431,
+              -24.07444
+            ],
+            [
+              -69.87431,
+              -24.10346
+            ],
+            [
+              -69.84678,
+              -24.11797
+            ],
+            [
+              -69.81925,
+              -24.10346
+            ],
+            [
+              -69.81925,
+              -24.07444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Atacama Desert (Yungay Hyper-Arid Core)",
+        "country": "Chile",
+        "continent": "South America",
+        "cell_id_h3": "8651f9060000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1442,
+        "afi_score_p10": 0.1441,
+        "afi_score_p90": 0.1444,
+        "M_match": 0.51,
+        "C_confounder": 0.134,
+        "T_transferable": 0.385,
+        "rank_p50": 10,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-86d2b32d0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.31328,
+              79.45341
+            ],
+            [
+              13.17618,
+              79.46792
+            ],
+            [
+              13.03908,
+              79.45341
+            ],
+            [
+              13.03908,
+              79.42439
+            ],
+            [
+              13.17618,
+              79.40988
+            ],
+            [
+              13.31328,
+              79.42439
+            ],
+            [
+              13.31328,
+              79.45341
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Svalbard Bockfjorden Volcanic Complex",
+        "country": "Norway",
+        "continent": "Europe",
+        "cell_id_h3": "86d2b32d0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1493,
+        "afi_score_p10": 0.1492,
+        "afi_score_p90": 0.1494,
+        "M_match": 0.7372,
+        "C_confounder": 0.2367,
+        "T_transferable": 0.385,
+        "rank_p50": 8,
+        "p_top10": 1.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8652a00c0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.37918,
+              -23.52162
+            ],
+            [
+              -179.40659,
+              -23.50711
+            ],
+            [
+              -179.434,
+              -23.52162
+            ],
+            [
+              -179.434,
+              -23.55064
+            ],
+            [
+              -179.40659,
+              -23.56515
+            ],
+            [
+              -179.37918,
+              -23.55064
+            ],
+            [
+              -179.37918,
+              -23.52162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Central Namib Gravel Pavement & Reg Basin",
+        "country": "Namibia",
+        "continent": "Africa",
+        "cell_id_h3": "8652a00c0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1411,
+        "afi_score_p10": 0.1409,
+        "afi_score_p90": 0.1412,
+        "M_match": 0.5318,
+        "C_confounder": 0.147,
+        "T_transferable": 0.385,
+        "rank_p50": 11,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-865099c80000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.50838,
+              -25.18007
+            ],
+            [
+              -59.53615,
+              -25.16556
+            ],
+            [
+              -59.56392,
+              -25.18007
+            ],
+            [
+              -59.56392,
+              -25.20909
+            ],
+            [
+              -59.53615,
+              -25.2236
+            ],
+            [
+              -59.50838,
+              -25.20909
+            ],
+            [
+              -59.50838,
+              -25.18007
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Simpson Desert Silcrete Gibber Plain",
+        "country": "Australia",
+        "continent": "Oceania",
+        "cell_id_h3": "865099c80000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.136,
+        "afi_score_p10": 0.1359,
+        "afi_score_p90": 0.1362,
+        "M_match": 0.5016,
+        "C_confounder": 0.1653,
+        "T_transferable": 0.385,
+        "rank_p50": 13,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869ecc510000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.55851,
+              37.69048
+            ],
+            [
+              -6.59026,
+              37.70499
+            ],
+            [
+              -6.62201,
+              37.69048
+            ],
+            [
+              -6.62201,
+              37.66146
+            ],
+            [
+              -6.59026,
+              37.64695
+            ],
+            [
+              -6.55851,
+              37.66146
+            ],
+            [
+              -6.55851,
+              37.69048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Rio Tinto Iron Gossans & Sulfates",
+        "country": "Spain",
+        "continent": "Europe",
+        "cell_id_h3": "869ecc510000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.141,
+        "afi_score_p10": 0.1409,
+        "afi_score_p90": 0.1411,
+        "M_match": 0.5774,
+        "C_confounder": 0.1876,
+        "T_transferable": 0.385,
+        "rank_p50": 12,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-869447c00000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.99387,
+              29.24743
+            ],
+            [
+              -81.02267,
+              29.26194
+            ],
+            [
+              -81.05147,
+              29.24743
+            ],
+            [
+              -81.05147,
+              29.21841
+            ],
+            [
+              -81.02267,
+              29.2039
+            ],
+            [
+              -80.99387,
+              29.21841
+            ],
+            [
+              -80.99387,
+              29.24743
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Daytona Beach Wet Quartz Sand (Adversarial Look-Alike)",
+        "country": "United States",
+        "continent": "North America",
+        "cell_id_h3": "869447c00000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.0916,
+        "afi_score_p10": 0.0915,
+        "afi_score_p90": 0.0917,
+        "M_match": 0.4743,
+        "C_confounder": 0.4336,
+        "T_transferable": 0.385,
+        "rank_p50": 16,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8696ad850000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.94705,
+              31.15717
+            ],
+            [
+              -3.97641,
+              31.17168
+            ],
+            [
+              -4.00577,
+              31.15717
+            ],
+            [
+              -4.00577,
+              31.12815
+            ],
+            [
+              -3.97641,
+              31.11364
+            ],
+            [
+              -3.94705,
+              31.12815
+            ],
+            [
+              -3.94705,
+              31.15717
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Erg Chebbi Well-Sorted Aeolian Dunes (Adversarial Look-Alike)",
+        "country": "Morocco",
+        "continent": "Africa",
+        "cell_id_h3": "8696ad850000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1358,
+        "afi_score_p10": 0.1356,
+        "afi_score_p90": 0.136,
+        "M_match": 0.4248,
+        "C_confounder": 0.197,
+        "T_transferable": 0.385,
+        "rank_p50": 14,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TERRAX-8656e97b0000000_MARS_JEZERO_DELTA_ASTROBIO",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -67.4551,
+              -20.10419
+            ],
+            [
+              -67.48186,
+              -20.08968
+            ],
+            [
+              -67.50862,
+              -20.10419
+            ],
+            [
+              -67.50862,
+              -20.13321
+            ],
+            [
+              -67.48186,
+              -20.14772
+            ],
+            [
+              -67.4551,
+              -20.13321
+            ],
+            [
+              -67.4551,
+              -20.10419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_name": "Salar de Uyuni Altiplano Salt Crust",
+        "country": "Bolivia",
+        "continent": "South America",
+        "cell_id_h3": "8656e97b0000000",
+        "planetary_target": "MARS_JEZERO_DELTA",
+        "function_profile": "ASTROBIO",
+        "afi_score_p50": 0.1342,
+        "afi_score_p10": 0.1341,
+        "afi_score_p90": 0.1344,
+        "M_match": 0.4761,
+        "C_confounder": 0.17,
+        "T_transferable": 0.385,
+        "rank_p50": 15,
+        "p_top10": 0.0,
+        "novelty_score": 1.0,
+        "stac_version": "1.0.0",
+        "license": "OPEN_PUBLIC_DOMAIN",
+        "doi": "10.5067/TERRAX-ANALOG"
+      }
+    }
+  ]
+}

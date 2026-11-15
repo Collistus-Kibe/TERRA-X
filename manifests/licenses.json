@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "license_classes": {
+    "OPEN_PUBLIC_DOMAIN": {
+      "name": "US Government Public Domain (17 U.S.C. 105)",
+      "export_allowed": true,
+      "commercial_allowed": true,
+      "redistribution_allowed": true,
+      "attribution_required": true,
+      "examples": ["NASA Earthdata", "USGS Landsat", "USGS LOLA", "PDS Geosciences Node"]
+    },
+    "OPEN_CC_BY_4": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "export_allowed": true,
+      "commercial_allowed": true,
+      "redistribution_allowed": true,
+      "attribution_required": true,
+      "examples": ["Copernicus Open Access", "CDSE COP-DEM GLO-30", "ESA PSA"]
+    },
+    "OPEN_ESA_FREE": {
+      "name": "ESA Data Policy - Free Open Access",
+      "export_allowed": true,
+      "commercial_allowed": true,
+      "redistribution_allowed": true,
+      "attribution_required": true,
+      "examples": ["ESA CCI Permafrost", "Mars Express HRSC/OMEGA"]
+    },
+    "RESEARCH_NON_COMMERCIAL": {
+      "name": "JAXA Research & Non-Commercial Terms",
+      "export_allowed": true,
+      "commercial_allowed": false,
+      "redistribution_allowed": true,
+      "attribution_required": true,
+      "terms_url": "https://earth.jaxa.jp/en/data/policy/",
+      "examples": ["JAXA AW3D30", "ALOS PALSAR 25m", "GSMaP"]
+    },
+    "NON_PROFIT_OPERATIONAL": {
+      "name": "JMA Himawari Non-Profit Data Policy",
+      "export_allowed": true,
+      "commercial_allowed": false,
+      "redistribution_allowed": false,
+      "attribution_required": true,
+      "requires_declaration": true,
+      "examples": ["Himawari-8/9 AHI Surface Reflectance"]
+    },
+    "RESTRICTED_MANUAL_AUTH": {
+      "name": "ISRO PRADAN Regulated Access",
+      "export_allowed": false,
+      "commercial_allowed": false,
+      "redistribution_allowed": false,
+      "attribution_required": true,
+      "requires_manual_login": true,
+      "terms_url": "https://pradan.issdc.gov.in/",
+      "examples": ["ISRO Chandrayaan TMC/IIRS DEM"]
+    },
+    "CANADIAN_OPEN_GOV": {
+      "name": "Open Government Licence - Canada",
+      "export_allowed": true,
+      "commercial_allowed": true,
+      "redistribution_allowed": true,
+      "attribution_required": true,
+      "examples": ["CSA RCM", "RADARSAT-1 Open Data"]
+    }
+  },
+  "guardrails": {
+    "filter_restricted_exports": true,
+    "require_provenance_audit": true,
+    "require_doi_or_stac_id": true
+  }
+}
+
